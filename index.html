@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Last Bite Market — Turn end-of-day surplus into revenue</title>
+  <meta name="description" content="Help restaurants sell end-of-day surplus, reduce waste, and give nearby customers affordable last-minute meals with clear pickup and payment flows." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Fraunces', 'serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f8fbf5',
+              100: '#edf7e6',
+              200: '#d9eec7',
+              300: '#b7dc94',
+              400: '#8fc45e',
+              500: '#6ca83f',
+              600: '#568730',
+              700: '#446928',
+              800: '#385423',
+              900: '#30461f'
+            }
+          },
+          boxShadow: {
+            soft: '0 20px 60px -25px rgba(30, 41, 59, 0.22)'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="font-sans bg-stone-50 text-stone-900 antialiased">
+  <header class="sticky top-0 z-50 border-b border-stone-200 bg-white/95 backdrop-blur shadow-sm">
+    <nav class="mx-auto max-w-6xl px-4 py-4 flex flex-wrap items-center justify-between gap-3">
+      <a href="#top" class="flex items-center gap-3 font-bold text-xl text-stone-900 focus:outline-none focus:ring-2 focus:ring-brand-500 rounded-md">
+        <span class="grid h-10 w-10 place-items-center rounded-xl bg-brand-700 text-white shadow-soft">LB</span>
+        <span>Last Bite Market</span>
+      </a>
+      <div class="flex items-center gap-5 text-sm font-medium text-stone-700">
+        <a href="#features" class="hover:text-stone-950 focus:outline-none focus:ring-2 focus:ring-brand-500 rounded-md">Features</a>
+        <a href="#how-it-works" class="hover:text-stone-950 focus:outline-none focus:ring-2 focus:ring-brand-500 rounded-md">How it works</a>
+        <a href="#cta" class="hover:text-stone-950 focus:outline-none focus:ring-2 focus:ring-brand-500 rounded-md">Get started</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="relative overflow-hidden">
+      <div class="absolute inset-0 -z-10 bg-gradient-to-b from-brand-100 via-stone-50 to-stone-50"></div>
+      <div class="mx-auto max-w-6xl px-4 py-14 md:py-20 grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div class="max-w-2xl">
+          <div class="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-white px-4 py-2 text-sm font-medium text-brand-800 shadow-sm">
+            <span class="h-2.5 w-2.5 rounded-full bg-brand-500"></span>
+            Food waste reduction for restaurants and nearby customers
+          </div>
+          <h1 class="mt-6 font-display text-5xl leading-tight text-stone-950 md:text-6xl">
+            Turn end-of-day surplus into revenue.
+          </h1>
+          <p class="mt-5 text-lg leading-8 text-stone-700 md:text-xl">
+            Last Bite Market helps restaurants list unsold food in minutes, sell time-limited deals before closing, and give nearby customers a trustworthy way to reserve affordable last-minute meals.
+          </p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-4">
+            <a href="#cta" class="inline-flex items-center justify-center rounded-xl bg-brand-700 px-6 py-3.5 text-base font-semibold text-white shadow-soft transition hover:bg-brand-800 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2">
+              Start selling surplus
+            </a>
+            <a href="#features" class="inline-flex items-center justify-center rounded-xl border border-stone-300 bg-white px-6 py-3.5 text-base font-semibold text-stone-800 transition hover:border-stone-400 hover:bg-stone-100 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2">
+              See core features
+            </a>
+          </div>
+          <div class="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3">
+            <div class="rounded-2xl bg-white p-4 shadow-soft border border-stone-100">
+              <div class="text-2xl font-bold text-stone-950">Minutes</div>
+              <div class="mt-1 text-sm text-stone-600">to list leftover meals</div>
+            </div>
+            <div class="rounded-2xl bg-white p-4 shadow-soft border border-stone-100">
+              <div class="text-2xl font-bold text-stone-950">Live</div>
+              <div class="mt-1 text-sm text-stone-600">inventory and expiry status</div>
+            </div>
+            <div class="rounded-2xl bg-white p-4 shadow-soft border border-stone-100">
+              <div class="text-2xl font-bold text-stone-950">Clear</div>
+              <div class="mt-1 text-sm text-stone-600">pickup, payment, and no-show rules</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -left-6 top-8 h-24 w-24 rounded-full bg-brand-200 blur-3xl"></div>
+          <div class="absolute -right-8 bottom-8 h-32 w-32 rounded-full bg-amber-100 blur-3xl"></div>
+          <div class="grid gap-4 sm:grid-cols-2">
+            <figure class="sm:row-span-2 overflow-hidden rounded-3xl shadow-soft border border-white bg-white">
+              <img src="https://images.unsplash.com/photo-1675647699232-76b8f533b006?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTU1MjR8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwZm9vZCUyMHN1cnBsdXMlMjBwcmVwYXJlZCUyMG1lYWxzfGVufDB8fHx8MTc3NTMyMDEwM3ww&ixlib=rb-4.1.0&q=80&w=1080&auto=format&fit=crop&w=1200&q=80" alt="Prepared surplus meals ready for last-minute restaurant pickup" class="h-full w-full object-cover" />
+              <figcaption class="p-4 text-sm text-stone-600 bg-white">
+                Daily surplus becomes a sellable menu with time windows and quantities.
+              </figcaption>
+            </figure>
+            <figure class="overflow-hidden rounded-3xl shadow-soft border border-white bg-white">
+              <img src="https://images.unsplash.com/photo-1720827965696-78503c2be359?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTU1MjR8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwcGlja3VwJTIwY3VzdG9tZXIlMjBtb2JpbGUlMjBmb29kJTIwb3JkZXJ8ZW58MHx8fHwxNzc1MzIwMTAzfDA&ixlib=rb-4.1.0&q=80&w=1080&auto=format&fit=crop&w=1200&q=80" alt="Customer checking a mobile food order before pickup" class="h-56 w-full object-cover" />
+            </figure>
+            <div class="rounded-3xl bg-stone-900 p-6 text-white shadow-soft">
+              <div class="text-sm font-semibold text-brand-300">Designed for closing time</div>
+              <p class="mt-3 text-lg leading-7 text-stone-100">
+                Show exactly what is left, what it costs, when it expires, and how to hand it off without confusion.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="mx-auto max-w-6xl px-4 py-16 md:py-20">
+      <div class="max-w-3xl">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-brand-700">Core features</p>
+        <h2 class="mt-3 font-display text-3xl md:text-4xl text-stone-950">Built around the real closing-time workflow</h2>
+        <p class="mt-4 text-lg leading-8 text-stone-700">
+          Every feature maps to the operational realities in the spec: quick setup, live availability, time-limited offers, and reliable handoff.
+        </p>
+      </div>
+
+      <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <article class="rounded-3xl bg-white p-6 shadow-soft border border-stone-100">
+          <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-100 text-brand-800">
+            <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6" stroke="currentColor" stroke-width="1.8"><path d="M4 19V5m0 0h6m-6 0 4 4m-4-4 4-4"/><path d="M14 7h6M14 12h6M14 17h6"/></svg>
+          </div>
+          <h3 class="mt-5 text-xl font-semibold text-stone-950">Restaurant onboarding and profile setup</h3>
+          <p class="mt-3 text-stone-700 leading-7">Verify location, set hours, and configure pickup or delivery so operators can launch without extra burden.</p>
+        </article>
+
+        <article class="rounded-3xl bg-white p-6 shadow-soft border border-stone-100">
+          <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-800">
+            <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6" stroke="currentColor" stroke-width="1.8"><path d="M5 7h14v10H5z"/><path d="M8 7c0-2 1.8-3 4-3s4 1 4 3"/><path d="M9 12h6"/></svg>
+          </div>
+          <h3 class="mt-5 text-xl font-semibold text-stone-950">Unsold food listings with discount and time window</h3>
+          <p class="mt-3 text-stone-700 leading-7">Post surplus items, quantity, closing-time pickup windows, and discount pricing that feels fair and urgent.</p>
+        </article>
+
+        <article class="rounded-3xl bg-white p-6 shadow-soft border border-stone-100">
+          <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-800">
+            <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6" stroke="currentColor" stroke-width="1.8"><path d="M4 12a8 8 0 1 0 16 0 8 8 0 0 0-16 0Z"/><path d="M12 8v5l3 2"/></svg>
+          </div>
+          <h3 class="mt-5 text-xl font-semibold text-stone-950">Real-time availability and inventory updates</h3>
+          <p class="mt-3 text-stone-700 leading-7">Remaining quantity updates live and sold-out or expired deals hide automatically to prevent disappointment.</p>
+        </article>
+
+        <article class="rounded-3xl bg-white p-6 shadow-soft border border-stone-100">
+          <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-stone-100 text-stone-800">
+            <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6" stroke="currentColor" stroke-width="1.8"><path d="M4 8h16v10H4z"/><path d="M7 8V6a5 5 0 0 1 10 0v2"/><path d="M9 13h6"/></svg>
+          </div>
+          <h3 class="mt-5 text-xl font-semibold text-stone-950">Reservation, pickup, and payment flow</h3>
+          <p class="mt-3 text-stone-700 leading-7">Customers reserve, pay in-app, and receive confirmation with pickup instructions and ETA in one flow.</p>
+        </article>
+
+        <article class="rounded-3xl bg-white p-6 shadow-soft border border-stone-100 md:col-span-2 xl:col-span-2">
+          <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-red-100 text-red-800">
+            <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6" stroke="currentColor" stroke-width="1.8"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 4h3.4l7.1 14.5a1.7 1.7 0 0 1-1.5 2.5H4.7a1.7 1.7 0 0 1-1.5-2.5L10.3 4Z"/></svg>
+          </div>
+          <h3 class="mt-5 text-xl font-semibold text-stone-950">Food safety, cancellation, and no-show rules</h3>
+          <p class="mt-3 text-stone-700 leading-7">Prominent disclaimers, allergen or condition notes, and clear expiration and no-show policies keep the marketplace trustworthy for everyone involved.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="bg-white border-y border-stone-200">
+      <div class="mx-auto max-w-6xl px-4 py-16 md:py-20">
+        <div class="grid gap-8 lg:grid-cols-3">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-brand-700">How it works</p>
+            <h2 class="mt-3 font-display text-3xl md:text-4xl text-stone-950">A simple system for operators, diners, and runners</h2>
+          </div>
+          <div class="lg:col-span-2 grid gap-6 md:grid-cols-3">
+            <div class="rounded-3xl bg-stone-50 p-6 border border-stone-200">
+              <div class="text-sm font-semibold text-brand-700">01</div>
+              <h3 class="mt-3 text-lg font-semibold">Restaurant operator</h3>
+              <p class="mt-2 text-stone-700 leading-7">Creates a profile, posts leftover meals in minutes, and sets the pickup window before closing.</p>
+            </div>
+            <div class="rounded-3xl bg-stone-50 p-6 border border-stone-200">
+              <div class="text-sm font-semibold text-brand-700">02</div>
+              <h3 class="mt-3 text-lg font-semibold">Nearby customer</h3>
+              <p class="mt-2 text-stone-700 leading-7">Browses discounted meals by distance and pickup time, then reserves and pays with minimal friction.</p>
+            </div>
+            <div class="rounded-3xl bg-stone-50 p-6 border border-stone-200">
+              <div class="text-sm font-semibold text-brand-700">03</div>
+              <h3 class="mt-3 text-lg font-semibold">Pickup or delivery runner</h3>
+              <p class="mt-2 text-stone-700 leading-7">Gets clear order details, timing, and status updates to complete the handoff without wasted food.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-4 py-16 md:py-20">
+      <div class="grid gap-6 lg:grid-cols-3">
+        <article class="rounded-3xl bg-brand-700 p-8 text-white shadow-soft lg:col-span-2">
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-brand-200">Personas</p>
+          <h2 class="mt-3 font-display text-3xl md:text-4xl">Designed for the closing shift, the hungry neighbor, and the handoff.</h2>
+          <div class="mt-8 grid gap-5 md:grid-cols-3">
+            <div class="rounded-2xl bg-white/10 p-5 ring-1 ring-white/10">
+              <h3 class="font-semibold text-lg">Restaurant Operator</h3>
+              <p class="mt-2 text-sm leading-6 text-brand-50">Needs a fast way to recover revenue from leftovers without extra operational burden or customer confusion.</p>
+            </div>
+            <div class="rounded-2xl bg-white/10 p-5 ring-1 ring-white/10">
+              <h3 class="font-semibold text-lg">Deal-Seeking Customer</h3>
+              <p class="mt-2 text-sm leading-6 text-brand-50">Wants trustworthy, time-limited deals with clear availability and minimal friction at checkout.</p>
+            </div>
+            <div class="rounded-2xl bg-white/10 p-5 ring-1 ring-white/10">
+              <h3 class="font-semibold text-lg">Pickup/Delivery Runner</h3>
+              <p class="mt-2 text-sm leading-6 text-brand-50">Needs clear order details, timing, and status updates to avoid missed pickups and wasted food.</p>
+            </div>
+          </div>
+        </article>
+        <figure class="overflow-hidden rounded-3xl bg-white border border-stone-200 shadow-soft">
+          <img src="https://images.unsplash.com/photo-1668838268173-816ee121ad4a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTU1MjR8MHwxfHNlYXJjaHwyfHxyZXN0YXVyYW50JTIwZm9vZCUyMHN1cnBsdXMlMjBwcmVwYXJlZCUyMG1lYWxzfGVufDB8fHx8MTc3NTMyMDEwM3ww&ixlib=rb-4.1.0&q=80&w=1080&auto=format&fit=crop&w=1200&q=80" alt="A buffet-style spread representing remaining food available for same-day sale" class="h-72 w-full object-cover" />
+          <figcaption class="p-4 text-sm text-stone-600">
+            Clear listings help good food move instead of being discarded.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="cta" class="mx-auto max-w-6xl px-4 pb-16 md:pb-20">
+      <div class="rounded-[2rem] bg-stone-900 px-6 py-10 md:px-12 md:py-14 shadow-soft overflow-hidden relative">
+        <div class="absolute inset-y-0 right-0 w-1/3 bg-brand-700/20 blur-3xl"></div>
+        <div class="relative grid gap-8 lg:grid-cols-2 lg:items-center">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-brand-300">Final CTA</p>
+            <h2 class="mt-3 font-display text-3xl md:text-4xl text-white">Launch a clearer, faster way to sell surplus tonight.</h2>
+            <p class="mt-4 text-lg leading-8 text-stone-300">Help restaurants recover revenue, give locals an affordable meal option, and reduce food waste with one focused marketplace flow.</p>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-4 lg:justify-end">
+            <a href="#top" class="inline-flex items-center justify-center rounded-xl bg-white px-6 py-3.5 text-base font-semibold text-stone-900 transition hover:bg-stone-100 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 focus:ring-offset-stone-900">
+              Back to top
+            </a>
+            <a href="#features" class="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/5 px-6 py-3.5 text-base font-semibold text-white transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 focus:ring-offset-stone-900">
+              Review features
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-stone-200 bg-white">
+    <div class="mx-auto max-w-6xl px-4 py-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+      <div>
+        <div class="font-bold text-lg text-stone-900">Last Bite Market</div>
+        <p class="mt-2 text-sm text-stone-600">Help restaurants turn surplus into revenue and give nearby customers a great last-minute meal.</p>
+      </div>
+      <div class="flex flex-wrap items-center gap-4 text-sm text-stone-600">
+        <a href="#features" class="hover:text-stone-900">Features</a>
+        <a href="#how-it-works" class="hover:text-stone-900">How it works</a>
+        <a href="#cta" class="hover:text-stone-900">Get started</a>
+      </div>
+    </div>
+    <div class="mx-auto max-w-6xl px-4 pb-10 text-sm text-stone-500 space-y-2">
+      <p>© <span id="year"></span> Last Bite Market. All rights reserved.</p>
+      <p>
+        Photos from <a class="text-stone-700 underline hover:text-stone-950" href="https://unsplash.com" target="_blank" rel="noreferrer">Unsplash</a>:
+        <a class="text-stone-700 underline hover:text-stone-950" href="https://unsplash.com/@sepro" target="_blank" rel="noreferrer">Richard R</a> via
+        <a class="text-stone-700 underline hover:text-stone-950" href="https://unsplash.com/photos/a-bunch-of-trays-filled-with-different-types-of-food-mjuRSU6RvgU" target="_blank" rel="noreferrer">Unsplash photo page</a>,
+        <a class="text-stone-700 underline hover:text-stone-950" href="https://unsplash.com/@erielreyes" target="_blank" rel="noreferrer">Eriel Ezequiel Reyes Saviñon</a> via
+        <a class="text-stone-700 underline hover:text-stone-950" href="https://unsplash.com/photos/a-man-holding-a-brown-paper-bag-and-a-cell-phone-5X00GuXexJ8" target="_blank" rel="noreferrer">Unsplash photo page</a>, and
+        <a class="text-stone-700 underline hover:text-stone-950" href="https://unsplash.com/@sepro" target="_blank" rel="noreferrer">Richard R</a> via
+        <a class="text-stone-700 underline hover:text-stone-950" href="https://unsplash.com/photos/a-buffet-of-food-Hmhn6g_Owg4" target="_blank" rel="noreferrer">Unsplash photo page</a>.
+      </p>
+      <p>Built with LaunchMind.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
