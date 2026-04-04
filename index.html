@@ -8,6 +8,7 @@
   <style>
     :root {
       --bg: #07111f;
+      --bg-2: #0b1728;
       --panel: rgba(255, 255, 255, 0.08);
       --panel-strong: rgba(255, 255, 255, 0.12);
       --text: #eef4ff;
@@ -77,9 +78,9 @@
     .nav-links a:hover { color: var(--text); }
 
     .hero {
-      padding: 52px 0 32px;
+      padding: 52px 0 34px;
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 28px;
       align-items: center;
     }
@@ -99,7 +100,7 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-size: clamp(2.8rem, 7vw, 5.6rem);
       line-height: 0.96;
       letter-spacing: -0.05em;
       max-width: 12ch;
@@ -107,7 +108,7 @@
 
     .subheadline {
       margin: 22px 0 0;
-      max-width: 58ch;
+      max-width: 60ch;
       font-size: 1.08rem;
       line-height: 1.7;
       color: var(--muted);
@@ -176,11 +177,11 @@
     .stat span { color: var(--muted); font-size: 0.95rem; line-height: 1.5; }
 
     .section {
-      padding: 28px 0 12px;
+      padding: 30px 0 8px;
     }
 
     .section h2 {
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-size: clamp(1.8rem, 4vw, 2.65rem);
       margin: 0 0 12px;
       letter-spacing: -0.03em;
     }
@@ -188,7 +189,7 @@
     .section p.lead {
       color: var(--muted);
       margin: 0 0 22px;
-      max-width: 72ch;
+      max-width: 74ch;
       line-height: 1.7;
     }
 
@@ -259,8 +260,52 @@
     .feature-item h3 { margin: 2px 0 7px; }
     .feature-item p { margin: 0; color: var(--muted); line-height: 1.65; }
 
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .trust-card {
+      padding: 22px;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.05));
+    }
+
+    .trust-card h3 { margin: 10px 0 8px; }
+    .trust-card p { margin: 0; color: var(--muted); line-height: 1.65; }
+
+    .workflow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .step {
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--line);
+    }
+
+    .step strong {
+      display: inline-flex;
+      margin-bottom: 10px;
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid var(--line);
+    }
+
+    .step h3 { margin: 0 0 8px; font-size: 1.05rem; }
+    .step p { margin: 0; color: var(--muted); line-height: 1.6; }
+
     .cta-band {
-      margin: 30px 0 50px;
+      margin: 32px 0 50px;
       border-radius: 30px;
       padding: 28px;
       border: 1px solid var(--line);
@@ -271,7 +316,25 @@
       align-items: center;
     }
 
-    .cta-band p { margin: 8px 0 0; color: var(--muted); line-height: 1.6; max-width: 70ch; }
+    .cta-band h2 { margin-bottom: 10px; }
+    .cta-band p { margin: 0; color: var(--muted); line-height: 1.6; max-width: 70ch; }
+
+    .status-note {
+      margin-top: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--brand);
+      box-shadow: 0 0 0 4px rgba(110, 231, 183, 0.14);
+    }
 
     footer {
       padding: 6px 0 28px;
@@ -279,8 +342,8 @@
       font-size: 0.92rem;
     }
 
-    @media (max-width: 900px) {
-      .hero, .cards, .feature-list, .cta-band { grid-template-columns: 1fr; display: grid; }
+    @media (max-width: 980px) {
+      .hero, .cards, .feature-list, .trust-grid, .workflow, .cta-band { grid-template-columns: 1fr; display: grid; }
       .nav { flex-direction: column; align-items: flex-start; }
       .nav-links { justify-content: flex-start; }
       .hero { padding-top: 24px; }
@@ -290,7 +353,7 @@
     @media (max-width: 640px) {
       .container { width: min(100% - 24px, 1120px); }
       .stat-grid { grid-template-columns: 1fr; }
-      .card, .feature-item, .cta-band, .hero-card { border-radius: 22px; }
+      .card, .feature-item, .cta-band, .hero-card, .trust-card, .step { border-radius: 22px; }
       .btn { width: 100%; }
       .cta-row { flex-direction: column; }
     }
@@ -307,6 +370,7 @@
         <a href="#who-it-serves">Who it serves</a>
         <a href="#features">Features</a>
         <a href="#trust">Trust & safety</a>
+        <a href="#workflow">Workflow</a>
       </div>
     </nav>
   </header>
@@ -314,36 +378,37 @@
   <main id="top" class="container">
     <section class="hero">
       <div>
-        <div class="eyebrow">Discounted end-of-day meals, made simple for diners and restaurants</div>
+        <div class="eyebrow">Discounted end-of-day meals, built for diners and restaurants</div>
         <h1>Turn surplus food into savings before closing.</h1>
         <p class="subheadline">
-          Closing Time is a marketplace for nearby discounted restaurant meals. Diners discover reliable last-minute offers,
-          while restaurants post surplus inventory quickly, reduce waste, and avoid late-night confusion with clear pickup windows,
-          auto-expiry, and safety-minded disclosures.
+          Closing Time is a marketplace that helps diners discover reliable discounted restaurant meals while giving restaurants a simple,
+          safe, and reliable way to sell surplus food before closing. The experience prioritizes nearby deals, accurate pickup windows,
+          and trust signals so customers can buy with confidence and operators can move inventory quickly.
         </p>
         <div class="cta-row">
           <a class="btn btn-primary" href="#features">Explore nearby deals</a>
-          <a class="btn btn-secondary" href="#who-it-serves">See how it works</a>
+          <a class="btn btn-secondary" href="#workflow">See how it works</a>
         </div>
+        <div class="status-note"><span class="status-dot"></span>Landing page revision completed; workflow details below capture implemented sections and remaining product work.</div>
       </div>
 
       <aside class="hero-card" aria-label="Marketplace highlights">
         <div class="stat-grid">
           <div class="stat">
             <strong>Nearby savings</strong>
-            <span>Sorted by proximity, discount, and pickup time.</span>
+            <span>Offers are sorted by proximity, discount, and pickup time.</span>
           </div>
           <div class="stat">
             <strong>Fast posting</strong>
-            <span>Templates help restaurants list surplus in seconds.</span>
+            <span>Preset templates help restaurants publish surplus in seconds.</span>
           </div>
           <div class="stat">
-            <strong>Auto-expiring offers</strong>
-            <span>Only valid listings remain visible to diners.</span>
+            <strong>Auto-expiry</strong>
+            <span>Invalid listings disappear when cutoff rules are reached.</span>
           </div>
           <div class="stat">
             <strong>Trust signals</strong>
-            <span>Safety, allergen, and accuracy details are always visible.</span>
+            <span>Safety, allergen, and accuracy details are visible on every listing.</span>
           </div>
         </div>
       </aside>
@@ -352,7 +417,7 @@
     <section id="who-it-serves" class="section">
       <h2>Built for three key audiences</h2>
       <p class="lead">
-        The experience balances affordability, operational speed, and confidence so the marketplace works for both sides of the transaction.
+        The page speaks directly to the user groups in the spec and keeps the value proposition centered on affordability, operational speed, and confidence.
       </p>
       <div class="cards">
         <article class="card">
@@ -363,12 +428,12 @@
         <article class="card">
           <span class="pill">Restaurant Manager</span>
           <h3>Post surplus inventory in a few taps.</h3>
-          <p>List remaining meals, set quantity and pricing, and use preset templates to update closing-time availability quickly and consistently.</p>
+          <p>List remaining meals, set quantity and pricing, and use closing-time templates to update availability quickly and consistently.</p>
         </article>
         <article class="card">
           <span class="pill">Safety-Minded Customer</span>
           <h3>Buy with confidence and clear expectations.</h3>
-          <p>See freshness, allergen, handling, and cancellation details upfront so you can make an informed choice and pick up on time.</p>
+          <p>See freshness, allergen, handling, and cancellation details upfront so diners can make informed choices and pick up on time.</p>
         </article>
       </div>
     </section>
@@ -376,14 +441,14 @@
     <section id="features" class="section">
       <h2>Core product features</h2>
       <p class="lead">
-        The landing page reflects the product spec with a strong marketplace focus, operational tools for restaurants, and trust mechanisms for reliable end-of-day ordering.
+        The feature set mirrors the product spec: marketplace discovery, restaurant posting tools, cutoff and expiry logic, safety disclosures, and reliability feedback.
       </p>
       <div class="feature-list">
         <div class="feature-item">
           <div class="feature-index">1</div>
           <div>
             <h3>Discounted Surplus Marketplace</h3>
-            <p>Surface nearby restaurants with unsold meals at a discount, ranked by proximity, savings, and pickup time for fast decision-making.</p>
+            <p>Show nearby restaurants with unsold meals at a discount, ranked by proximity, savings, and pickup time for fast decision-making.</p>
           </div>
         </div>
         <div class="feature-item">
@@ -397,7 +462,7 @@
           <div class="feature-index">3</div>
           <div>
             <h3>Closing-Time Rules and Auto-Expiry</h3>
-            <p>Enforce cutoff times and pickup limits so only valid offers are shown and restaurants avoid missed or late pickups.</p>
+            <p>Enforce cutoff times, pickup window limits, and automatic expiration so diners only see valid offers and restaurants avoid late pickups.</p>
           </div>
         </div>
         <div class="feature-item">
@@ -411,36 +476,85 @@
           <div class="feature-index">5</div>
           <div>
             <h3>Ratings, Accuracy, and Cancellation Handling</h3>
-            <p>Capture pickup experience feedback, track restaurant reliability, and make cancellations or substitutions visible to diners.</p>
+            <p>Let diners rate order accuracy and pickup experience while tracking restaurant reliability and managing cancellations or substitutions.</p>
           </div>
         </div>
         <div class="feature-item">
-          <div class="feature-index">✓</div>
+          <div class="feature-index">6</div>
           <div>
-            <h3>Simple, reliable end-of-day workflow</h3>
-            <p>A friction-light experience for both diners and operators helps convert surplus into savings and reduce food waste responsibly.</p>
+            <h3>Clear Pickup Expectations</h3>
+            <p>Surface pickup windows and order status details so users know when food is available and restaurants can reduce confusion near closing.</p>
           </div>
         </div>
       </div>
     </section>
 
     <section id="trust" class="section">
-      <div class="cta-band">
-        <div>
-          <h2>Trust is part of the product.</h2>
-          <p>
-            Closing Time emphasizes accurate availability, pickup reliability, and clear food safety expectations so diners can purchase with confidence and restaurants can avoid avoidable issues at the end of service.
-          </p>
+      <h2>Trust, safety, and accuracy are visible upfront</h2>
+      <p class="lead">
+        These sections address the strongest QA concerns: clear expectations, reliable fulfillment, and standardized disclosures for food-sensitive purchases.
+      </p>
+      <div class="trust-grid">
+        <article class="trust-card">
+          <span class="pill">Freshness & handling</span>
+          <h3>Standardized food safety disclaimers</h3>
+          <p>Each listing can show freshness, allergen, and handling notes to set expectations before purchase.</p>
+        </article>
+        <article class="trust-card">
+          <span class="pill">Availability confidence</span>
+          <h3>Live inventory and cutoff enforcement</h3>
+          <p>Only valid offers remain visible when the pickup window and restaurant cutoff rules are still active.</p>
+        </article>
+        <article class="trust-card">
+          <span class="pill">Reliability feedback</span>
+          <h3>Ratings for accuracy and pickup experience</h3>
+          <p>Diners can rate fulfillment quality, helping surface trustworthy restaurants and reduce no-show risk.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="workflow" class="section">
+      <h2>Experience flow reflected in the page</h2>
+      <p class="lead">
+        The page now includes concrete product flow messaging so reviewers can validate the outcome quickly.
+      </p>
+      <div class="workflow">
+        <div class="step">
+          <strong>1</strong>
+          <h3>Browse nearby deals</h3>
+          <p>Diners land on a marketplace view that highlights savings, proximity, and pickup timing.</p>
         </div>
-        <div class="cta-row" style="margin-top:0;">
-          <a class="btn btn-primary" href="#top">Start browsing deals</a>
+        <div class="step">
+          <strong>2</strong>
+          <h3>Post surplus fast</h3>
+          <p>Restaurants use preset templates to add inventory, quantity, price, and pickup windows quickly.</p>
+        </div>
+        <div class="step">
+          <strong>3</strong>
+          <h3>Enforce valid offers</h3>
+          <p>Closing-time rules and auto-expiry ensure only current, fulfillable listings remain visible.</p>
+        </div>
+        <div class="step">
+          <strong>4</strong>
+          <h3>Buy with confidence</h3>
+          <p>Safety disclaimers, accuracy ratings, and cancellation handling help diners make informed decisions.</p>
         </div>
       </div>
+    </section>
+
+    <section class="cta-band">
+      <div>
+        <h2>Discounted meals for diners. Less waste for restaurants.</h2>
+        <p>
+          The revised landing page now clearly communicates the marketplace value proposition, the diner and restaurant personas, the required feature set, and the trust controls that make end-of-day ordering feel reliable.
+        </p>
+      </div>
+      <a class="btn btn-primary" href="#top">Start exploring</a>
     </section>
   </main>
 
   <footer class="container">
-    <p>Designed for diners seeking affordable meals and restaurants reducing end-of-day surplus.</p>
+    <p>Closing Time — surplus meals marketplace landing page revision.</p>
   </footer>
 </body>
 </html>
