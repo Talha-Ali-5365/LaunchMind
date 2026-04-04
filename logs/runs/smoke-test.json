@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "run": {
+    "id": "smoke-test",
+    "idea": "i",
+    "started_at": "s",
+    "finished_at": "f",
+    "status": "completed",
+    "error": null,
+    "errors": []
+  },
+  "agents": [
+    {
+      "id": "ceo",
+      "title": "CEO",
+      "description": "Strategic lead: decomposes the startup idea, reviews product, engineering, and QA outputs, and posts the final team summary to Slack.",
+      "stats": {
+        "messages_sent": 1,
+        "messages_received": 0
+      },
+      "timeline": [
+        {
+          "message_id": "1",
+          "timestamp": "t",
+          "message_type": "task",
+          "payload_keys": [
+            "a"
+          ],
+          "direction": "out",
+          "peer": "product"
+        }
+      ],
+      "outputs": {}
+    },
+    {
+      "id": "product",
+      "title": "Product",
+      "description": "Owns the product specification—personas, features, and user stories—refined with the CEO until accepted.",
+      "stats": {
+        "messages_sent": 0,
+        "messages_received": 1
+      },
+      "timeline": [
+        {
+          "message_id": "1",
+          "timestamp": "t",
+          "message_type": "task",
+          "payload_keys": [
+            "a"
+          ],
+          "direction": "in",
+          "peer": "ceo"
+        }
+      ],
+      "outputs": {}
+    },
+    {
+      "id": "engineer",
+      "title": "Engineer",
+      "description": "Builds the landing page on GitHub: issue, branch, commits, and pull request from the approved spec.",
+      "stats": {
+        "messages_sent": 0,
+        "messages_received": 0
+      },
+      "timeline": [],
+      "outputs": {}
+    },
+    {
+      "id": "marketing",
+      "title": "Marketing",
+      "description": "Produces launch messaging: tagline, cold email, and Slack Block Kit, using the PR URL from the CEO handoff.",
+      "stats": {
+        "messages_sent": 0,
+        "messages_received": 0
+      },
+      "timeline": [],
+      "outputs": {}
+    },
+    {
+      "id": "qa",
+      "title": "QA",
+      "description": "Reviews the pull request, HTML, and marketing assets against the product spec and returns structured findings.",
+      "stats": {
+        "messages_sent": 0,
+        "messages_received": 0
+      },
+      "timeline": [],
+      "outputs": {}
+    }
+  ],
+  "message_history": [
+    {
+      "message_id": "1",
+      "from_agent": "ceo",
+      "to_agent": "product",
+      "message_type": "task",
+      "payload": {
+        "a": 1
+      },
+      "timestamp": "t"
+    }
+  ]
+}
