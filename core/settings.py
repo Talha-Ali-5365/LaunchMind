@@ -37,6 +37,7 @@ class Settings(BaseSettings):
 
     max_revision_rounds: int = 3
     engineer_branch_prefix: str = "agent-landing-page"
+    engineer_base_branch: str = "agent"
 
     # Per-run folder under repo root: run_log.json, links.json, index.html (see services/run_log.py).
     output_dir: str = "output"

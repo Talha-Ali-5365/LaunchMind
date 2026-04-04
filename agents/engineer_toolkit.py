@@ -53,8 +53,8 @@ class EngineerToolkit:
         """
         if self._ctx.branch_name:
             return f"branch_already_created: {self._ctx.branch_name}"
-        base_branch = self._gh.get_default_branch()
-        base_sha = self._gh.get_branch_sha(base_branch)
+        base_branch = (self._settings.engineer_base_branch or "agent").strip()
+        base_sha = self._gh.get_branch_sha(base_branch, allow_fallback_to_main=False)
         suffix = uuid4().hex[:8]
         name = f"{self._settings.engineer_branch_prefix}-{suffix}"
         try:
@@ -137,7 +137,7 @@ class EngineerToolkit:
             return "error: branch missing"
         if self._ctx.pr_url:
             return f"pr_already_open: {self._ctx.pr_url}"
-        base_branch = self._gh.get_default_branch()
+        base_branch = (self._settings.engineer_base_branch or "agent").strip()
         data = self._gh.create_pull_request(
             title=title.strip(),
             body=body.strip(),
@@ -168,7 +168,9 @@ def build_engineer_structured_tools(toolkit: EngineerToolkit) -> list[Structured
         StructuredTool.from_function(
             func=toolkit.create_engineer_branch,
             name="create_engineer_branch",
-            description="Create a new branch from the repo default branch for agent work.",
+            description=(
+                "Create a new branch from ENGINEER_BASE_BRANCH (e.g. agent), not from main."
+            ),
         ),
         StructuredTool.from_function(
             func=toolkit.search_unsplash_photos,
@@ -187,6 +189,8 @@ def build_engineer_structured_tools(toolkit: EngineerToolkit) -> list[Structured
         StructuredTool.from_function(
             func=toolkit.open_pull_request,
             name="open_pull_request",
-            description="Open a pull request from the engineer branch to the default branch.",
+            description=(
+                "Open a pull request from the engineer branch into ENGINEER_BASE_BRANCH (merge target)."
+            ),
         ),
     ]

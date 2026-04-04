@@ -71,10 +71,15 @@ Return JSON:
 """
 
 FINAL_SUMMARY_TEMPLATE = """Compose a short executive summary for the internal team Slack (plain text, no JSON).
-Include: idea recap, product value prop, PR link, email sent yes/no, QA verdict.
-Use this context:
 
+Context (JSON):
 {context_json}
+
+**Mandatory — read `slack_summary_facts` and do not contradict it:**
+- Include the exact meaning of `email_summary_line` for the email/cold-outreach status (do not invent “email sent: no” when `email_marketing_phase_completed` is true and `errors` is empty).
+- Include the exact meaning of `qa_summary_line` for QA (if `announce_qa_as_success` is true, state clearly that QA passed or was accepted for launch; do not claim QA failed).
+
+Also cover: idea recap, product value proposition, PR link, issue link if useful.
 
 Reply with only the Slack message body text (under 4000 chars).
 """

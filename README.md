@@ -36,17 +36,16 @@ pip install -e .
 
 3. Copy `.env.example` → `.env` and fill in real values (never commit `.env`).
 
-4. **GitHub**: public repo `launchmind-[group]`; classic PAT with `repo`, `workflow`.
 
-5. **Slack**: Bot token with `chat:write`, `channels:read`, `channels:join`; channel `#launches`; invite the bot.
+4. **Slack**: Bot token with `chat:write`, `channels:read`, `channels:join`; channel `#launches`; invite the bot.
 
-6. **Resend**: API key; with `onboarding@resend.dev`, **`TO_EMAIL` must be the same address as your Resend account** (testing restriction). To mail arbitrary inboxes, [verify a domain](https://resend.com/domains) and set `FROM_EMAIL` to an address on that domain.
+5. **Resend**: API key; with `onboarding@resend.dev`, **`TO_EMAIL` must be the same address as your Resend account** (testing restriction). To mail arbitrary inboxes, [verify a domain](https://resend.com/domains) and set `FROM_EMAIL` to an address on that domain.
 
-7. **Unsplash** (optional, for engineer landing imagery): [Create an application](https://unsplash.com/oauth/applications), copy the **Access Key** into `UNSPLASH_ACCESS_KEY`. The engineer agent calls `search_unsplash_photos`; without a key it falls back to fixed reference URLs in the prompt. `UNSPLASH_SECRET_KEY` and `UNSPLASH_APPLICATION_ID` are optional (dashboard metadata / future OAuth).
+6. **Unsplash** (optional, for engineer landing imagery): [Create an application](https://unsplash.com/oauth/applications), copy the **Access Key** into `UNSPLASH_ACCESS_KEY`. The engineer agent calls `search_unsplash_photos`; without a key it falls back to fixed reference URLs in the prompt. `UNSPLASH_SECRET_KEY` and `UNSPLASH_APPLICATION_ID` are optional (dashboard metadata / future OAuth).
 
 ## Run
 
-**Synchronous demo (PRD / video):**
+**CLI:**
 
 ```bash
 python3 main.py "Your startup idea here"

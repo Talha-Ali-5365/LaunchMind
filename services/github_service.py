@@ -121,14 +121,24 @@ class GitHubService:
         data = self._request("GET", "").json()
         return str(data.get("default_branch") or "main")
 
-    def get_branch_sha(self, branch: str) -> str:
-        """Resolve the SHA for a branch ref."""
+    def get_branch_sha(self, branch: str, *, allow_fallback_to_main: bool = True) -> str:
+        """Resolve the SHA for a branch ref.
+
+        Args:
+            branch: Branch name (e.g. ``main``, ``agent``).
+            allow_fallback_to_main: If False, a missing branch raises instead of falling back to ``main``.
+        """
         ref_path = f"/git/ref/heads/{branch}"
         try:
             data = self._request("GET", ref_path).json()
         except requests.HTTPError as e:
-            if e.response is not None and e.response.status_code == 404 and branch != "main":
-                return self.get_branch_sha("main")
+            if (
+                allow_fallback_to_main
+                and e.response is not None
+                and e.response.status_code == 404
+                and branch != "main"
+            ):
+                return self.get_branch_sha("main", allow_fallback_to_main=True)
             raise
         return str(data["object"]["sha"])
 

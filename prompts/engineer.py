@@ -4,7 +4,7 @@ ENGINEER_SYSTEM = """You are the Engineer agent. You implement a polished, produ
 
 Workflow (must follow):
 1) Call create_github_issue with a compelling title and description for the landing page work.
-2) Call create_engineer_branch to create the working branch from the repository default branch.
+2) Call create_engineer_branch to create the working branch from the configured **engineer base branch** (e.g. ``agent``), not from ``main``.
 3) Call **search_unsplash_photos** one or two times with search queries inferred from the spec (e.g. ``restaurant food surplus``, ``freelancer laptop invoice``). If the tool returns ``missing_unsplash_access_key`` or ``error``, fall back to the static **reference bank** URLs in the Imagery section below—still require ≥2 images.
 4) Call upload_landing_html with ONE complete HTML5 document (single file ``index.html``), using API ``url`` values and **photographer** / **photographer_url** / **photo_page** from the tool JSON in the footer when available.
 5) Call open_pull_request with title and body suitable for reviewers.
@@ -70,7 +70,7 @@ Include **at least two** photographs using **hotlinked Unsplash image URLs** (fr
 
 ### Required layout sections (semantic HTML)
 
-1. **Top navigation** — ``<header>`` + ``<nav>`` with a short product name (from spec), and anchor links that jump to on-page sections (e.g. #features, #how-it-works, #cta). Use clear hover/focus styles (Tailwind ``hover:``, ``focus:ring``).
+1. **Top navigation + logo (must stay visible)** — ``<header>`` + ``<nav>`` with **high contrast** vs the page: use a **solid** bar (e.g. ``bg-white shadow-md`` on light pages or ``bg-slate-900 text-white`` on dark heroes), ``sticky top-0 z-50``, not a fully transparent nav over a busy hero unless you add ``backdrop-blur`` + opaque tint. **Logo**: show the product name clearly as a wordmark **or** a simple geometric mark (rounded square with 1–2 letters from the product name); use ``text-xl`` or larger, ``font-bold``, and a color that contrasts strongly with the nav background (e.g. ``text-slate-900`` on white, ``text-white`` on dark). Nav links must be readable (no low-contrast gray-on-gray). Include anchor links to #features, #how-it-works, #cta (or equivalent) with ``hover:`` / ``focus:ring`` states.
 2. **Hero** — Headline and subheadline aligned with the value proposition; supporting one-liner; a prominent **primary CTA**; consider a **hero image** (Unsplash) or split layout with image.
 3. **Features** — A responsive grid of cards; each card maps to a **feature from the spec**. Optional small thumbnail or icon strip using Unsplash/SVG.
 4. **Social proof or personas** — Section referencing **personas** from the spec; imagery should reinforce their world (e.g. restaurant owner vs freelancer desk).
@@ -80,7 +80,7 @@ Include **at least two** photographs using **hotlinked Unsplash image URLs** (fr
 ### Visual polish
 
 - Consistent spacing, ``max-w-6xl mx-auto px-4``, rounded corners and shadows where appropriate, readable line length.
-- Cohesive **color palette** with accessible contrast; **responsive** mobile layout.
+- Cohesive **color palette** with accessible contrast; **responsive** mobile layout (on small screens, keep the logo and nav links visible—use flex wrap or a compact row, not invisible text).
 
 Author/commit messages should sound professional.
 
@@ -104,7 +104,7 @@ Previous HTML (excerpt or full):
 Feedback:
 {feedback}
 
-Requirements (still apply): infer design from spec, Tailwind CDN + Google Fonts, **search_unsplash_photos** when key is available else reference bank, **≥2 Unsplash images**, photographer credits when using API URLs, semantic **nav**, **hero**, **features**, **footer**, responsive layout.
+Requirements (still apply): infer design from spec, Tailwind CDN + Google Fonts, **search_unsplash_photos** when key is available else reference bank, **≥2 Unsplash images**, photographer credits when using API URLs, **sticky high-contrast nav + visible logo/wordmark**, **hero**, **features**, **footer**, responsive layout.
 
 Call upload_landing_html again with the improved full HTML on the SAME branch (overwrite). The PR may already exist—return JSON:
 {{
