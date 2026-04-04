@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InvoiceFlow — Recover Overdue Payments Faster</title>
+  <style>
+    :root {
+      --bg: #0b1220;
+      --panel: rgba(15, 23, 42, 0.78);
+      --panel-2: rgba(30, 41, 59, 0.72);
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-2: #22c55e;
+      --border: rgba(148, 163, 184, 0.18);
+      --shadow: 0 24px 80px rgba(2, 6, 23, 0.45);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 30%),
+        radial-gradient(circle at top right, rgba(34, 197, 94, 0.14), transparent 28%),
+        linear-gradient(180deg, #020617 0%, #0f172a 44%, #111827 100%);
+      min-height: 100vh;
+    }
+
+    .wrap {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 32px 0 64px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 72px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 10px 30px rgba(56, 189, 248, 0.25);
+    }
+
+    .header-note {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.55);
+      color: #cbd5e1;
+      font-size: 0.92rem;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(3rem, 6vw, 5.4rem);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      max-width: 11ch;
+    }
+
+    .subheadline {
+      max-width: 60ch;
+      font-size: 1.14rem;
+      line-height: 1.7;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 26px;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 20px;
+      border-radius: 14px;
+      border: none;
+      text-decoration: none;
+      color: #07111f;
+      background: linear-gradient(135deg, #7dd3fc, #34d399);
+      font-weight: 700;
+      box-shadow: 0 18px 40px rgba(56, 189, 248, 0.24);
+    }
+
+    .cta.secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+      box-shadow: none;
+    }
+
+    .proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .proof span {
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(15, 23, 42, 0.4);
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.68));
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .dashboard {
+      display: grid;
+      gap: 16px;
+    }
+
+    .dashboard .topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #cbd5e1;
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .metric {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid var(--border);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 1.5rem;
+      margin-bottom: 6px;
+    }
+
+    .metric small {
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .section {
+      margin-top: 84px;
+    }
+
+    .section h2 {
+      margin: 0 0 14px;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      letter-spacing: -0.03em;
+    }
+
+    .section p.lead {
+      margin: 0 0 30px;
+      color: var(--muted);
+      max-width: 65ch;
+      line-height: 1.7;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .feature {
+      padding: 22px;
+      border-radius: 20px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      min-height: 180px;
+    }
+
+    .feature .index {
+      display: inline-flex;
+      width: 34px;
+      height: 34px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      background: rgba(56, 189, 248, 0.14);
+      color: #7dd3fc;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .feature h3 {
+      margin: 0 0 10px;
+      font-size: 1.1rem;
+    }
+
+    .feature p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .persona-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .persona {
+      padding: 22px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, var(--panel), var(--panel-2));
+      border: 1px solid var(--border);
+    }
+
+    .persona h3 { margin: 0 0 8px; }
+    .persona .role { color: #cbd5e1; margin-bottom: 12px; font-size: 0.95rem; }
+    .persona p { margin: 0; color: var(--muted); line-height: 1.65; }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .step {
+      padding: 22px;
+      border-radius: 20px;
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid var(--border);
+    }
+
+    .step strong {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: #7dd3fc;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    footer {
+      margin-top: 72px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero, .features, .persona-grid, .steps { grid-template-columns: 1fr; }
+      header { flex-direction: column; align-items: flex-start; margin-bottom: 42px; }
+      h1 { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand"><div class="logo" aria-hidden="true"></div> InvoiceFlow</div>
+      <div class="header-note">Automated overdue payment follow-up for freelancers and small studios</div>
+    </header>
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <div class="eyebrow">Recover overdue payments without awkward manual chasing</div>
+        <h1 id="hero-title">Get paid faster, with less follow-up.</h1>
+        <p class="subheadline">
+          InvoiceFlow helps freelancers recover overdue payments faster by automatically tracking unpaid invoices and sending the right reminders at the right time — so you can focus on client work instead of collections.
+        </p>
+        <div class="cta-row">
+          <a class="cta" href="#features">Start tracking invoices</a>
+          <a class="cta secondary" href="#setup">See how it works</a>
+        </div>
+        <div class="proof" aria-label="Key benefits">
+          <span>Track sent, overdue, and paid statuses</span>
+          <span>Polite reminders by due date</span>
+          <span>Stops automatically after payment</span>
+        </div>
+      </div>
+
+      <div class="card dashboard" aria-label="Payment aging dashboard preview">
+        <div class="topline">
+          <strong>Payment Aging Dashboard</strong>
+          <span>Live overview</span>
+        </div>
+        <div class="metric-grid">
+          <div class="metric">
+            <strong>$8.4k</strong>
+            <small>Unpaid invoices currently in follow-up</small>
+          </div>
+          <div class="metric">
+            <strong>12</strong>
+            <small>Invoices needing action this week</small>
+          </div>
+          <div class="metric">
+            <strong>4</strong>
+            <small>Clients with overdue balances</small>
+          </div>
+          <div class="metric">
+            <strong>92%</strong>
+            <small>Reminder deliverability and reply visibility</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <h2>Built for the way freelancers actually collect payments</h2>
+      <p class="lead">
+        Designed for solo professionals, studio owners, and consultants who need a simple way to keep invoices organized, follow up consistently, and avoid unnecessary admin work.
+      </p>
+      <div class="persona-grid">
+        <article class="persona">
+          <h3>Solo Freelancer</h3>
+          <div class="role">Independent professional managing client billing alone</div>
+          <p>Loses time manually tracking due dates and following up on late payments across multiple clients.</p>
+        </article>
+        <article class="persona">
+          <h3>Small Studio Owner</h3>
+          <div class="role">Owner of a creative or consulting studio with multiple active invoices</div>
+          <p>Needs a simple way to monitor aging balances and keep follow-ups consistent without extra admin work.</p>
+        </article>
+        <article class="persona">
+          <h3>Independent Consultant</h3>
+          <div class="role">Consultant billing milestones and retainers to multiple clients</div>
+          <p>Struggles to stay organized on overdue invoices and avoid awkward or inconsistent reminder outreach.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Features that keep collections moving</h2>
+      <p class="lead">Everything you need to monitor unpaid invoices, send better reminders, and stop outreach automatically once payment is confirmed.</p>
+      <div class="features">
+        <article class="feature">
+          <div class="index">01</div>
+          <h3>Invoice Status Tracking</h3>
+          <p>Track each invoice from sent to overdue to paid so freelancers always know what needs follow-up.</p>
+        </article>
+        <article class="feature">
+          <div class="index">02</div>
+          <h3>Reminder Scheduling</h3>
+          <p>Automatically schedule reminder messages based on due dates, overdue intervals, and custom timing rules.</p>
+        </article>
+        <article class="feature">
+          <div class="index">03</div>
+          <h3>Reminder Templates</h3>
+          <p>Provide editable polite reminder templates for first notices, overdue nudges, and final requests.</p>
+        </article>
+        <article class="feature">
+          <div class="index">04</div>
+          <h3>Payment Aging Dashboard</h3>
+          <p>Show unpaid invoices by age bucket, amount, client, and urgency to help users prioritize collections.</p>
+        </article>
+        <article class="feature">
+          <div class="index">05</div>
+          <h3>Escalation and Deliverability Handling</h3>
+          <p>Escalate reminders when invoices stay unpaid and stop or adjust sends based on payment confirmation, bounce, or reply feedback.</p>
+        </article>
+        <article class="feature">
+          <div class="index">06</div>
+          <h3>Quick Setup and Import</h3>
+          <p>Connect your invoice data, import existing unpaid invoices, and begin follow-ups without re-entering everything manually.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="setup">
+      <h2>Three simple steps to get started</h2>
+      <div class="steps">
+        <article class="step">
+          <strong>1. Connect your invoices</strong>
+          <p>Set up your account and sync or import your unpaid invoices so tracking starts immediately.</p>
+        </article>
+        <article class="step">
+          <strong>2. Automate reminders</strong>
+          <p>Choose templates and timing rules that match your tone, then let the system handle follow-up cadence.</p>
+        </article>
+        <article class="step">
+          <strong>3. Stop when paid</strong>
+          <p>Reminder sequences stop automatically once payment is received, keeping your outreach accurate and professional.</p>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      <div>InvoiceFlow — overdue payment recovery for freelancers</div>
+      <div>Polite follow-up, consistent timing, faster cash flow</div>
+    </footer>
+  </div>
+</body>
+</html>
