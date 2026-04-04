@@ -2,7 +2,9 @@
 
 Multi-agent system that takes a startup **idea** and runs a micro-startup workflow: **Product** spec, **Engineer** landing page + real **GitHub** issue/branch/PR, **Marketing** cold email (**Resend**) + **Slack** Block Kit post (PR URL comes from the **CEO** only), **QA** inline PR comments, **CEO** orchestration with LLM reviews and multiple revision loops, and a final CEO summary to Slack.
 
-Course PR: [LaunchMind #21](https://github.com/Talha-Ali-5365/LaunchMind/pull/21).
+PR: [LaunchMind #23](https://github.com/Talha-Ali-5365/LaunchMind/pull/23).
+
+Issue: [LaunchMind #22](https://github.com/Talha-Ali-5365/LaunchMind/issues/22).
 
 Built with **FastAPI**, **LangChain Deep Agents** ([quickstart](https://docs.langchain.com/oss/python/deepagents/quickstart)), and **OpenAI-compatible** chat (`langchain-openai` `ChatOpenAI`, e.g. Metaminds `base_url`).
 
