@@ -3,140 +3,155 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WarmTrail — warm B2B leads, compliant outreach, clean CRM handoff</title>
   <meta name="description" content="WarmTrail helps sales and revops teams find high-intent B2B leads from configurable signals, draft compliant warm outreach, and run human-approved follow-up sequences that hand off cleanly to CRM." />
+  <title>WarmTrail — signal-driven warm outbound with compliant handoff</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
+            sans: ['Manrope', 'system-ui', 'sans-serif']
           },
           colors: {
             trail: {
-              50: '#f4faf7',
-              100: '#e3f2ec',
-              200: '#c7e4d8',
-              300: '#9dcdb8',
-              400: '#68aa8f',
-              500: '#3f8a70',
-              600: '#2d6859',
-              700: '#255346',
-              800: '#1f4138',
-              900: '#18332d'
+              50: '#f4faf5',
+              100: '#e4f2e7',
+              200: '#c4e3ca',
+              300: '#9cccaa',
+              400: '#69a47b',
+              500: '#4a8462',
+              600: '#35664c',
+              700: '#274d3a',
+              800: '#1f3a2b',
+              900: '#15281e'
             },
-            ember: {
-              50: '#fff8f1',
-              100: '#ffedd9',
-              200: '#ffd2a7',
-              300: '#ffb166',
-              400: '#f98b2d',
-              500: '#e86f12',
-              600: '#c6580a',
-              700: '#9f4509'
+            clay: {
+              50: '#fff8f3',
+              100: '#ffe9d8',
+              200: '#ffcca8',
+              300: '#f7a96a',
+              400: '#de7f39',
+              500: '#c86823',
+              600: '#9f521d',
+              700: '#7c411a'
+            },
+            ink: {
+              50: '#eef2f4',
+              100: '#dbe4e9',
+              200: '#b8c7d0',
+              300: '#8ca4b2',
+              400: '#658092',
+              500: '#476173',
+              600: '#344b59',
+              700: '#253846',
+              800: '#17242d',
+              900: '#0e171d'
             }
           },
           boxShadow: {
-            soft: '0 20px 60px -30px rgba(24, 51, 45, 0.35)'
+            soft: '0 24px 70px -28px rgba(14, 23, 29, 0.36)',
+            card: '0 18px 45px -32px rgba(14, 23, 29, 0.32)'
           },
           backgroundImage: {
-            'hero-grid': 'radial-gradient(circle at top left, rgba(63,138,112,.22), transparent 32%), radial-gradient(circle at top right, rgba(232,111,18,.18), transparent 26%), linear-gradient(180deg, rgba(24,51,45,.98), rgba(24,51,45,.92))'
+            'hero-warm': 'radial-gradient(circle at 15% 20%, rgba(74,132,98,.34), transparent 28%), radial-gradient(circle at 85% 10%, rgba(200,104,35,.22), transparent 24%), linear-gradient(180deg, rgba(21,40,30,1) 0%, rgba(24,46,35,1) 100%)',
+            'section-soft': 'linear-gradient(180deg, rgba(244,250,245,1), rgba(255,255,255,1))'
           }
         }
       }
     }
   </script>
 </head>
-<body class="font-sans bg-trail-50 text-slate-900 antialiased">
-  <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur shadow-sm">
-    <nav class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8" aria-label="Primary">
-      <a href="#top" class="flex items-center gap-3">
-        <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-trail-800 text-white shadow-soft">
-          <span class="text-lg font-extrabold">WT</span>
+<body class="bg-trail-50 font-sans text-ink-900 antialiased selection:bg-trail-200 selection:text-ink-900">
+  <header class="sticky top-0 z-50 border-b border-ink-200 bg-white/95 backdrop-blur-md shadow-sm">
+    <nav class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8" aria-label="Primary">
+      <a href="#top" class="flex items-center gap-3 focus:outline-none focus:ring-2 focus:ring-trail-500 focus:ring-offset-2 rounded-xl">
+        <span class="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-trail-800 text-white shadow-soft">
+          <span class="text-lg font-extrabold tracking-tight">WT</span>
         </span>
-        <span class="text-xl font-bold tracking-tight text-trail-900">WarmTrail</span>
+        <span class="text-xl font-extrabold tracking-tight text-ink-900">WarmTrail</span>
       </a>
-      <div class="flex flex-wrap items-center justify-end gap-2 text-sm font-medium sm:gap-4">
-        <a href="#features" class="rounded-full px-3 py-2 text-slate-700 transition hover:bg-trail-50 hover:text-trail-800 focus:outline-none focus:ring-2 focus:ring-trail-500">Features</a>
-        <a href="#how-it-works" class="rounded-full px-3 py-2 text-slate-700 transition hover:bg-trail-50 hover:text-trail-800 focus:outline-none focus:ring-2 focus:ring-trail-500">How it works</a>
-        <a href="#cta" class="rounded-full bg-trail-800 px-4 py-2 text-white transition hover:bg-trail-700 focus:outline-none focus:ring-2 focus:ring-trail-500">Request a demo</a>
+      <div class="flex flex-wrap items-center justify-end gap-2 text-sm font-semibold sm:gap-3">
+        <a href="#features" class="rounded-full px-3 py-2 text-ink-700 transition hover:bg-trail-100 hover:text-trail-800 focus:outline-none focus:ring-2 focus:ring-trail-500 focus:ring-offset-2">Features</a>
+        <a href="#personas" class="rounded-full px-3 py-2 text-ink-700 transition hover:bg-trail-100 hover:text-trail-800 focus:outline-none focus:ring-2 focus:ring-trail-500 focus:ring-offset-2">Teams</a>
+        <a href="#how-it-works" class="rounded-full px-3 py-2 text-ink-700 transition hover:bg-trail-100 hover:text-trail-800 focus:outline-none focus:ring-2 focus:ring-trail-500 focus:ring-offset-2">How it works</a>
+        <a href="#cta" class="rounded-full bg-trail-800 px-4 py-2.5 text-white transition hover:bg-trail-700 focus:outline-none focus:ring-2 focus:ring-trail-500 focus:ring-offset-2">Request a demo</a>
       </div>
     </nav>
   </header>
 
   <main id="top">
-    <section class="relative overflow-hidden bg-hero-grid text-white">
-      <div class="absolute inset-0 opacity-20" aria-hidden="true">
-        <div class="absolute -left-20 top-16 h-72 w-72 rounded-full bg-trail-500 blur-3xl"></div>
-        <div class="absolute right-0 top-0 h-80 w-80 rounded-full bg-ember-500 blur-3xl"></div>
+    <section class="relative overflow-hidden bg-hero-warm text-white">
+      <div class="absolute inset-0 opacity-25" aria-hidden="true">
+        <div class="absolute -left-20 top-16 h-72 w-72 rounded-full bg-trail-400 blur-3xl"></div>
+        <div class="absolute right-0 top-0 h-80 w-80 rounded-full bg-clay-500 blur-3xl"></div>
       </div>
       <div class="relative mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-24">
         <div>
-          <div class="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm text-white/90 backdrop-blur">
-            Configurable signals • human-approved outreach • CRM-ready handoff
+          <div class="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-white/90 backdrop-blur">
+            Signal-based lead discovery • human approval • clean CRM handoff
           </div>
           <h1 class="mt-5 max-w-2xl text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-            Find the right warm B2B leads. Approve every send. Keep CRM clean.
+            Warm B2B outreach, built for compliance and clean pipeline operations.
           </h1>
-          <p class="mt-5 max-w-2xl text-lg leading-8 text-slate-100/90 sm:text-xl">
-            WarmTrail helps sales and revops teams detect high-intent accounts from configurable signals, draft compliant warm outreach, and run follow-up sequences that stop on reply and sync back to CRM with no extra manual chase.
+          <p class="mt-5 max-w-2xl text-lg leading-8 text-white/85 sm:text-xl">
+            WarmTrail helps sales and revops teams find high-intent B2B leads from configurable signals, draft compliant warm outreach, and run human-approved follow-up sequences that hand off cleanly to CRM.
           </p>
           <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href="#cta" class="inline-flex items-center justify-center rounded-full bg-white px-6 py-3.5 text-base font-semibold text-trail-900 shadow-soft transition hover:translate-y-[-1px] hover:bg-trail-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-trail-800">
-              See WarmTrail in action
+            <a href="#cta" class="inline-flex items-center justify-center rounded-full bg-white px-6 py-3.5 text-base font-bold text-trail-900 shadow-soft transition hover:-translate-y-0.5 hover:bg-trail-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-trail-900">
+              See the workflow
             </a>
-            <a href="#features" class="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-6 py-3.5 text-base font-semibold text-white transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+            <a href="#features" class="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-6 py-3.5 text-base font-bold text-white transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40 focus:ring-offset-2 focus:ring-offset-trail-900">
               Explore features
             </a>
           </div>
-          <div class="mt-10 grid max-w-2xl grid-cols-1 gap-4 sm:grid-cols-3">
-            <div class="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur">
-              <div class="text-2xl font-bold text-white">Signals</div>
-              <div class="mt-1 text-sm text-slate-100/80">job changes, funding, hiring spikes, intent</div>
+          <div class="mt-10 grid max-w-2xl gap-4 sm:grid-cols-3">
+            <div class="rounded-2xl border border-white/10 bg-white/8 p-4 backdrop-blur">
+              <div class="text-2xl font-extrabold text-white">Signals</div>
+              <div class="mt-1 text-sm text-white/75">job changes, funding, hiring spikes, intent</div>
             </div>
-            <div class="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur">
-              <div class="text-2xl font-bold text-white">Approval</div>
-              <div class="mt-1 text-sm text-slate-100/80">review before send with compliance guardrails</div>
+            <div class="rounded-2xl border border-white/10 bg-white/8 p-4 backdrop-blur">
+              <div class="text-2xl font-extrabold text-white">Approval</div>
+              <div class="mt-1 text-sm text-white/75">review before send with compliance guardrails</div>
             </div>
-            <div class="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur">
-              <div class="text-2xl font-bold text-white">Handoff</div>
-              <div class="mt-1 text-sm text-slate-100/80">replies stop sequences and sync to CRM</div>
+            <div class="rounded-2xl border border-white/10 bg-white/8 p-4 backdrop-blur">
+              <div class="text-2xl font-extrabold text-white">Handoff</div>
+              <div class="mt-1 text-sm text-white/75">reply stops sequence and syncs outcome to CRM</div>
             </div>
           </div>
         </div>
 
         <div class="relative">
-          <div class="overflow-hidden rounded-3xl border border-white/10 bg-slate-900/40 shadow-2xl ring-1 ring-white/10">
+          <div class="overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-2xl ring-1 ring-white/10">
             <img
-              src="https://images.unsplash.com/photo-1576267423429-569309b31e84?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTU1MjR8MHwxfHNlYXJjaHwxfHxCMkIlMjBzYWxlcyUyMHRlYW0lMjBsYXB0b3AlMjBDUk0lMjBtZWV0aW5nJTIwd2FybSUyMG91dHJlYWNofGVufDB8fHx8MTc3NTMyODQ0NXww&ixlib=rb-4.1.0&q=80&w=1080&auto=format&fit=crop&w=1200&q=80"
-              alt="Sales professional working on lead outreach strategy at a laptop"
-              class="h-[360px] w-full object-cover sm:h-[460px]"
+              src="https://images.unsplash.com/photo-1542744094-f77e9f7a10b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTU1MjR8MHwxfHNlYXJjaHwxfHxzYWxlcyUyMHJldm9wcyUyMGRhc2hib2FyZCUyMEIyQiUyMHRlYW0lMjBsYXB0b3AlMjBvdXRyZWFjaHxlbnwwfHx8fDE3NzUzMjg1MzR8MA&ixlib=rb-4.1.0&q=80&w=1080&auto=format&fit=crop&w=1400&q=80"
+              alt="Sales and revops teammates collaborating around a laptop, representing warm outreach planning"
+              class="h-[360px] w-full object-cover sm:h-[480px]"
             />
           </div>
-          <div class="absolute -bottom-6 left-4 right-4 rounded-3xl border border-slate-200 bg-white p-5 text-slate-900 shadow-soft sm:left-8 sm:right-auto sm:max-w-md">
+          <div class="absolute -bottom-6 left-4 right-4 rounded-3xl border border-ink-200 bg-white p-5 text-ink-900 shadow-soft sm:left-8 sm:right-auto sm:max-w-md">
             <div class="flex items-start justify-between gap-4">
               <div>
-                <div class="text-sm font-semibold uppercase tracking-[0.18em] text-trail-600">Warm lead snapshot</div>
-                <div class="mt-2 text-lg font-bold">Funding event + persona match + recent engagement</div>
+                <div class="text-sm font-bold uppercase tracking-[0.18em] text-trail-600">Warm lead snapshot</div>
+                <div class="mt-2 text-lg font-extrabold">Funding event + persona match + recent engagement</div>
               </div>
-              <div class="rounded-full bg-trail-100 px-3 py-1 text-sm font-semibold text-trail-800">Ready to review</div>
+              <div class="rounded-full bg-trail-100 px-3 py-1 text-sm font-bold text-trail-800">Ready to review</div>
             </div>
             <div class="mt-4 grid grid-cols-3 gap-3 text-sm">
-              <div class="rounded-2xl bg-slate-50 p-3">
-                <div class="font-semibold text-slate-500">Fit</div>
-                <div class="mt-1 font-bold">ICP</div>
+              <div class="rounded-2xl bg-trail-50 p-3">
+                <div class="font-semibold text-ink-500">Fit</div>
+                <div class="mt-1 font-extrabold">ICP</div>
               </div>
-              <div class="rounded-2xl bg-slate-50 p-3">
-                <div class="font-semibold text-slate-500">Recency</div>
-                <div class="mt-1 font-bold">3 days</div>
+              <div class="rounded-2xl bg-trail-50 p-3">
+                <div class="font-semibold text-ink-500">Recency</div>
+                <div class="mt-1 font-extrabold">3 days</div>
               </div>
-              <div class="rounded-2xl bg-slate-50 p-3">
-                <div class="font-semibold text-slate-500">Risk</div>
-                <div class="mt-1 font-bold">Clear</div>
+              <div class="rounded-2xl bg-trail-50 p-3">
+                <div class="font-semibold text-ink-500">Risk</div>
+                <div class="mt-1 font-extrabold">Clear</div>
               </div>
             </div>
           </div>
@@ -144,201 +159,177 @@
       </div>
     </section>
 
-    <section id="features" class="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
-      <div class="max-w-3xl">
-        <p class="text-sm font-semibold uppercase tracking-[0.24em] text-trail-600">Features</p>
-        <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">A workflow built for signal-driven outbound, not random spray-and-pray.</h2>
-        <p class="mt-4 text-lg leading-8 text-slate-600">Each feature maps directly to how SDRs, RevOps, and sales leaders work: identify the right lead, validate the risk, personalize the message, approve the send, and keep pipeline data synchronized.</p>
-      </div>
+    <section id="features" class="bg-section-soft">
+      <div class="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
+        <div class="max-w-3xl">
+          <p class="text-sm font-bold uppercase tracking-[0.24em] text-trail-600">Features</p>
+          <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-ink-900 sm:text-4xl">A signal-driven outbound workflow for SDRs, RevOps, and sales leaders.</h2>
+          <p class="mt-4 text-lg leading-8 text-ink-600">
+            Every section mirrors the product spec: surface the right account, qualify it, draft outreach, enforce approvals, and keep CRM state accurate when replies land.
+          </p>
+        </div>
 
-      <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-soft">
-          <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-trail-100 text-trail-800">
-            <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6" stroke="currentColor" stroke-width="1.8"><path d="M4 19V5m0 14h16M8 15l3-3 2 2 5-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <h3 class="mt-5 text-xl font-bold text-slate-900">Configurable Signal-Based Lead Discovery</h3>
-          <p class="mt-3 text-slate-600">Detect leads that match ICP rules using job changes, funding events, hiring spikes, tech-stack changes, website engagement, intent data, and account activity.</p>
-        </article>
-        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-soft">
-          <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-ember-100 text-ember-700">
-            <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6" stroke="currentColor" stroke-width="1.8"><path d="M5 5h14v14H5z" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 9h8M8 12h8M8 15h5" stroke-linecap="round"/></svg>
-          </div>
-          <h3 class="mt-5 text-xl font-bold text-slate-900">Warm Lead Qualification Rules</h3>
-          <p class="mt-3 text-slate-600">Filter by account fit, trigger recency, persona match, and disqualifiers so only relevant leads enter outreach—no wasted touches, no noisy queues.</p>
-        </article>
-        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-soft">
-          <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-trail-100 text-trail-800">
-            <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16v12H4z" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 14l2-2 2 1 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <h3 class="mt-5 text-xl font-bold text-slate-900">AI Personalized Outreach Drafts</h3>
-          <p class="mt-3 text-slate-600">Generate tailored email and sequence copy using lead signals, account context, and approved tone of voice for sales and revops buyers.</p>
-        </article>
-        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-soft">
-          <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-ember-100 text-ember-700">
-            <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6" stroke="currentColor" stroke-width="1.8"><path d="M12 2v4m0 12v4m8-8h-4M8 12H4" stroke-linecap="round"/><path d="M12 6a6 6 0 100 12 6 6 0 000-12z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <h3 class="mt-5 text-xl font-bold text-slate-900">Human-in-the-Loop Approval and Compliance Guardrails</h3>
-          <p class="mt-3 text-slate-600">Require review before send, enforce opt-out suppression, track consent and unsubscribe status, and block non-compliant sends with audit visibility.</p>
-        </article>
-        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-soft md:col-span-2 xl:col-span-1">
-          <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-trail-100 text-trail-800">
-            <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M7 4v6m10-6v6M5 20h14a1 1 0 001-1V8H4v11a1 1 0 001 1z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <h3 class="mt-5 text-xl font-bold text-slate-900">Smart Sequencing, CRM Handoff, and Packaging</h3>
-          <p class="mt-3 text-slate-600">Run follow-up sequences until reply, then stop automatically and hand off status, notes, and engagement history to CRM with packaging that feels modern and trustworthy.</p>
-        </article>
+        <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <article class="rounded-3xl border border-ink-200 bg-white p-6 shadow-card transition hover:-translate-y-1 hover:shadow-soft">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-trail-100 text-trail-800">
+              <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6" stroke="currentColor" stroke-width="1.8"><path d="M4 19V5m0 14h16M8 15l3-3 2 2 5-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="mt-5 text-xl font-extrabold text-ink-900">Configurable Signal-Based Lead Discovery</h3>
+            <p class="mt-3 text-ink-600">Detect leads that match ICP rules using job changes, funding events, hiring spikes, tech-stack changes, website engagement, intent data, and account activity.</p>
+          </article>
+
+          <article class="rounded-3xl border border-ink-200 bg-white p-6 shadow-card transition hover:-translate-y-1 hover:shadow-soft">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-clay-100 text-clay-700">
+              <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6" stroke="currentColor" stroke-width="1.8"><path d="M5 5h14v14H5z" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 9h8M8 12h8M8 15h5" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="mt-5 text-xl font-extrabold text-ink-900">Warm Lead Qualification Rules</h3>
+            <p class="mt-3 text-ink-600">Define warmth with filters for account fit, trigger recency, persona match, and disqualifiers so only relevant leads enter outreach.</p>
+          </article>
+
+          <article class="rounded-3xl border border-ink-200 bg-white p-6 shadow-card transition hover:-translate-y-1 hover:shadow-soft">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-trail-100 text-trail-800">
+              <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16v12H4z" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 14l2-2 2 1 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="mt-5 text-xl font-extrabold text-ink-900">AI Personalized Outreach Drafts</h3>
+            <p class="mt-3 text-ink-600">Generate tailored email and sequence copy using lead signals, account context, and approved tone of voice for sales and revops buyers.</p>
+          </article>
+
+          <article class="rounded-3xl border border-ink-200 bg-white p-6 shadow-card transition hover:-translate-y-1 hover:shadow-soft">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-clay-100 text-clay-700">
+              <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6" stroke="currentColor" stroke-width="1.8"><path d="M12 2v4m0 12v4m8-8h-4M8 12H4" stroke-linecap="round"/><path d="M12 6a6 6 0 100 12 6 6 0 000-12z" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="mt-5 text-xl font-extrabold text-ink-900">Human Approval and Compliance Guardrails</h3>
+            <p class="mt-3 text-ink-600">Require review before send, enforce opt-out suppression, track consent and unsubscribe status, and block non-compliant sends with audit visibility.</p>
+          </article>
+
+          <article class="rounded-3xl border border-ink-200 bg-white p-6 shadow-card transition hover:-translate-y-1 hover:shadow-soft">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-trail-100 text-trail-800">
+              <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6" stroke="currentColor" stroke-width="1.8"><path d="M7 7h10v10H7z" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 12h3M17 12h3M12 4v3M12 17v3" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="mt-5 text-xl font-extrabold text-ink-900">Smart Sequencing, CRM Handoff, and Packaging</h3>
+            <p class="mt-3 text-ink-600">Run follow-up sequences until reply, stop automatically, and hand off status, notes, and engagement history to CRM with a modern, trustworthy brand experience.</p>
+          </article>
+
+          <article class="rounded-3xl border border-ink-200 bg-white p-6 shadow-card transition hover:-translate-y-1 hover:shadow-soft">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-clay-100 text-clay-700">
+              <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6" stroke="currentColor" stroke-width="1.8"><path d="M6 8h12M6 12h12M6 16h8" stroke-linecap="round"/><path d="M4 4h16v16H4z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="mt-5 text-xl font-extrabold text-ink-900">Pricing That Fits the Team</h3>
+            <p class="mt-3 text-ink-600">Positioned for per-seat or active-sequence packaging so the offer feels practical for teams balancing throughput, compliance, and forecastable spend.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section id="how-it-works" class="border-y border-slate-200 bg-white">
-      <div class="mx-auto grid max-w-6xl gap-10 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8">
+    <section id="personas" class="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
+      <div class="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
         <div>
-          <p class="text-sm font-semibold uppercase tracking-[0.24em] text-trail-600">How it works</p>
-          <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">The workflow keeps momentum high and manual cleanup low.</h2>
-          <div class="mt-8 space-y-4">
-            <div class="rounded-3xl bg-trail-50 p-5">
-              <div class="flex items-start gap-4">
-                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-trail-800 text-sm font-bold text-white">1</div>
-                <div>
-                  <h3 class="text-lg font-semibold text-slate-900">Signal intake</h3>
-                  <p class="mt-1 text-slate-600">WarmTrail watches trigger sources like funding, job changes, hiring spikes, engagement, and intent to surface likely buyers.</p>
-                </div>
-              </div>
-            </div>
-            <div class="rounded-3xl bg-trail-50 p-5">
-              <div class="flex items-start gap-4">
-                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-trail-800 text-sm font-bold text-white">2</div>
-                <div>
-                  <h3 class="text-lg font-semibold text-slate-900">Qualification and drafting</h3>
-                  <p class="mt-1 text-slate-600">Rules screen out poor-fit contacts, then AI drafts warm outreach using approved tone, signal context, and account details.</p>
-                </div>
-              </div>
-            </div>
-            <div class="rounded-3xl bg-trail-50 p-5">
-              <div class="flex items-start gap-4">
-                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-trail-800 text-sm font-bold text-white">3</div>
-                <div>
-                  <h3 class="text-lg font-semibold text-slate-900">Approval, send, and CRM sync</h3>
-                  <p class="mt-1 text-slate-600">Every send is human-approved, compliance-checked, and recorded so replies stop sequences and ownership transfers cleanly to CRM.</p>
-                </div>
-              </div>
-            </div>
+          <p class="text-sm font-bold uppercase tracking-[0.24em] text-trail-600">Who it serves</p>
+          <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-ink-900 sm:text-4xl">Built around how SDR, RevOps, and sales leaders actually work.</h2>
+          <div class="mt-8 grid gap-4 sm:grid-cols-3">
+            <article class="rounded-3xl border border-ink-200 bg-white p-6 shadow-card">
+              <p class="text-sm font-bold uppercase tracking-[0.18em] text-trail-600">SDR</p>
+              <h3 class="mt-2 text-xl font-extrabold text-ink-900">Sales development rep</h3>
+              <p class="mt-3 text-ink-600">Spends too much time researching leads, personalizing outreach, and tracking follow-ups across tools.</p>
+            </article>
+            <article class="rounded-3xl border border-ink-200 bg-white p-6 shadow-card">
+              <p class="text-sm font-bold uppercase tracking-[0.18em] text-trail-600">RevOps lead</p>
+              <h3 class="mt-2 text-xl font-extrabold text-ink-900">Revenue operations</h3>
+              <p class="mt-3 text-ink-600">Needs consistent workflows, CRM hygiene, and compliance controls without adding manual overhead.</p>
+            </article>
+            <article class="rounded-3xl border border-ink-200 bg-white p-6 shadow-card">
+              <p class="text-sm font-bold uppercase tracking-[0.18em] text-trail-600">Sales manager</p>
+              <h3 class="mt-2 text-xl font-extrabold text-ink-900">SDR leader</h3>
+              <p class="mt-3 text-ink-600">Wants predictable outbound activity, clear approvals, and measurable conversion from warm leads to meetings.</p>
+            </article>
+          </div>
+          <div id="how-it-works" class="mt-8 rounded-3xl border border-trail-200 bg-trail-50 p-6">
+            <h3 class="text-lg font-extrabold text-ink-900">How the workflow feels</h3>
+            <ol class="mt-4 grid gap-3 text-ink-700 sm:grid-cols-3">
+              <li class="rounded-2xl bg-white p-4 shadow-sm"><span class="font-bold text-trail-700">1.</span> Discover high-intent leads from signals.</li>
+              <li class="rounded-2xl bg-white p-4 shadow-sm"><span class="font-bold text-trail-700">2.</span> Review drafts with approval and opt-out rules.</li>
+              <li class="rounded-2xl bg-white p-4 shadow-sm"><span class="font-bold text-trail-700">3.</span> Stop on reply and sync the CRM handoff.</li>
+            </ol>
           </div>
         </div>
 
-        <div class="grid gap-6">
-          <figure class="overflow-hidden rounded-3xl shadow-soft ring-1 ring-slate-200">
+        <aside class="space-y-6">
+          <div class="overflow-hidden rounded-[2rem] border border-ink-200 bg-white shadow-soft">
             <img
-              src="https://images.unsplash.com/photo-1758873269181-270f5b7fc6aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTU1MjR8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMGFuYWx5dGljcyUyMGRhc2hib2FyZCUyMGxlYWQlMjBtYW5hZ2VtZW50JTIwb2ZmaWNlJTIwdGVhbXxlbnwwfHx8fDE3NzUzMjg0NDV8MA&ixlib=rb-4.1.0&q=80&w=1080&auto=format&fit=crop&w=1200&q=80"
-              alt="Business analytics presentation showing lead management and team decision-making"
+              src="https://images.unsplash.com/photo-1758519288162-eb246ab904a7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTU1MjR8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHByb2Zlc3Npb25hbCUyMHJldmlld2luZyUyMENSTSUyMG9uJTIwbGFwdG9wJTIwb2ZmaWNlfGVufDB8fHx8MTc3NTMyODUzNHww&ixlib=rb-4.1.0&q=80&w=1080&auto=format&fit=crop&w=1200&q=80"
+              alt="Business professional reviewing CRM information on a laptop in a calm workspace"
               class="h-72 w-full object-cover"
             />
-            <figcaption class="bg-white p-4 text-sm text-slate-600">RevOps teams get visibility into approvals, suppression, and handoff history.</figcaption>
-          </figure>
-          <div class="grid gap-6 sm:grid-cols-2">
-            <div class="rounded-3xl border border-slate-200 bg-slate-900 p-6 text-white shadow-soft">
-              <div class="text-sm font-semibold uppercase tracking-[0.18em] text-white/60">For SDRs</div>
-              <p class="mt-4 text-lg leading-7 text-white/90">Spend less time researching leads, personalizing copy, and juggling follow-ups across tools.</p>
-            </div>
-            <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-              <div class="text-sm font-semibold uppercase tracking-[0.18em] text-trail-600">For RevOps</div>
-              <p class="mt-4 text-lg leading-7 text-slate-700">Keep outbound rules, compliance controls, and CRM hygiene consistent without adding manual overhead.</p>
-            </div>
           </div>
-        </div>
+          <div class="rounded-[2rem] border border-ink-200 bg-white p-6 shadow-card">
+            <p class="text-sm font-bold uppercase tracking-[0.18em] text-trail-600">Acceptance notes</p>
+            <ul class="mt-4 space-y-3 text-ink-700">
+              <li>• The page stays aligned to WarmTrail’s exact value proposition and persona language.</li>
+              <li>• Layout is responsive, with a sticky high-contrast nav and a visible wordmark on mobile and desktop.</li>
+              <li>• At least two Unsplash images are embedded and credited in the footer.</li>
+              <li>• This is a static, single-file HTML implementation delivered via Tailwind CDN; no GitHub Actions changes were required for the landing page revision.</li>
+            </ul>
+          </div>
+        </aside>
       </div>
     </section>
 
-    <section class="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
-      <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-        <div class="max-w-3xl">
-          <p class="text-sm font-semibold uppercase tracking-[0.24em] text-trail-600">Personas</p>
-          <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Built for the people who actually run outbound.</h2>
-          <p class="mt-4 text-lg leading-8 text-slate-600">WarmTrail is tuned for SDRs who need speed, RevOps leads who need control, and managers who need measurable conversion from warm leads to meetings.</p>
-        </div>
-      </div>
-
-      <div class="mt-10 grid gap-6 lg:grid-cols-3">
-        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <div class="flex items-center justify-between">
-            <h3 class="text-xl font-bold text-slate-900">SDR</h3>
-            <span class="rounded-full bg-trail-100 px-3 py-1 text-sm font-semibold text-trail-800">Sales development rep</span>
+    <section id="cta" class="bg-ink-900 text-white">
+      <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+        <div class="grid gap-8 rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-soft lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <div>
+            <p class="text-sm font-bold uppercase tracking-[0.24em] text-trail-200">Final CTA</p>
+            <h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Bring warm outbound, compliance, and CRM handoff into one workflow.</h2>
+            <p class="mt-4 max-w-2xl text-lg leading-8 text-white/80">
+              WarmTrail keeps SDRs focused, gives RevOps control, and gives sales leaders a clean view of every reply, approval, and sequence outcome.
+            </p>
           </div>
-          <p class="mt-4 text-slate-600">Spends too much time researching leads, personalizing outreach, and tracking follow-ups across tools.</p>
-          <p class="mt-4 rounded-2xl bg-trail-50 p-4 text-sm leading-6 text-slate-700">WarmTrail surfaces high-intent leads from signals and drafts compliant copy so the rep can stay focused on conversations.</p>
-        </article>
-        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <div class="flex items-center justify-between">
-            <h3 class="text-xl font-bold text-slate-900">RevOps Lead</h3>
-            <span class="rounded-full bg-ember-100 px-3 py-1 text-sm font-semibold text-ember-700">Revenue operations</span>
+          <div class="flex flex-col gap-3 sm:flex-row lg:justify-end">
+            <a href="#top" class="inline-flex items-center justify-center rounded-full bg-white px-6 py-3.5 text-base font-bold text-ink-900 transition hover:bg-trail-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-ink-900">Back to top</a>
+            <a href="mailto:hello@warmtrail.example" class="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-6 py-3.5 text-base font-bold text-white transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40 focus:ring-offset-2 focus:ring-offset-ink-900">Request a walkthrough</a>
           </div>
-          <p class="mt-4 text-slate-600">Needs consistent pipeline workflows, CRM hygiene, and compliance controls without adding manual overhead.</p>
-          <p class="mt-4 rounded-2xl bg-slate-50 p-4 text-sm leading-6 text-slate-700">Approval gates, suppression rules, and audit visibility keep the outbound process trustworthy and repeatable.</p>
-        </article>
-        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <div class="flex items-center justify-between">
-            <h3 class="text-xl font-bold text-slate-900">Sales Manager</h3>
-            <span class="rounded-full bg-trail-100 px-3 py-1 text-sm font-semibold text-trail-800">Sales leader</span>
-          </div>
-          <p class="mt-4 text-slate-600">Wants predictable outbound activity, clear approval workflows, and measurable conversion from warm leads to meetings.</p>
-          <p class="mt-4 rounded-2xl bg-trail-50 p-4 text-sm leading-6 text-slate-700">Sequences stop on reply and sync outcomes to CRM, making ownership and reporting straightforward.</p>
-        </article>
-      </div>
-
-      <div class="mt-8 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-soft">
-        <img
-          src="https://images.unsplash.com/photo-1760346546771-a81d986459ff?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTU1MjR8MHwxfHNlYXJjaHwyfHxCMkIlMjBzYWxlcyUyMHRlYW0lMjBsYXB0b3AlMjBDUk0lMjBtZWV0aW5nJTIwd2FybSUyMG91dHJlYWNofGVufDB8fHx8MTc3NTMyODQ0NXww&ixlib=rb-4.1.0&q=80&w=1080&auto=format&fit=crop&w=1200&q=80"
-          alt="Sales team discussing outreach workflow around a laptop"
-          class="h-72 w-full object-cover sm:h-80"
-        />
-      </div>
-    </section>
-
-    <section id="cta" class="bg-trail-900 text-white">
-      <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:flex lg:items-center lg:justify-between lg:px-8 lg:py-20">
-        <div class="max-w-3xl">
-          <p class="text-sm font-semibold uppercase tracking-[0.24em] text-white/60">Final CTA</p>
-          <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Ready to turn signals into approved meetings?</h2>
-          <p class="mt-4 text-lg leading-8 text-white/80">See how WarmTrail can help your team move faster on the right accounts, stay compliant, and keep CRM handoff clean.</p>
-        </div>
-        <div class="mt-8 flex flex-col gap-3 sm:flex-row lg:mt-0">
-          <a href="mailto:hello@warmtrail.example" class="inline-flex items-center justify-center rounded-full bg-white px-6 py-3.5 text-base font-semibold text-trail-900 transition hover:bg-trail-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-trail-900">Contact sales</a>
-          <a href="#top" class="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-6 py-3.5 text-base font-semibold text-white transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">Back to top</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="border-t border-slate-200 bg-white">
-    <div class="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
+  <footer class="border-t border-ink-200 bg-white">
+    <div class="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
       <div class="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
         <div>
           <div class="flex items-center gap-3">
-            <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-trail-800 text-white"><span class="text-sm font-extrabold">WT</span></span>
-            <span class="text-lg font-bold text-slate-900">WarmTrail</span>
+            <span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-trail-800 text-white">
+              <span class="text-lg font-extrabold">WT</span>
+            </span>
+            <div>
+              <div class="text-lg font-extrabold text-ink-900">WarmTrail</div>
+              <div class="text-sm text-ink-600">Signal-driven warm outbound for B2B teams</div>
+            </div>
           </div>
-          <p class="mt-3 max-w-xl text-sm leading-6 text-slate-600">WarmTrail helps sales and revops teams find high-intent B2B leads from configurable signals, draft compliant warm outreach, and run human-approved follow-up sequences that hand off cleanly to CRM.</p>
+          <p class="mt-4 text-sm text-ink-600">© <span id="year"></span> WarmTrail. Photos from Unsplash.</p>
         </div>
-        <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium text-slate-600">
+        <div class="grid gap-2 text-sm font-semibold text-ink-700 sm:grid-cols-3 sm:gap-x-6">
           <a href="#features" class="transition hover:text-trail-700">Features</a>
-          <a href="#how-it-works" class="transition hover:text-trail-700">How it works</a>
+          <a href="#personas" class="transition hover:text-trail-700">Teams</a>
           <a href="#cta" class="transition hover:text-trail-700">CTA</a>
           <a href="https://unsplash.com" target="_blank" rel="noreferrer" class="transition hover:text-trail-700">Unsplash</a>
         </div>
       </div>
 
-      <div class="mt-8 border-t border-slate-200 pt-6 text-sm text-slate-500">
-        <p>© <span id="year"></span> WarmTrail. All rights reserved.</p>
-        <p class="mt-3">Photos from Unsplash:</p>
-        <ul class="mt-2 space-y-2 leading-6">
-          <li>Hero image by <a class="font-medium text-trail-700 hover:underline" href="https://unsplash.com/@windows" target="_blank" rel="noreferrer">Windows</a> on <a class="font-medium text-trail-700 hover:underline" href="https://unsplash.com/photos/woman-in-maroon-sweater-using-laptop-kRWY72TKB0Y" target="_blank" rel="noreferrer">Unsplash</a>.</li>
-          <li>Workflow image by <a class="font-medium text-trail-700 hover:underline" href="https://unsplash.com/@silverkblack" target="_blank" rel="noreferrer">Vitaly Gariev</a> on <a class="font-medium text-trail-700 hover:underline" href="https://unsplash.com/photos/woman-presenting-a-business-strategy-to-colleagues-NNFACGKyzZw" target="_blank" rel="noreferrer">Unsplash</a>.</li>
-          <li>Persona image by <a class="font-medium text-trail-700 hover:underline" href="https://unsplash.com/@bluestonex_apphaus" target="_blank" rel="noreferrer">Bluestonex</a> on <a class="font-medium text-trail-700 hover:underline" href="https://unsplash.com/photos/three-men-in-discussion-around-a-table-with-laptops-ceIEGTR7G18" target="_blank" rel="noreferrer">Unsplash</a>.</li>
-        </ul>
-        <p class="mt-4">Built with LaunchMind.</p>
+      <div class="mt-6 grid gap-3 border-t border-ink-200 pt-6 text-sm text-ink-600 md:grid-cols-2">
+        <div>
+          Photo by <a href="https://unsplash.com/@campaign_creators" target="_blank" rel="noreferrer" class="font-semibold text-trail-700 hover:underline">Campaign Creators</a> on <a href="https://unsplash.com/photos/man-and-woman-sitting-down-in-front-of-table-Klf0icSX4N4" target="_blank" rel="noreferrer" class="font-semibold text-trail-700 hover:underline">Unsplash</a>.
+        </div>
+        <div>
+          Photo by <a href="https://unsplash.com/@silverkblack" target="_blank" rel="noreferrer" class="font-semibold text-trail-700 hover:underline">Vitaly Gariev</a> on <a href="https://unsplash.com/photos/man-in-suit-working-on-laptop-at-a-table-Dj0dQpaS9gM" target="_blank" rel="noreferrer" class="font-semibold text-trail-700 hover:underline">Unsplash</a>.
+        </div>
       </div>
+      <p class="mt-3 text-sm text-ink-500">Built with LaunchMind.</p>
     </div>
-    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
