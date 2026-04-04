@@ -3,19 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MealSave — Sell Surplus, Find Affordable Meals Nearby</title>
+  <title>LaunchMind — Surplus Food Marketplace for Restaurants and Nearby Buyers</title>
   <style>
     :root {
-      --bg: #07111f;
-      --bg-2: #09192d;
-      --panel: rgba(10, 22, 38, 0.82);
-      --panel-strong: rgba(16, 34, 56, 0.96);
+      --bg: #06101b;
+      --bg-2: #09182a;
+      --panel: rgba(12, 24, 41, 0.82);
+      --panel-strong: rgba(16, 32, 52, 0.96);
       --text: #eef5ff;
-      --muted: #a8bdd8;
-      --accent: #67e8f9;
+      --muted: #a9bdd8;
+      --accent: #66e8f5;
       --accent-2: #a78bfa;
       --accent-3: #34d399;
-      --warning: #fbbf24;
       --border: rgba(255, 255, 255, 0.12);
       --shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
     }
@@ -26,10 +25,10 @@
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at 10% 10%, rgba(103, 232, 249, 0.18), transparent 30%),
-        radial-gradient(circle at 90% 0%, rgba(167, 139, 250, 0.16), transparent 28%),
-        radial-gradient(circle at 80% 80%, rgba(52, 211, 153, 0.10), transparent 24%),
-        linear-gradient(180deg, #06101d 0%, #07111f 45%, #091423 100%);
+        radial-gradient(circle at 12% 12%, rgba(102, 232, 245, 0.18), transparent 28%),
+        radial-gradient(circle at 88% 2%, rgba(167, 139, 250, 0.16), transparent 26%),
+        radial-gradient(circle at 78% 82%, rgba(52, 211, 153, 0.10), transparent 22%),
+        linear-gradient(180deg, #05101a 0%, #06101b 45%, #091423 100%);
       min-height: 100vh;
       line-height: 1.55;
     }
@@ -41,9 +40,7 @@
       margin: 0 auto;
     }
 
-    header {
-      padding: 24px 0 10px;
-    }
+    header { padding: 24px 0 10px; }
 
     .nav {
       display: flex;
@@ -67,10 +64,10 @@
       border-radius: 14px;
       display: grid;
       place-items: center;
-      color: #03111a;
+      color: #02111b;
       font-weight: 900;
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      box-shadow: 0 12px 30px rgba(103, 232, 249, 0.2);
+      box-shadow: 0 12px 30px rgba(102, 232, 245, 0.2);
     }
 
     .nav-pill {
@@ -82,9 +79,7 @@
       font-size: 0.94rem;
     }
 
-    .hero {
-      padding: 70px 0 44px;
-    }
+    .hero { padding: 70px 0 44px; }
 
     .hero-grid {
       display: grid;
@@ -99,8 +94,8 @@
       gap: 8px;
       padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(103, 232, 249, 0.1);
-      border: 1px solid rgba(103, 232, 249, 0.22);
+      background: rgba(102, 232, 245, 0.1);
+      border: 1px solid rgba(102, 232, 245, 0.22);
       color: #c9fbff;
       font-size: 0.92rem;
       margin-bottom: 18px;
@@ -145,7 +140,7 @@
     .btn-primary {
       background: linear-gradient(135deg, var(--accent), #7dd3fc 58%, var(--accent-2));
       color: #05111c;
-      box-shadow: 0 18px 40px rgba(103, 232, 249, 0.2);
+      box-shadow: 0 18px 40px rgba(102, 232, 245, 0.2);
     }
 
     .btn-secondary {
@@ -225,8 +220,8 @@
       border-radius: 999px;
       font-size: 0.82rem;
       white-space: nowrap;
-      background: rgba(103, 232, 249, 0.12);
-      border: 1px solid rgba(103, 232, 249, 0.15);
+      background: rgba(102, 232, 245, 0.12);
+      border: 1px solid rgba(102, 232, 245, 0.15);
       color: #c9fbff;
     }
 
@@ -292,7 +287,7 @@
       display: grid;
       place-items: center;
       margin-bottom: 14px;
-      background: linear-gradient(135deg, rgba(103,232,249,0.18), rgba(167,139,250,0.16));
+      background: linear-gradient(135deg, rgba(102,232,245,0.18), rgba(167,139,250,0.16));
       color: #e9feff;
       font-weight: 800;
       border: 1px solid rgba(255,255,255,0.08);
@@ -341,14 +336,14 @@
       padding: 6px 10px;
       border-radius: 999px;
       color: #dffcff;
-      background: rgba(103,232,249,0.12);
-      border: 1px solid rgba(103,232,249,0.12);
+      background: rgba(102,232,245,0.12);
+      border: 1px solid rgba(102,232,245,0.12);
     }
 
     .footer-cta {
       margin: 18px 0 70px;
       padding: 28px;
-      background: linear-gradient(135deg, rgba(103,232,249,0.14), rgba(167,139,250,0.14));
+      background: linear-gradient(135deg, rgba(102,232,245,0.14), rgba(167,139,250,0.14));
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -383,10 +378,10 @@
   <header>
     <div class="container nav">
       <div class="brand">
-        <div class="brand-mark">M</div>
-        <span>MealSave</span>
+        <div class="brand-mark">L</div>
+        <span>LaunchMind</span>
       </div>
-      <div class="nav-pill">Trusted end-of-day meals for nearby pickup</div>
+      <div class="nav-pill">Trusted surplus food marketplace for nearby pickup</div>
     </div>
   </header>
 
@@ -394,15 +389,15 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">Reduce waste. Recover revenue. Help nearby buyers find dinner fast.</div>
-          <h1>Turn unsold restaurant food into fast, affordable meals.</h1>
+          <div class="eyebrow">Reduce waste. Recover revenue. Help nearby buyers get dinner fast.</div>
+          <h1>LaunchMind turns unsold restaurant food into fast, affordable meals nearby.</h1>
           <p class="subheadline">
-            MealSave is a marketplace that helps restaurants sell end-of-day surplus while giving local buyers a
-            simple, trusted way to discover discounted meals nearby, reserve ahead, and pick up with confidence.
+            LaunchMind is a marketplace for end-of-day surplus: restaurants can post remaining inventory, and local
+            buyers can discover verified deals, reserve and pay ahead, and pick up with confidence before food goes to waste.
           </p>
           <div class="cta-row">
-            <a class="btn btn-primary" href="#features">Explore the platform</a>
-            <a class="btn btn-secondary" href="#audiences">See who it serves</a>
+            <a class="btn btn-primary" href="#features">List surplus for restaurants</a>
+            <a class="btn btn-secondary" href="#features">Reserve &amp; pay ahead as a buyer</a>
           </div>
           <p class="hero-note">
             Built for restaurant managers, budget-conscious local buyers, students, and office workers who need
@@ -442,7 +437,7 @@
 
           <div class="stats">
             <div class="stat"><strong>5 min</strong><span class="small">Reserve and pay ahead</span></div>
-            <div class="stat"><strong>2 steps</strong><span class="small">Discover, reserve, pickup</span></div>
+            <div class="stat"><strong>2 actions</strong><span class="small">Restaurants list, buyers reserve</span></div>
             <div class="stat"><strong>Trusted</strong><span class="small">Verification and safety controls</span></div>
           </div>
         </aside>
@@ -451,32 +446,31 @@
 
     <section id="features">
       <div class="container">
-        <h2 class="section-title">Core product features aligned to the end-of-day food workflow.</h2>
+        <h2 class="section-title">Core product features</h2>
         <p class="section-subtitle">
-          The page now emphasizes the complete experience from restaurant listing to buyer handoff: surplus inventory,
-          discovery, reserve-and-pay, trust signals, and a clean pickup confirmation flow.
+          The experience is designed around the full end-of-day workflow: posting surplus, finding the best nearby
+          offer, paying with less friction, and confirming pickup cleanly.
         </p>
-
         <div class="features">
           <article class="feature">
             <div class="num">1</div>
             <h3>Restaurant Surplus Listings</h3>
-            <p>Restaurants can post end-of-day inventory with item description, quantity, pickup window, discount price, and freshness cutoff.</p>
+            <p>Restaurants post item descriptions, quantity, pickup windows, discount pricing, and freshness cutoffs so end-of-day inventory is easy to sell.</p>
           </article>
           <article class="feature">
             <div class="num">2</div>
             <h3>Nearby Deal Discovery</h3>
-            <p>Buyers can browse discounted meals sorted by distance, pickup time, price, and category to find relevant offers quickly.</p>
+            <p>Buyers browse discounted meals sorted by distance, pickup time, price, and category to quickly find relevant offers nearby.</p>
           </article>
           <article class="feature">
             <div class="num">3</div>
             <h3>Reserve and Pay Ahead</h3>
-            <p>Reserve items and pay in-app to reduce uncertainty, cut friction at pickup, and lower the chance of no-shows.</p>
+            <p>Reserve items and pay in-app to reduce uncertainty, cut no-shows, and make pickup faster for both buyers and restaurants.</p>
           </article>
           <article class="feature">
             <div class="num">4</div>
             <h3>Trust and Safety Controls</h3>
-            <p>Verification badges, food handling guidance, allergen notes, and freshness rules help buyers feel confident about the order.</p>
+            <p>Verification badges, food handling guidance, allergen notes, and freshness rules build confidence and support informed decisions.</p>
           </article>
           <article class="feature">
             <div class="num">5</div>
@@ -489,55 +483,25 @@
 
     <section id="audiences">
       <div class="container">
-        <h2 class="section-title">Designed for the people who need it most.</h2>
+        <h2 class="section-title">Designed for the people who use it most</h2>
         <p class="section-subtitle">
-          The messaging now speaks to the primary personas in the product spec so the landing page reflects both the
-          seller and buyer value proposition.
+          LaunchMind serves restaurants trying to reduce waste, buyers looking for value, and time-sensitive people who need food fast.
         </p>
-
         <div class="audience">
           <article class="persona">
             <span>Food seller</span>
             <h3>Restaurant Manager</h3>
-            <p>Reduce end-of-day waste and recover revenue without extra operational burden or reputation risk.</p>
+            <p>Needs to reduce waste and recover revenue without adding operational burden or risking reputation.</p>
           </article>
           <article class="persona">
-            <span>Affordable meal seeker</span>
+            <span>Food buyer</span>
             <h3>Budget-Conscious Local Buyer</h3>
-            <p>Find nearby discounted meals with reliable pickup timing, freshness details, and clear trust signals.</p>
+            <p>Wants affordable nearby meals and reliable details on availability, pickup timing, freshness, and safety.</p>
           </article>
           <article class="persona">
-            <span>Convenience-first buyer</span>
+            <span>Convenience-seeking buyer</span>
             <h3>Student or Office Worker</h3>
-            <p>Get quick, low-cost food options near campus or work with minimal planning and a simple pickup flow.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <h2 class="section-title">Simple flow from listing to pickup.</h2>
-        <p class="section-subtitle">
-          The structure below clarifies the end-to-end process for reviewers: publish the surplus, discover the best
-          nearby deal, and confirm a successful handoff.
-        </p>
-
-        <div class="workflow-grid">
-          <article class="workflow">
-            <strong>Step 1</strong>
-            <h3>Post surplus inventory</h3>
-            <p>Restaurants publish item details, price, quantity, pickup window, and freshness cutoff in a few inputs.</p>
-          </article>
-          <article class="workflow">
-            <strong>Step 2</strong>
-            <h3>Reserve with confidence</h3>
-            <p>Buyers choose a nearby deal, reserve it, and pay ahead so the order is ready when they arrive.</p>
-          </article>
-          <article class="workflow">
-            <strong>Step 3</strong>
-            <h3>Confirm pickup cleanly</h3>
-            <p>QR or order code verification completes the handoff and gives both sides a clear end state.</p>
+            <p>Needs quick, low-cost options near campus or work with a simple reserve-and-pickup flow.</p>
           </article>
         </div>
       </div>
@@ -546,8 +510,8 @@
     <section>
       <div class="container footer-cta">
         <div>
-          <h2 class="section-title" style="margin-bottom: 8px;">Make surplus food discoverable, trustworthy, and easy to pick up.</h2>
-          <p>MealSave frames the product around waste reduction for restaurants and convenience for nearby buyers.</p>
+          <h2 class="section-title" style="margin-bottom: 8px;">List surplus. Reserve meals. Pick up with confidence.</h2>
+          <p>LaunchMind makes end-of-day food feel reliable for sellers and buyers alike.</p>
         </div>
         <a class="btn btn-primary" href="#features">Get started</a>
       </div>
