@@ -8,6 +8,7 @@ from typing import Any
 from deepagents import create_deep_agent
 
 from agents.deep_invoke import ainvoke_deep_agent
+from agents.marketing_context import MarketingContext
 from agents.marketing_toolkit import MarketingToolkit, build_marketing_structured_tools
 from core.settings import Settings
 from prompts.marketing import MARKETING_SYSTEM, MARKETING_USER_TEMPLATE
@@ -16,18 +17,23 @@ from services.llm import build_chat_model
 from utils.structured_parse import parse_structured_llm_json
 
 
-def build_marketing_agent(settings: Settings, pr_url: str) -> Any:
+def build_marketing_agent(
+    settings: Settings,
+    pr_url: str,
+    run_ctx: MarketingContext,
+) -> Any:
     """Build Marketing deep agent; ``pr_url`` must come from the CEO handoff.
 
     Args:
         settings: Application settings.
         pr_url: GitHub PR URL injected into Slack tool (not read from Engineer bus).
+        run_ctx: Per-pipeline marketing state (e.g. single Slack launch post).
 
     Returns:
         Deep Agent runnable with email + Slack tools.
     """
     model = build_chat_model(settings)
-    toolkit = MarketingToolkit(settings, pr_url)
+    toolkit = MarketingToolkit(settings, pr_url, run_ctx)
     tools = build_marketing_structured_tools(toolkit)
     return create_deep_agent(model=model, system_prompt=MARKETING_SYSTEM, tools=tools)
 

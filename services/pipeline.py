@@ -24,6 +24,7 @@ from agents.engineer_agent import (
     engineer_revision_run,
     engineer_run,
 )
+from agents.marketing_context import MarketingContext
 from agents.marketing_agent import build_marketing_agent, marketing_run
 from agents.product_agent import build_product_agent, product_run
 from agents.qa_agent import build_qa_agent, qa_run
@@ -342,6 +343,7 @@ async def _run_pipeline_core(
         )
 
     log("--- CEO to marketing: PR URL handoff (before Slack) ---")
+    marketing_ctx = MarketingContext()
     bus.send(
         new_message(
             from_agent="ceo",
@@ -353,7 +355,7 @@ async def _run_pipeline_core(
             },
         )
     )
-    m_agent = build_marketing_agent(settings, ctx.pr_url)
+    m_agent = build_marketing_agent(settings, ctx.pr_url, marketing_ctx)
     marketing_copy = await marketing_run(m_agent, spec, ctx.pr_url)
     artifacts["marketing"] = marketing_copy
     bus.send(
@@ -423,7 +425,7 @@ async def _run_pipeline_core(
                     payload={"feedback": feedback},
                 )
             )
-            m_agent = build_marketing_agent(settings, ctx.pr_url)
+            m_agent = build_marketing_agent(settings, ctx.pr_url, marketing_ctx)
             marketing_copy = await marketing_run(m_agent, spec, ctx.pr_url)
             artifacts["marketing"] = marketing_copy
         else:
