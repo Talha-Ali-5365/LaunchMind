@@ -27,8 +27,9 @@ class MessageBus:
         with self._lock:
             self._inboxes[message.to_agent].append(message)
             self._history.append(message)
-        if self._print_hook is not None:
-            self._print_hook(message)
+            hook = self._print_hook
+        if hook is not None:
+            hook(message)
 
     def peek_inbox(self, agent: str) -> list[AgentMessage]:
         """Return a copy of queued messages for ``agent`` without consuming."""

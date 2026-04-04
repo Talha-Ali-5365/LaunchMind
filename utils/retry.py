@@ -32,8 +32,13 @@ def with_retry(
         The callable's return value.
 
     Raises:
+        ValueError: If ``attempts < 1`` or ``base_delay_s`` is negative.
         Exception: The last exception if all attempts fail.
     """
+    if attempts < 1:
+        raise ValueError("attempts must be >= 1")
+    if base_delay_s < 0:
+        raise ValueError("base_delay_s must be >= 0")
     last_exc: Exception | None = None
     for i in range(attempts):
         try:
@@ -66,8 +71,13 @@ async def with_retry_async(
         The awaited return value.
 
     Raises:
+        ValueError: If ``attempts < 1`` or ``base_delay_s`` is negative.
         Exception: The last exception if all attempts fail.
     """
+    if attempts < 1:
+        raise ValueError("attempts must be >= 1")
+    if base_delay_s < 0:
+        raise ValueError("base_delay_s must be >= 0")
     last_exc: Exception | None = None
     for i in range(attempts):
         try:

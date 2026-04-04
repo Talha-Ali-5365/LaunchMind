@@ -31,17 +31,11 @@ def extract_json_object(text: str) -> dict[str, Any]:
     if start < 0:
         raise ValueError("No JSON object found in model output")
 
-    depth = 0
-    end = -1
-    for i, ch in enumerate(s[start:], start=start):
-        if ch == "{":
-            depth += 1
-        elif ch == "}":
-            depth -= 1
-            if depth == 0:
-                end = i + 1
-                break
-    if end < 0:
-        raise ValueError("Unbalanced JSON braces in model output")
-
-    return json.loads(s[start:end])
+    decoder = json.JSONDecoder()
+    try:
+        obj, _end = decoder.raw_decode(s, start)
+    except json.JSONDecodeError as e:
+        raise ValueError(f"Invalid JSON in model output: {e}") from e
+    if not isinstance(obj, dict):
+        raise ValueError("First JSON value is not an object")
+    return obj

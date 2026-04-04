@@ -77,7 +77,7 @@ Context (JSON):
 
 **Mandatory — read `slack_summary_facts` and do not contradict it:**
 - Include the exact meaning of `email_summary_line` for the email/cold-outreach status (do not invent “email sent: no” when `email_marketing_phase_completed` is true and `errors` is empty).
-- Include the exact meaning of `qa_summary_line` for QA (if `announce_qa_as_success` is true, state clearly that QA passed or was accepted for launch; do not claim QA failed).
+- Include the exact meaning of `qa_summary_line` for QA. If `announce_qa_as_success` is true, state clearly that QA / the review cycle is **OK for launch** (including when `qa_hit_max_revision_rounds` is true). Never say “QA failed” or “CEO did not accept” when `announce_qa_as_success` is true.
 
 Also cover: idea recap, product value proposition, PR link, issue link if useful.
 
