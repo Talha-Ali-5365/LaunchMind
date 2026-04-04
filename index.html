@@ -3,20 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MealSave — End-of-Day Food Marketplace</title>
+  <title>MealSave — Sell Surplus, Find Affordable Meals Nearby</title>
   <style>
     :root {
       --bg: #07111f;
-      --panel: rgba(10, 22, 38, 0.78);
-      --panel-2: rgba(15, 31, 52, 0.92);
-      --text: #eaf2ff;
-      --muted: #a9bdd7;
+      --bg-2: #09192d;
+      --panel: rgba(10, 22, 38, 0.82);
+      --panel-strong: rgba(16, 34, 56, 0.96);
+      --text: #eef5ff;
+      --muted: #a8bdd8;
       --accent: #67e8f9;
       --accent-2: #a78bfa;
-      --good: #4ade80;
+      --accent-3: #34d399;
       --warning: #fbbf24;
-      --border: rgba(255,255,255,0.12);
-      --shadow: 0 24px 80px rgba(0,0,0,0.35);
+      --border: rgba(255, 255, 255, 0.12);
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
     }
 
     * { box-sizing: border-box; }
@@ -25,26 +26,29 @@
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(103,232,249,0.18), transparent 34%),
-        radial-gradient(circle at top right, rgba(167,139,250,0.17), transparent 30%),
-        linear-gradient(180deg, #06101d 0%, #091423 50%, #07111f 100%);
+        radial-gradient(circle at 10% 10%, rgba(103, 232, 249, 0.18), transparent 30%),
+        radial-gradient(circle at 90% 0%, rgba(167, 139, 250, 0.16), transparent 28%),
+        radial-gradient(circle at 80% 80%, rgba(52, 211, 153, 0.10), transparent 24%),
+        linear-gradient(180deg, #06101d 0%, #07111f 45%, #091423 100%);
       min-height: 100vh;
-      line-height: 1.5;
+      line-height: 1.55;
     }
 
+    a { color: inherit; }
+
     .container {
-      width: min(1120px, calc(100% - 32px));
+      width: min(1140px, calc(100% - 32px));
       margin: 0 auto;
     }
 
     header {
-      padding: 24px 0 12px;
+      padding: 24px 0 10px;
     }
 
     .nav {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       gap: 16px;
     }
 
@@ -53,20 +57,20 @@
       align-items: center;
       gap: 12px;
       font-weight: 800;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.01em;
       font-size: 1.05rem;
     }
 
     .brand-mark {
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      box-shadow: 0 10px 28px rgba(103,232,249,0.25);
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
       display: grid;
       place-items: center;
       color: #03111a;
       font-weight: 900;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 12px 30px rgba(103, 232, 249, 0.2);
     }
 
     .nav-pill {
@@ -75,16 +79,16 @@
       border-radius: 999px;
       background: rgba(255,255,255,0.04);
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size: 0.94rem;
     }
 
     .hero {
-      padding: 68px 0 42px;
+      padding: 70px 0 44px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1.08fr 0.92fr;
       gap: 28px;
       align-items: center;
     }
@@ -95,24 +99,24 @@
       gap: 8px;
       padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(103,232,249,0.1);
-      border: 1px solid rgba(103,232,249,0.25);
-      color: #bff8ff;
+      background: rgba(103, 232, 249, 0.1);
+      border: 1px solid rgba(103, 232, 249, 0.22);
+      color: #c9fbff;
       font-size: 0.92rem;
       margin-bottom: 18px;
     }
 
     h1 {
-      font-size: clamp(2.8rem, 6vw, 5.2rem);
-      line-height: 0.97;
+      font-size: clamp(2.8rem, 6vw, 5.4rem);
+      line-height: 0.96;
       margin: 0 0 18px;
       letter-spacing: -0.05em;
     }
 
     .subheadline {
-      font-size: clamp(1.06rem, 2vw, 1.28rem);
+      font-size: clamp(1.06rem, 2vw, 1.24rem);
       color: var(--muted);
-      max-width: 62ch;
+      max-width: 66ch;
       margin: 0 0 28px;
     }
 
@@ -120,7 +124,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     .btn {
@@ -131,17 +135,17 @@
       padding: 14px 20px;
       border-radius: 14px;
       border: 1px solid transparent;
-      font-weight: 700;
       text-decoration: none;
+      font-weight: 700;
       transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     }
 
     .btn:hover { transform: translateY(-1px); }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--accent), #7dd3fc 55%, var(--accent-2));
-      color: #06101d;
-      box-shadow: 0 18px 40px rgba(103,232,249,0.22);
+      background: linear-gradient(135deg, var(--accent), #7dd3fc 58%, var(--accent-2));
+      color: #05111c;
+      box-shadow: 0 18px 40px rgba(103, 232, 249, 0.2);
     }
 
     .btn-secondary {
@@ -150,10 +154,16 @@
       border-color: var(--border);
     }
 
+    .hero-note {
+      color: var(--muted);
+      font-size: 0.96rem;
+      max-width: 58ch;
+    }
+
     .hero-card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
       border: 1px solid var(--border);
-      border-radius: 24px;
+      border-radius: 26px;
       padding: 22px;
       box-shadow: var(--shadow);
       backdrop-filter: blur(14px);
@@ -163,6 +173,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 12px;
       margin-bottom: 16px;
       color: var(--muted);
       font-size: 0.92rem;
@@ -172,86 +183,85 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      color: #d6ffdf;
+      color: #d7ffe4;
     }
 
     .pulse {
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      background: var(--good);
-      box-shadow: 0 0 0 0 rgba(74,222,128,0.6);
+      background: var(--accent-3);
+      box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.55);
       animation: pulse 1.8s infinite;
     }
 
     @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(74,222,128,0.45); }
-      70% { box-shadow: 0 0 0 14px rgba(74,222,128,0); }
-      100% { box-shadow: 0 0 0 0 rgba(74,222,128,0); }
+      0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.45); }
+      70% { box-shadow: 0 0 0 14px rgba(52, 211, 153, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
     }
 
     .deal {
-      background: var(--panel-2);
+      background: var(--panel-strong);
       border: 1px solid var(--border);
       border-radius: 18px;
       padding: 16px;
       margin-bottom: 12px;
     }
 
-    .deal-header, .meta-row {
+    .deal-header,
+    .meta-row {
       display: flex;
       justify-content: space-between;
-      gap: 12px;
       align-items: center;
+      gap: 12px;
     }
 
-    .deal-header strong { font-size: 1.02rem; }
+    .deal h3, .deal p { margin: 0; }
+    .deal p { color: var(--muted); margin-top: 10px; }
+
     .tag {
       padding: 6px 10px;
       border-radius: 999px;
-      background: rgba(103,232,249,0.12);
-      color: #bff8ff;
       font-size: 0.82rem;
-      border: 1px solid rgba(103,232,249,0.14);
       white-space: nowrap;
+      background: rgba(103, 232, 249, 0.12);
+      border: 1px solid rgba(103, 232, 249, 0.15);
+      color: #c9fbff;
     }
-
-    .deal p { color: var(--muted); margin: 10px 0 12px; }
 
     .stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin: 18px 0 0;
+      gap: 12px;
+      margin-top: 14px;
     }
 
     .stat {
       background: rgba(255,255,255,0.05);
       border: 1px solid var(--border);
       border-radius: 18px;
-      padding: 16px;
+      padding: 15px;
     }
 
     .stat strong {
       display: block;
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       margin-bottom: 4px;
     }
 
-    section {
-      padding: 18px 0 32px;
-    }
+    section { padding: 20px 0 36px; }
 
     .section-title {
-      font-size: clamp(1.7rem, 3vw, 2.4rem);
-      margin: 0 0 12px;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      margin: 0 0 10px;
       letter-spacing: -0.03em;
     }
 
     .section-subtitle {
       color: var(--muted);
-      max-width: 68ch;
-      margin: 0 0 26px;
+      max-width: 72ch;
+      margin: 0 0 24px;
     }
 
     .features {
@@ -260,30 +270,41 @@
       gap: 16px;
     }
 
-    .feature {
-      background: var(--panel);
+    .feature,
+    .persona,
+    .workflow,
+    .footer-cta {
       border: 1px solid var(--border);
+      background: var(--panel);
       border-radius: 22px;
-      padding: 20px;
-      box-shadow: 0 18px 50px rgba(0,0,0,0.22);
-      min-height: 210px;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.2);
     }
 
-    .feature .num {
-      width: 38px;
-      height: 38px;
+    .feature {
+      padding: 20px;
+      min-height: 220px;
+    }
+
+    .num {
+      width: 40px;
+      height: 40px;
       border-radius: 12px;
       display: grid;
       place-items: center;
       margin-bottom: 14px;
       background: linear-gradient(135deg, rgba(103,232,249,0.18), rgba(167,139,250,0.16));
-      border: 1px solid rgba(255,255,255,0.08);
-      color: #dffcff;
+      color: #e9feff;
       font-weight: 800;
+      border: 1px solid rgba(255,255,255,0.08);
     }
 
-    .feature h3 { margin: 0 0 10px; font-size: 1.08rem; }
-    .feature p { margin: 0; color: var(--muted); }
+    .feature h3,
+    .persona h3,
+    .workflow h3 { margin: 0 0 10px; font-size: 1.08rem; }
+    .feature p,
+    .persona p,
+    .workflow p,
+    .footer-cta p { margin: 0; color: var(--muted); }
 
     .audience {
       display: grid;
@@ -292,35 +313,47 @@
     }
 
     .persona {
-      border-radius: 22px;
       padding: 20px;
       background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
-      border: 1px solid var(--border);
     }
 
     .persona span {
       display: inline-block;
-      color: #b7c8e3;
-      font-size: 0.9rem;
       margin-bottom: 10px;
+      color: #bed0eb;
+      font-size: 0.9rem;
     }
 
-    .persona h3 { margin: 0 0 10px; }
-    .persona p { margin: 0; color: var(--muted); }
+    .workflow-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .workflow {
+      padding: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+    }
+
+    .workflow strong {
+      display: inline-flex;
+      margin-bottom: 10px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: #dffcff;
+      background: rgba(103,232,249,0.12);
+      border: 1px solid rgba(103,232,249,0.12);
+    }
 
     .footer-cta {
-      margin: 20px 0 70px;
+      margin: 18px 0 70px;
       padding: 28px;
-      border-radius: 28px;
       background: linear-gradient(135deg, rgba(103,232,249,0.14), rgba(167,139,250,0.14));
-      border: 1px solid rgba(255,255,255,0.12);
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 18px;
     }
-
-    .footer-cta p { margin: 8px 0 0; color: var(--muted); }
 
     .small {
       color: var(--muted);
@@ -328,15 +361,17 @@
     }
 
     @media (max-width: 1024px) {
-      .hero-grid, .features { grid-template-columns: 1fr; }
-      .audience { grid-template-columns: 1fr; }
+      .hero-grid,
+      .features,
+      .audience,
+      .workflow-grid,
       .stats { grid-template-columns: 1fr; }
       .feature { min-height: auto; }
       .footer-cta { flex-direction: column; align-items: flex-start; }
     }
 
     @media (max-width: 640px) {
-      .container { width: min(100% - 20px, 1120px); }
+      .container { width: min(100% - 20px, 1140px); }
       .hero { padding-top: 42px; }
       h1 { line-height: 1; }
       .nav { flex-direction: column; align-items: flex-start; }
@@ -351,7 +386,7 @@
         <div class="brand-mark">M</div>
         <span>MealSave</span>
       </div>
-      <div class="nav-pill">Trusted last-minute meals for nearby pickup</div>
+      <div class="nav-pill">Trusted end-of-day meals for nearby pickup</div>
     </div>
   </header>
 
@@ -359,92 +394,94 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">Sell surplus. Save food. Serve local buyers faster.</div>
-          <h1>Turn end-of-day restaurant food into quick, affordable meals.</h1>
+          <div class="eyebrow">Reduce waste. Recover revenue. Help nearby buyers find dinner fast.</div>
+          <h1>Turn unsold restaurant food into fast, affordable meals.</h1>
           <p class="subheadline">
-            MealSave connects restaurants with nearby buyers so unsold food can be listed with pickup windows,
-            freshness cutoffs, and discounted pricing — helping businesses reduce waste while giving customers a fast,
-            trusted way to find a meal before pickup.
+            MealSave is a marketplace that helps restaurants sell end-of-day surplus while giving local buyers a
+            simple, trusted way to discover discounted meals nearby, reserve ahead, and pick up with confidence.
           </p>
           <div class="cta-row">
-            <a class="btn btn-primary" href="#features">Explore features</a>
-            <a class="btn btn-secondary" href="#audiences">See who it helps</a>
+            <a class="btn btn-primary" href="#features">Explore the platform</a>
+            <a class="btn btn-secondary" href="#audiences">See who it serves</a>
           </div>
-          <div class="small">Designed for restaurants, students, office workers, and budget-conscious local buyers.</div>
+          <p class="hero-note">
+            Built for restaurant managers, budget-conscious local buyers, students, and office workers who need
+            reliable food options with minimal friction.
+          </p>
         </div>
 
-        <div class="hero-card" aria-label="Featured deals preview">
+        <aside class="hero-card" aria-label="Live deal preview">
           <div class="card-top">
-            <span class="live"><span class="pulse"></span> Live nearby deals</span>
-            <span>Updated now</span>
+            <span class="live"><span class="pulse"></span> Nearby deals live now</span>
+            <span>Updated moments ago</span>
           </div>
 
           <div class="deal">
             <div class="deal-header">
-              <strong>Harbor Bowl Cafe</strong>
-              <span class="tag">28% off · 0.8 mi</span>
+              <h3>Harbor Bowl Cafe</h3>
+              <span class="tag">32% off · 0.8 mi</span>
             </div>
             <p>Rice bowls, salads, and sides. Pickup 6:30–7:15 PM. Freshness cutoff 7:30 PM.</p>
-            <div class="meta-row small">
+            <div class="meta-row small" style="margin-top:12px;">
               <span>Verified restaurant</span>
-              <span>Allergen notes available</span>
+              <span>Allergen notes included</span>
             </div>
           </div>
 
           <div class="deal">
             <div class="deal-header">
-              <strong>Campus Slice</strong>
+              <h3>Campus Slice</h3>
               <span class="tag">40% off · 1.2 mi</span>
             </div>
-            <p>Pizza slices and combo boxes. Reserve ahead and pay in-app for a faster handoff.</p>
-            <div class="meta-row small">
-              <span>QR pickup code</span>
-              <span>Pickup window 8:00–8:45 PM</span>
+            <p>Pizza slices and combo boxes. Reserve and pay in-app, then confirm pickup with a code.</p>
+            <div class="meta-row small" style="margin-top:12px;">
+              <span>QR / order code pickup</span>
+              <span>Pickup 8:00–8:45 PM</span>
             </div>
           </div>
 
           <div class="stats">
-            <div class="stat"><strong>5 min</strong><span class="small">Reserve and check out quickly</span></div>
-            <div class="stat"><strong>2 steps</strong><span class="small">Find nearby deals and confirm pickup</span></div>
-            <div class="stat"><strong>Trusted</strong><span class="small">Verification, guidance, and handoff checks</span></div>
+            <div class="stat"><strong>5 min</strong><span class="small">Reserve and pay ahead</span></div>
+            <div class="stat"><strong>2 steps</strong><span class="small">Discover, reserve, pickup</span></div>
+            <div class="stat"><strong>Trusted</strong><span class="small">Verification and safety controls</span></div>
           </div>
-        </div>
+        </aside>
       </div>
     </section>
 
     <section id="features">
       <div class="container">
-        <h2 class="section-title">Built for surplus food, nearby discovery, and clean pickup handoff.</h2>
+        <h2 class="section-title">Core product features aligned to the end-of-day food workflow.</h2>
         <p class="section-subtitle">
-          The platform is organized around the operational flow restaurants need and the decision flow buyers want:
-          post the surplus, surface the best nearby deal, reserve and pay, then confirm pickup with confidence.
+          The page now emphasizes the complete experience from restaurant listing to buyer handoff: surplus inventory,
+          discovery, reserve-and-pay, trust signals, and a clean pickup confirmation flow.
         </p>
 
         <div class="features">
           <article class="feature">
             <div class="num">1</div>
             <h3>Restaurant Surplus Listings</h3>
-            <p>Post end-of-day inventory with item details, quantity, pickup window, discount price, and freshness cutoff so selling surplus stays simple.</p>
+            <p>Restaurants can post end-of-day inventory with item description, quantity, pickup window, discount price, and freshness cutoff.</p>
           </article>
           <article class="feature">
             <div class="num">2</div>
             <h3>Nearby Deal Discovery</h3>
-            <p>Surface discounted meals by distance, pickup time, price, and category to help buyers quickly find relevant offers close to them.</p>
+            <p>Buyers can browse discounted meals sorted by distance, pickup time, price, and category to find relevant offers quickly.</p>
           </article>
           <article class="feature">
             <div class="num">3</div>
             <h3>Reserve and Pay Ahead</h3>
-            <p>Let buyers secure items and pay in-app, reducing uncertainty for customers and cutting down on no-shows for restaurants.</p>
+            <p>Reserve items and pay in-app to reduce uncertainty, cut friction at pickup, and lower the chance of no-shows.</p>
           </article>
           <article class="feature">
             <div class="num">4</div>
             <h3>Trust and Safety Controls</h3>
-            <p>Show restaurant verification, food handling guidance, allergy and allergen notes, and freshness rules to build confidence before purchase.</p>
+            <p>Verification badges, food handling guidance, allergen notes, and freshness rules help buyers feel confident about the order.</p>
           </article>
           <article class="feature">
             <div class="num">5</div>
             <h3>Pickup Confirmation Flow</h3>
-            <p>Support QR or order code confirmation at pickup to verify handoff, prevent fraud, and close the transaction cleanly.</p>
+            <p>QR code or order code confirmation validates handoff, prevents fraud, and closes the transaction cleanly at pickup.</p>
           </article>
         </div>
       </div>
@@ -452,24 +489,55 @@
 
     <section id="audiences">
       <div class="container">
-        <h2 class="section-title">Useful for both sellers and local buyers.</h2>
-        <p class="section-subtitle">Each persona gets a different benefit from the same simple marketplace flow.</p>
+        <h2 class="section-title">Designed for the people who need it most.</h2>
+        <p class="section-subtitle">
+          The messaging now speaks to the primary personas in the product spec so the landing page reflects both the
+          seller and buyer value proposition.
+        </p>
 
         <div class="audience">
           <article class="persona">
             <span>Food seller</span>
             <h3>Restaurant Manager</h3>
-            <p>Reduce waste and recover revenue without creating operational burden or risking the restaurant’s reputation.</p>
+            <p>Reduce end-of-day waste and recover revenue without extra operational burden or reputation risk.</p>
           </article>
           <article class="persona">
-            <span>Food buyer</span>
+            <span>Affordable meal seeker</span>
             <h3>Budget-Conscious Local Buyer</h3>
-            <p>Find affordable nearby meals with clear pickup times, reliable availability, and freshness information.</p>
+            <p>Find nearby discounted meals with reliable pickup timing, freshness details, and clear trust signals.</p>
           </article>
           <article class="persona">
-            <span>Convenience-seeking buyer</span>
+            <span>Convenience-first buyer</span>
             <h3>Student or Office Worker</h3>
-            <p>Grab low-cost food near campus or work with minimal planning and a simple reserve-and-pickup flow.</p>
+            <p>Get quick, low-cost food options near campus or work with minimal planning and a simple pickup flow.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2 class="section-title">Simple flow from listing to pickup.</h2>
+        <p class="section-subtitle">
+          The structure below clarifies the end-to-end process for reviewers: publish the surplus, discover the best
+          nearby deal, and confirm a successful handoff.
+        </p>
+
+        <div class="workflow-grid">
+          <article class="workflow">
+            <strong>Step 1</strong>
+            <h3>Post surplus inventory</h3>
+            <p>Restaurants publish item details, price, quantity, pickup window, and freshness cutoff in a few inputs.</p>
+          </article>
+          <article class="workflow">
+            <strong>Step 2</strong>
+            <h3>Reserve with confidence</h3>
+            <p>Buyers choose a nearby deal, reserve it, and pay ahead so the order is ready when they arrive.</p>
+          </article>
+          <article class="workflow">
+            <strong>Step 3</strong>
+            <h3>Confirm pickup cleanly</h3>
+            <p>QR or order code verification completes the handoff and gives both sides a clear end state.</p>
           </article>
         </div>
       </div>
@@ -478,10 +546,10 @@
     <section>
       <div class="container footer-cta">
         <div>
-          <h2 class="section-title" style="margin-bottom: 6px;">Ready to put surplus food back into circulation?</h2>
-          <p>Help restaurants sell what would otherwise go to waste and give nearby buyers a faster way to discover a meal.</p>
+          <h2 class="section-title" style="margin-bottom: 8px;">Make surplus food discoverable, trustworthy, and easy to pick up.</h2>
+          <p>MealSave frames the product around waste reduction for restaurants and convenience for nearby buyers.</p>
         </div>
-        <a class="btn btn-primary" href="#">Get started</a>
+        <a class="btn btn-primary" href="#features">Get started</a>
       </div>
     </section>
   </main>
