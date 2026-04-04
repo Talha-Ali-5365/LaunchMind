@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LedgerFlow — Polite invoice reminders for freelancers</title>
+  <title>LaunchMind — Polite invoice reminders for freelancers</title>
   <style>
     :root {
       --bg: #07111f;
@@ -199,7 +199,8 @@
     .section h2,
     .feature h3,
     .persona strong,
-    .cta-panel h2 {
+    .cta-panel h2,
+    .entry strong {
       margin: 0 0 8px;
     }
 
@@ -207,7 +208,8 @@
     .section p,
     .feature p,
     .persona p,
-    .cta-panel p {
+    .cta-panel p,
+    .entry p {
       margin: 0;
       color: var(--muted);
       line-height: 1.65;
@@ -270,6 +272,39 @@
 
     .persona span { display: block; margin-top: 8px; color: var(--muted); line-height: 1.6; }
 
+    .entry-point {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .entry {
+      padding: 22px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+    }
+
+    .entry .mini-actions {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(159, 177, 202, 0.18);
+      background: rgba(255, 255, 255, 0.03);
+      color: #d9e7f5;
+      font-size: 0.92rem;
+      text-decoration: none;
+    }
+
     .cta-panel {
       margin-top: 74px;
       padding: 28px;
@@ -296,6 +331,7 @@
       .hero,
       .features,
       .persona-band,
+      .entry-point,
       .cta-panel,
       .section-header,
       .nav {
@@ -316,16 +352,18 @@
       .actions { flex-direction: column; align-items: stretch; }
       .btn { width: 100%; }
       .cta-panel { padding: 22px; }
+      .entry .mini-actions { flex-direction: column; }
+      .chip { width: 100%; justify-content: center; }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <header class="nav">
-      <div class="brand" aria-label="LedgerFlow home">
+      <div class="brand" aria-label="LaunchMind home">
         <div class="logo">L</div>
         <div>
-          LedgerFlow
+          LaunchMind
           <small>Polite invoice follow-ups, automatically</small>
         </div>
       </div>
@@ -337,12 +375,12 @@
         <div class="eyebrow">Less awkward chasing. Faster payments.</div>
         <h1>Track unpaid invoices and send reminders that stay professional.</h1>
         <p class="subheadline">
-          LedgerFlow helps freelancers, contractors, and small studio owners keep every invoice visible,
+          LaunchMind helps freelancers, contractors, and small studio owners keep every invoice visible,
           spot overdue risk early, and automatically send timely reminders so cash flow stays healthy
           without manual follow-up.
         </p>
         <div class="actions">
-          <a class="btn btn-primary" href="#cta">Start tracking invoices</a>
+          <a class="btn btn-primary" href="#invoice-entry">Create or import invoices</a>
           <a class="btn btn-secondary" href="#features">See how it works</a>
         </div>
       </section>
@@ -373,6 +411,36 @@
         </div>
       </aside>
     </main>
+
+    <section class="section" id="invoice-entry">
+      <div class="section-header">
+        <div>
+          <h2>Get invoices into LaunchMind in one step</h2>
+          <p>
+            Start with a new invoice or import existing records to see unpaid work, due dates, and follow-up timing in a single dashboard.
+          </p>
+        </div>
+      </div>
+
+      <div class="entry-point">
+        <article class="entry">
+          <strong>Create invoice</strong>
+          <p>Manually add a new invoice for a client, milestone, or net-30 contract and keep reminders attached from day one.</p>
+          <div class="mini-actions">
+            <a class="chip" href="#cta">Start a new invoice</a>
+            <a class="chip" href="#features">View reminder flow</a>
+          </div>
+        </article>
+        <article class="entry">
+          <strong>Import invoices</strong>
+          <p>Bring in existing invoices so freelancers and studios can immediately track outstanding balances and overdue risk.</p>
+          <div class="mini-actions">
+            <a class="chip" href="#cta">Import from CSV</a>
+            <a class="chip" href="#features">Review dashboard</a>
+          </div>
+        </article>
+      </div>
+    </section>
 
     <section class="section" id="features">
       <div class="section-header">
@@ -428,20 +496,22 @@
         </div>
         <div class="persona">
           <strong>Contractor</strong>
-          <span>Spot overdue invoices early and escalate politely when clients delay payment.</span>
+          <span>Spot overdue invoices early and escalate politely when payment drifts past due.</span>
         </div>
       </div>
     </section>
 
     <section class="cta-panel" id="cta">
       <div>
-        <h2 style="margin: 0 0 10px;">Get paid faster without the awkward follow-up.</h2>
-        <p>Start with a clear invoice tracker, then automate reminders that keep conversations professional and payments moving.</p>
+        <h2>Keep cash flow moving without awkward follow-ups</h2>
+        <p>
+          LaunchMind helps you track unpaid invoices, send polite reminders, and stop chasing the moment payment lands.
+        </p>
       </div>
-      <a class="btn btn-primary" href="#">Launch LedgerFlow</a>
+      <a class="btn btn-primary" href="#invoice-entry">Start with invoices</a>
     </section>
 
-    <p class="footer">Reliable invoice reminders for freelancers who want less admin and better cash flow.</p>
+    <p class="footer">LaunchMind — designed for freelancers, studios, and contractors who need a clearer path to payment.</p>
   </div>
 </body>
 </html>
