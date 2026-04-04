@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Last Bite — Turn Surplus Into Sold Out</title>
-  <meta name="description" content="A marketplace that helps restaurants quickly sell end-of-day surplus food at a discount while giving local customers a simple, trustworthy way to reserve affordable meals." />
+  <title>Last Bite — Sell surplus food before closing</title>
+  <meta name="description" content="Last Bite helps restaurants quickly sell end-of-day surplus food at a discount while giving local customers a simple, trustworthy way to reserve affordable meals nearby." />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -12,19 +12,21 @@
         extend: {
           colors: {
             cream: '#f7f2ea',
-            ink: '#16201a',
-            moss: '#3d6b57',
-            sage: '#88a58d',
-            amber: '#d68a36',
-            sand: '#ead8be',
-            blush: '#f5e8db'
+            ink: '#17231c',
+            moss: '#466f59',
+            sage: '#91aa96',
+            amber: '#c88431',
+            sand: '#ead7bc',
+            blush: '#f5e8dc',
+            stone: '#d7e0d4'
           },
           fontFamily: {
             sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
             display: ['Cormorant Garamond', 'serif']
           },
           boxShadow: {
-            soft: '0 18px 50px rgba(22, 32, 26, 0.10)'
+            soft: '0 18px 50px rgba(23, 35, 28, 0.10)',
+            card: '0 10px 24px rgba(23, 35, 28, 0.08)'
           }
         }
       }
@@ -35,16 +37,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body class="bg-cream text-ink font-sans antialiased">
-  <header class="sticky top-0 z-40 border-b border-black/5 bg-cream/90 backdrop-blur">
+  <header class="sticky top-0 z-50 border-b border-black/5 bg-cream/90 backdrop-blur">
     <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8" aria-label="Primary">
-      <a href="#top" class="flex items-center gap-3 font-semibold tracking-tight text-ink focus:outline-none focus:ring-2 focus:ring-amber focus:ring-offset-2 focus:ring-offset-cream rounded-lg px-2 py-1">
-        <span class="flex h-9 w-9 items-center justify-center rounded-full bg-moss text-white shadow-sm">LB</span>
+      <a href="#top" class="flex items-center gap-3 rounded-xl px-2 py-1 font-semibold tracking-tight text-ink focus:outline-none focus:ring-2 focus:ring-amber focus:ring-offset-2 focus:ring-offset-cream">
+        <span class="flex h-9 w-9 items-center justify-center rounded-full bg-moss text-sm font-bold text-white shadow-sm">LB</span>
         <span class="text-lg">Last Bite</span>
       </a>
       <div class="hidden items-center gap-8 md:flex">
-        <a href="#features" class="text-sm font-medium text-ink/70 hover:text-ink focus:outline-none focus:ring-2 focus:ring-amber rounded">Features</a>
-        <a href="#personas" class="text-sm font-medium text-ink/70 hover:text-ink focus:outline-none focus:ring-2 focus:ring-amber rounded">Who it serves</a>
-        <a href="#cta" class="text-sm font-medium text-ink/70 hover:text-ink focus:outline-none focus:ring-2 focus:ring-amber rounded">Get started</a>
+        <a href="#features" class="text-sm font-medium text-ink/70 transition hover:text-ink focus:outline-none focus:ring-2 focus:ring-amber rounded">Features</a>
+        <a href="#personas" class="text-sm font-medium text-ink/70 transition hover:text-ink focus:outline-none focus:ring-2 focus:ring-amber rounded">Who it serves</a>
+        <a href="#cta" class="text-sm font-medium text-ink/70 transition hover:text-ink focus:outline-none focus:ring-2 focus:ring-amber rounded">Get started</a>
       </div>
       <a href="#cta" class="inline-flex items-center rounded-full bg-ink px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-moss focus:outline-none focus:ring-2 focus:ring-amber focus:ring-offset-2 focus:ring-offset-cream">
         Reserve a demo
@@ -54,37 +56,40 @@
 
   <main id="top">
     <section class="relative overflow-hidden">
-      <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,_rgba(61,107,87,0.14),_transparent_35%),radial-gradient(circle_at_top_right,_rgba(214,138,54,0.14),_transparent_28%)]"></div>
+      <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,_rgba(70,111,89,0.14),_transparent_34%),radial-gradient(circle_at_top_right,_rgba(200,132,49,0.14),_transparent_28%)]"></div>
       <div class="mx-auto grid max-w-6xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-24">
         <div class="max-w-xl">
-          <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-moss/15 bg-white/70 px-4 py-2 text-sm font-medium text-moss shadow-sm">
+          <div class="inline-flex items-center gap-2 rounded-full border border-moss/15 bg-white/75 px-4 py-2 text-sm font-medium text-moss shadow-sm">
             <span class="h-2 w-2 rounded-full bg-amber"></span>
             End-of-day surplus, reserved in minutes
           </div>
-          <h1 class="font-display text-5xl font-semibold leading-none tracking-tight text-ink sm:text-6xl lg:text-7xl">
+          <h1 class="mt-6 font-display text-5xl font-semibold leading-[0.95] tracking-tight text-ink sm:text-6xl lg:text-7xl">
             Turn unsold meals into sold-out nights.
           </h1>
           <p class="mt-6 text-lg leading-8 text-ink/75 sm:text-xl">
-            Last Bite helps restaurants list remaining food quickly, and gives local customers a trustworthy way to discover nearby discounted meals before closing time.
+            Last Bite helps restaurants list remaining food quickly, while giving local customers a simple, trustworthy way to discover nearby discounted meals before closing time.
+          </p>
+          <p class="mt-4 max-w-prose text-sm leading-6 text-ink/60">
+            Built for the final hour of service: fast listing, nearby discovery, instant reservation, and clear trust controls so every pickup feels organized instead of rushed.
           </p>
           <div class="mt-8 flex flex-col gap-3 sm:flex-row">
             <a href="#cta" class="inline-flex items-center justify-center rounded-full bg-moss px-6 py-3.5 text-sm font-semibold text-white shadow-soft transition hover:bg-ink focus:outline-none focus:ring-2 focus:ring-amber focus:ring-offset-2 focus:ring-offset-cream">
               Start selling surplus
             </a>
             <a href="#features" class="inline-flex items-center justify-center rounded-full border border-ink/10 bg-white/80 px-6 py-3.5 text-sm font-semibold text-ink transition hover:border-moss/30 hover:text-moss focus:outline-none focus:ring-2 focus:ring-amber focus:ring-offset-2 focus:ring-offset-cream">
-              Explore how it works
+              Explore features
             </a>
           </div>
           <div class="mt-10 grid gap-4 sm:grid-cols-3">
-            <div class="rounded-2xl bg-white/80 p-4 shadow-sm ring-1 ring-black/5">
+            <div class="rounded-2xl bg-white/85 p-4 shadow-sm ring-1 ring-black/5">
               <div class="text-2xl font-bold text-moss">Fast</div>
-              <p class="mt-1 text-sm text-ink/65">Create offers in a few taps.</p>
+              <p class="mt-1 text-sm text-ink/65">Publish offers in a few taps.</p>
             </div>
-            <div class="rounded-2xl bg-white/80 p-4 shadow-sm ring-1 ring-black/5">
+            <div class="rounded-2xl bg-white/85 p-4 shadow-sm ring-1 ring-black/5">
               <div class="text-2xl font-bold text-moss">Nearby</div>
               <p class="mt-1 text-sm text-ink/65">Map and list discovery for locals.</p>
             </div>
-            <div class="rounded-2xl bg-white/80 p-4 shadow-sm ring-1 ring-black/5">
+            <div class="rounded-2xl bg-white/85 p-4 shadow-sm ring-1 ring-black/5">
               <div class="text-2xl font-bold text-moss">Trusted</div>
               <p class="mt-1 text-sm text-ink/65">Freshness, allergen, and pickup clarity.</p>
             </div>
@@ -92,19 +97,19 @@
         </div>
 
         <div class="relative">
-          <div class="absolute -left-6 top-12 h-24 w-24 rounded-full bg-amber/15 blur-2xl"></div>
-          <div class="absolute -right-10 bottom-16 h-32 w-32 rounded-full bg-moss/15 blur-3xl"></div>
+          <div class="absolute -left-6 top-10 h-24 w-24 rounded-full bg-amber/15 blur-2xl"></div>
+          <div class="absolute -right-10 bottom-10 h-32 w-32 rounded-full bg-moss/15 blur-3xl"></div>
           <div class="grid gap-4 sm:grid-cols-2">
             <figure class="overflow-hidden rounded-3xl bg-white shadow-soft ring-1 ring-black/5 sm:col-span-2">
-              <img src="https://images.unsplash.com/flagged/photo-1564697262397-850cba28ddec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTU1MjR8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwc3VycGx1cyUyMGZvb2QlMjBwaWNrdXB8ZW58MHx8fHwxNzc1MzE2Mzk4fDA&ixlib=rb-4.1.0&q=80&w=1080&auto=format&fit=crop&w=1200&q=80" alt="Restaurant staff preparing a takeout pickup order for a nearby customer" class="h-72 w-full object-cover sm:h-80" />
+              <img src="https://images.unsplash.com/flagged/photo-1564697262397-850cba28ddec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTU1MjR8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwc3VycGx1cyUyMGZvb2QlMjBwaWNrdXB8ZW58MHx8fHwxNzc1MzE2NDg0fDA&ixlib=rb-4.1.0&q=80&w=1080&auto=format&fit=crop&w=1200&q=80" alt="Restaurant staff preparing a pickup bag for a reserved surplus meal order" class="h-72 w-full object-cover sm:h-80" />
             </figure>
             <figure class="overflow-hidden rounded-3xl bg-white shadow-soft ring-1 ring-black/5">
-              <img src="https://images.unsplash.com/photo-1645670752801-6414d1f2a611?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTU1MjR8MHwxfHNlYXJjaHwzfHxsb2NhbCUyMGN1c3RvbWVyJTIwZm9vZCUyMGRlbGl2ZXJ5JTIwcmVzdGF1cmFudCUyMGludGVyaW9yfGVufDB8fHx8MTc3NTMxNjM5OHww&ixlib=rb-4.1.0&q=80&w=1080&auto=format&fit=crop&w=1200&q=80" alt="A warm restaurant interior that signals freshness and easy pickup" class="h-52 w-full object-cover" />
+              <img src="https://images.unsplash.com/photo-1760888549280-4aef010720bd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTU1MjR8MHwxfHNlYXJjaHwyfHxsb2NhbCUyMGN1c3RvbWVyJTIwb3JkZXJpbmclMjBmb29kJTIwb24lMjBwaG9uZSUyMHJlc3RhdXJhbnR8ZW58MHx8fHwxNzc1MzE2NDg0fDA&ixlib=rb-4.1.0&q=80&w=1080&auto=format&fit=crop&w=1200&q=80" alt="Customer using a phone to reserve nearby discounted food" class="h-52 w-full object-cover" />
             </figure>
             <div class="rounded-3xl bg-ink p-6 text-white shadow-soft sm:col-span-1">
               <p class="text-sm uppercase tracking-[0.24em] text-white/60">Pickup ready</p>
               <p class="mt-4 font-display text-3xl leading-tight">Reserve it, lock it, collect it.</p>
-              <p class="mt-3 text-sm leading-6 text-white/75">Clear order IDs, cutoff times, and pickup instructions keep handoffs smooth for staff, customers, and delivery partners.</p>
+              <p class="mt-3 text-sm leading-6 text-white/75">Clear order IDs, cutoff times, and pickup instructions keep handoffs smooth for staff, customers, and pickup partners.</p>
             </div>
           </div>
         </div>
@@ -114,8 +119,9 @@
     <section id="features" class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
       <div class="max-w-2xl">
         <p class="text-sm font-semibold uppercase tracking-[0.24em] text-moss">Features</p>
-        <h2 class="mt-3 font-display text-4xl font-semibold text-ink sm:text-5xl">Built for the last hour of service.</h2>
-        <p class="mt-4 text-lg leading-8 text-ink/72">Every part of the product reflects the realities of closing time: quick listing, local discovery, reliable reservation flow, and trust controls that set clear expectations.
+        <h2 class="mt-3 font-display text-4xl font-semibold text-ink sm:text-5xl">Designed for the last hour of service.</h2>
+        <p class="mt-4 text-lg leading-8 text-ink/72">
+          Every part of the product reflects closing-time realities: quick listing, local discovery, dependable checkout, and trust controls that set clear expectations before anyone arrives.
         </p>
       </div>
       <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
@@ -124,7 +130,7 @@
             <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h10M4 17h16" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <h3 class="mt-5 text-xl font-semibold">Restaurant Listing Flow</h3>
-          <p class="mt-3 leading-7 text-ink/70">Create end-of-day offers in a few taps by choosing food type, quantity, pickup window, discount, and availability status.</p>
+          <p class="mt-3 leading-7 text-ink/70">Create end-of-day offers in a few taps by selecting food type, quantity, pickup window, discount, and availability status.</p>
         </article>
         <article class="rounded-3xl bg-white p-6 shadow-soft ring-1 ring-black/5">
           <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber/15 text-amber">
@@ -138,7 +144,7 @@
             <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 8h14v10H5z"/><path d="M8 8V6a4 4 0 018 0v2" stroke-linecap="round"/><path d="M9 12h6" stroke-linecap="round"/></svg>
           </div>
           <h3 class="mt-5 text-xl font-semibold">Reservation and Checkout</h3>
-          <p class="mt-3 leading-7 text-ink/70">Reserve items instantly, lock inventory, and send confirmation with pickup instructions to reduce missed handoffs.</p>
+          <p class="mt-3 leading-7 text-ink/70">Reserve or purchase instantly, lock inventory, and send confirmation with pickup instructions to reduce missed handoffs.</p>
         </article>
         <article class="rounded-3xl bg-white p-6 shadow-soft ring-1 ring-black/5">
           <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-moss/10 text-moss">
@@ -159,81 +165,96 @@
 
     <section id="personas" class="bg-white/70 py-16">
       <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div class="max-w-2xl">
-          <p class="text-sm font-semibold uppercase tracking-[0.24em] text-moss">Personas</p>
-          <h2 class="mt-3 font-display text-4xl font-semibold text-ink sm:text-5xl">Designed for the people keeping food in circulation.</h2>
-          <p class="mt-4 text-lg leading-8 text-ink/72">The experience balances restaurant operations, customer confidence, and handoff simplicity so each side can move quickly without uncertainty.</p>
-        </div>
-        <div class="mt-10 grid gap-6 lg:grid-cols-3">
-          <article class="overflow-hidden rounded-3xl bg-cream shadow-soft ring-1 ring-black/5">
-            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80" alt="A restaurant interior with warm lighting that matches the manager's busy closing shift" class="h-48 w-full object-cover" />
-            <div class="p-6">
-              <h3 class="text-xl font-semibold">Restaurant Manager</h3>
-              <p class="mt-2 text-sm font-medium text-moss">Publishes listings and manages fulfillment</p>
-              <p class="mt-4 leading-7 text-ink/70">Needs to reduce waste and recover revenue without adding operational burden or risking customer complaints.</p>
+        <div class="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.24em] text-moss">Personas</p>
+            <h2 class="mt-3 font-display text-4xl font-semibold text-ink sm:text-5xl">Built for busy kitchens, local deal hunters, and efficient handoffs.</h2>
+            <p class="mt-4 max-w-2xl text-lg leading-8 text-ink/72">
+              The experience maps to the real needs in the spec: restaurant managers need low-friction publishing, customers need confidence and speed, and pickup partners need unambiguous handoff details.
+            </p>
+            <div class="mt-8 grid gap-5 md:grid-cols-3">
+              <article class="rounded-3xl bg-cream p-6 shadow-card ring-1 ring-black/5">
+                <div class="inline-flex rounded-full bg-moss/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-moss">Restaurant Manager</div>
+                <h3 class="mt-4 text-xl font-semibold">Reduce waste without adding burden.</h3>
+                <p class="mt-3 text-sm leading-6 text-ink/70">Publish remaining food with quantity, pickup window, and discount so closing staff can recover revenue before the night ends.</p>
+              </article>
+              <article class="rounded-3xl bg-cream p-6 shadow-card ring-1 ring-black/5">
+                <div class="inline-flex rounded-full bg-amber/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-amber">Local Customer</div>
+                <h3 class="mt-4 text-xl font-semibold">Find affordable meals with confidence.</h3>
+                <p class="mt-3 text-sm leading-6 text-ink/70">Browse nearby deals quickly while seeing freshness, allergen, timing, and cancellation details up front.</p>
+              </article>
+              <article class="rounded-3xl bg-cream p-6 shadow-card ring-1 ring-black/5">
+                <div class="inline-flex rounded-full bg-sand px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-ink">Pickup Partner</div>
+                <h3 class="mt-4 text-xl font-semibold">Keep handoffs clear and on time.</h3>
+                <p class="mt-3 text-sm leading-6 text-ink/70">Use order IDs, notifications, and pickup codes to collect food without confusion or disputes.</p>
+              </article>
             </div>
-          </article>
-          <article class="overflow-hidden rounded-3xl bg-cream shadow-soft ring-1 ring-black/5">
-            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80" alt="Fresh produce and prepared food that conveys affordable, trustworthy meals for local customers" class="h-48 w-full object-cover" />
-            <div class="p-6">
-              <h3 class="text-xl font-semibold">Value-Seeking Local Customer</h3>
-              <p class="mt-2 text-sm font-medium text-moss">Browses nearby offers and reserves pickups</p>
-              <p class="mt-4 leading-7 text-ink/70">Wants affordable meals from nearby restaurants with confidence that food is fresh, safe, and available when promised.</p>
+          </div>
+          <div class="space-y-4">
+            <figure class="overflow-hidden rounded-3xl bg-white shadow-soft ring-1 ring-black/5">
+              <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80" alt="Fresh restaurant dishes arranged for quick sale and pickup" class="h-64 w-full object-cover" />
+            </figure>
+            <div class="rounded-3xl bg-ink p-6 text-white shadow-soft">
+              <p class="text-sm uppercase tracking-[0.24em] text-white/60">Workflow clarity</p>
+              <p class="mt-3 font-display text-3xl leading-tight">Every order has a cutoff, a note, and a handoff path.</p>
+              <p class="mt-3 text-sm leading-6 text-white/75">That keeps the marketplace trustworthy, especially when a customer is reserving food near closing time.
+              </p>
             </div>
-          </article>
-          <article class="overflow-hidden rounded-3xl bg-cream shadow-soft ring-1 ring-black/5">
-            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80" alt="A laptop workspace that evokes the coordination needed by pickup partners" class="h-48 w-full object-cover" />
-            <div class="p-6">
-              <h3 class="text-xl font-semibold">Pickup Partner</h3>
-              <p class="mt-2 text-sm font-medium text-moss">Collects and delivers reserved orders</p>
-              <p class="mt-4 leading-7 text-ink/70">Needs clear pickup timing, accurate order details, and low-friction handoff to avoid delays and disputes.</p>
-            </div>
-          </article>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="cta" class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
-      <div class="overflow-hidden rounded-[2rem] bg-ink px-6 py-12 shadow-soft sm:px-10 lg:flex lg:items-center lg:justify-between lg:px-12">
-        <div class="max-w-2xl">
-          <p class="text-sm font-semibold uppercase tracking-[0.24em] text-white/55">Ready to launch</p>
-          <h2 class="mt-3 font-display text-4xl font-semibold text-white sm:text-5xl">Give surplus food a better final hour.</h2>
-          <p class="mt-4 text-lg leading-8 text-white/75">Build trust with clear labeling, make pickup simple, and help local customers discover affordable meals before they disappear.</p>
-        </div>
-        <div class="mt-8 flex flex-col gap-3 sm:flex-row lg:mt-0">
-          <a href="mailto:hello@lastbite.example" class="inline-flex items-center justify-center rounded-full bg-amber px-6 py-3.5 text-sm font-semibold text-ink transition hover:bg-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-ink">
-            Contact sales
-          </a>
-          <a href="#top" class="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-ink">
-            Back to top
-          </a>
+      <div class="overflow-hidden rounded-[2rem] bg-moss text-white shadow-soft">
+        <div class="grid gap-8 p-8 sm:p-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:p-12">
+          <div>
+            <p class="text-sm uppercase tracking-[0.24em] text-white/65">Ready for review</p>
+            <h2 class="mt-3 font-display text-4xl font-semibold sm:text-5xl">Launch a cleaner surplus-food experience.</h2>
+            <p class="mt-4 max-w-2xl text-base leading-7 text-white/80">
+              Last Bite is positioned as a practical marketplace for restaurants and local buyers, with a calm, trust-first interface that reduces waste and keeps pickup expectations clear.
+            </p>
+          </div>
+          <div class="flex flex-col gap-3 sm:flex-row lg:justify-end">
+            <a href="#top" class="inline-flex items-center justify-center rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-moss transition hover:bg-cream focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-moss">
+              Review the landing page
+            </a>
+            <a href="#features" class="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-moss">
+              See the feature set
+            </a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="border-t border-black/5 bg-white/60">
+  <footer class="border-t border-black/5 bg-cream/80">
     <div class="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
-      <div class="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+      <div class="grid gap-8 md:grid-cols-[1fr_auto] md:items-start">
         <div>
-          <div class="flex items-center gap-3 font-semibold text-ink">
-            <span class="flex h-9 w-9 items-center justify-center rounded-full bg-moss text-white">LB</span>
-            <span>Last Bite</span>
+          <div class="flex items-center gap-3 font-semibold tracking-tight text-ink">
+            <span class="flex h-9 w-9 items-center justify-center rounded-full bg-moss text-sm font-bold text-white">LB</span>
+            <span class="text-lg">Last Bite</span>
           </div>
-          <p class="mt-3 max-w-md text-sm leading-6 text-ink/68">A marketplace for restaurants, nearby customers, and pickup partners to keep good food moving instead of going to waste.</p>
+          <p class="mt-3 max-w-2xl text-sm leading-6 text-ink/65">
+            A marketplace that helps restaurants sell end-of-day surplus food at a discount while giving local customers a reliable way to reserve affordable meals nearby.
+          </p>
+          <p class="mt-4 text-sm text-ink/60">© <span id="year"></span> Last Bite. All rights reserved.</p>
+          <p class="mt-2 text-sm text-ink/60">Photos from <a class="font-medium text-moss underline decoration-moss/30 underline-offset-2 hover:text-ink" href="https://unsplash.com" target="_blank" rel="noreferrer">Unsplash</a>.</p>
+          <p class="mt-2 text-sm text-ink/60">Hero photo by <a class="font-medium text-moss underline decoration-moss/30 underline-offset-2 hover:text-ink" href="https://unsplash.com/@foodjetsexpress" target="_blank" rel="noreferrer">logan jeffrey</a> on <a class="font-medium text-moss underline decoration-moss/30 underline-offset-2 hover:text-ink" href="https://unsplash.com/photos/man-putting-cup-into-brown-bag-M335gwTgomo" target="_blank" rel="noreferrer">Unsplash</a>; second hero photo by <a class="font-medium text-moss underline decoration-moss/30 underline-offset-2 hover:text-ink" href="https://unsplash.com/@wolfart32" target="_blank" rel="noreferrer">Rodrigo Rodrigues | WOLF Λ RT</a> on <a class="font-medium text-moss underline decoration-moss/30 underline-offset-2 hover:text-ink" href="https://unsplash.com/photos/hand-holding-smartphone-displaying-food-ordering-app-UL37FlWpyus" target="_blank" rel="noreferrer">Unsplash</a>; persona image by <a class="font-medium text-moss underline decoration-moss/30 underline-offset-2 hover:text-ink" href="https://unsplash.com/photos/man-holding-plate-of-food-on-a-city-street-fkrix4pi9ug" target="_blank" rel="noreferrer">sander traa</a> on <a class="font-medium text-moss underline decoration-moss/30 underline-offset-2 hover:text-ink" href="https://unsplash.com" target="_blank" rel="noreferrer">Unsplash</a>.</p>
+          <p class="mt-2 text-sm text-ink/60">Built with LaunchMind.</p>
         </div>
-        <div class="flex flex-wrap gap-x-8 gap-y-3 text-sm font-medium text-ink/70">
-          <a href="#features" class="hover:text-ink focus:outline-none focus:ring-2 focus:ring-amber rounded">Features</a>
-          <a href="#personas" class="hover:text-ink focus:outline-none focus:ring-2 focus:ring-amber rounded">Personas</a>
-          <a href="#cta" class="hover:text-ink focus:outline-none focus:ring-2 focus:ring-amber rounded">Contact</a>
+        <div class="grid gap-3 text-sm font-medium text-ink/70 sm:grid-cols-3 md:grid-cols-1">
+          <a href="#features" class="transition hover:text-ink">Features</a>
+          <a href="#personas" class="transition hover:text-ink">Personas</a>
+          <a href="#cta" class="transition hover:text-ink">Call to action</a>
         </div>
-      </div>
-      <div class="mt-8 border-t border-black/5 pt-6 text-sm text-ink/60">
-        <p>© 2025 Last Bite. Photos from <a class="underline decoration-amber decoration-2 underline-offset-2 hover:text-ink" href="https://unsplash.com">Unsplash</a>.</p>
-        <p class="mt-2">Photo credits: <a class="underline decoration-amber decoration-2 underline-offset-2 hover:text-ink" href="https://unsplash.com/@foodjetsexpress">logan jeffrey</a> via <a class="underline decoration-amber decoration-2 underline-offset-2 hover:text-ink" href="https://unsplash.com/photos/man-putting-cup-into-brown-bag-M335gwTgomo">Unsplash photo</a>; <a class="underline decoration-amber decoration-2 underline-offset-2 hover:text-ink" href="https://unsplash.com/@matthewjungling">Matthew Jungling</a> via <a class="underline decoration-amber decoration-2 underline-offset-2 hover:text-ink" href="https://unsplash.com/photos/a-sign-hanging-from-the-ceiling-of-a-restaurant-zMAT-Vx6O8g">Unsplash photo</a>.</p>
-        <p class="mt-2">Built with LaunchMind.</p>
       </div>
     </div>
   </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
