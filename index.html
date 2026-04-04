@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LedgerFlow — Polite invoice reminders for freelancers</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: rgba(15, 23, 42, 0.72);
+      --card: rgba(255, 255, 255, 0.08);
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-2: #22c55e;
+      --border: rgba(148, 163, 184, 0.22);
+      --shadow: 0 24px 80px rgba(2, 6, 23, 0.45);
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.22), transparent 30%),
+        radial-gradient(circle at top right, rgba(34, 197, 94, 0.16), transparent 28%),
+        linear-gradient(180deg, #020617 0%, #0f172a 55%, #111827 100%);
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 56px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 56px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 12px 30px rgba(56, 189, 248, 0.3);
+      color: #00111f;
+      font-weight: 900;
+    }
+
+    .nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      margin-bottom: 18px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      color: #cbd5e1;
+      font-size: 0.92rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.8rem, 6vw, 5.6rem);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      max-width: 11ch;
+    }
+
+    .subheadline {
+      margin: 22px 0 30px;
+      max-width: 58ch;
+      font-size: 1.12rem;
+      line-height: 1.7;
+      color: #cbd5e1;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border-radius: 14px;
+      border: 1px solid transparent;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn-primary {
+      color: #00111f;
+      background: linear-gradient(135deg, #7dd3fc, #34d399);
+      box-shadow: 0 18px 36px rgba(52, 211, 153, 0.2);
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.04);
+      border-color: var(--border);
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .hero-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+    }
+
+    .status-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .mini-card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .mini-card h3, .section h2 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .mini-card p, .section p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .section {
+      margin-top: 72px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: end;
+      margin-bottom: 22px;
+    }
+
+    .section-header p {
+      max-width: 60ch;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .feature {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 16px 50px rgba(2, 6, 23, 0.25);
+    }
+
+    .feature .priority {
+      display: inline-flex;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      margin-bottom: 14px;
+      background: rgba(56, 189, 248, 0.14);
+      color: #bae6fd;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+    }
+
+    .feature h3 { margin-bottom: 10px; font-size: 1.08rem; }
+
+    .persona-band {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .persona {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+    }
+
+    .persona strong { display: block; margin-bottom: 8px; }
+
+    .cta-panel {
+      margin-top: 72px;
+      padding: 28px;
+      border-radius: 26px;
+      border: 1px solid rgba(125, 211, 252, 0.2);
+      background: linear-gradient(135deg, rgba(14, 165, 233, 0.16), rgba(34, 197, 94, 0.14));
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-panel p { max-width: 58ch; }
+
+    .footer {
+      margin-top: 34px;
+      color: #64748b;
+      font-size: 0.92rem;
+      text-align: center;
+    }
+
+    @media (max-width: 920px) {
+      .hero, .features, .persona-band, .cta-panel, .section-header, .nav {
+        grid-template-columns: 1fr;
+        display: grid;
+      }
+
+      .hero-card { order: -1; }
+      h1 { max-width: none; }
+      .section-header, .cta-panel, .nav { align-items: start; }
+      .status-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .container { width: min(100% - 22px, 1120px); padding-top: 18px; }
+      h1 { font-size: 2.8rem; }
+      .subheadline { font-size: 1rem; }
+      .btn { width: 100%; }
+      .actions { flex-direction: column; align-items: stretch; }
+      .cta-panel { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="nav">
+      <div class="brand">
+        <div class="logo">L</div>
+        <div>
+          LedgerFlow
+          <div style="color: var(--muted); font-weight: 500; font-size: 0.9rem;">Polite invoice follow-ups</div>
+        </div>
+      </div>
+      <a href="#features">Features</a>
+    </header>
+
+    <main class="hero">
+      <section>
+        <div class="eyebrow">Less awkward chasing. Faster payments.</div>
+        <h1>Track unpaid invoices and send reminders that feel professional.</h1>
+        <p class="subheadline">
+          LedgerFlow helps freelancers, contractors, and small studio owners keep every invoice visible,
+          detect overdue risk early, and automatically send timely reminders so cash flow stays healthy
+          without the manual follow-up.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#cta">Start tracking invoices</a>
+          <a class="btn btn-secondary" href="#features">See how it works</a>
+        </div>
+      </section>
+
+      <aside class="hero-card" aria-label="Invoice dashboard preview">
+        <h2 style="margin-top:0;">Invoice Dashboard</h2>
+        <p>Centralize due dates, amounts, client names, and payment status in one calm workspace.</p>
+        <div class="status-grid">
+          <div class="mini-card">
+            <h3>Due soon</h3>
+            <p>3 invoices approaching net-30</p>
+          </div>
+          <div class="mini-card">
+            <h3>Overdue</h3>
+            <p>2 invoices flagged for follow-up</p>
+          </div>
+          <div class="mini-card">
+            <h3>Reminders</h3>
+            <p>Scheduled before and after due dates</p>
+          </div>
+          <div class="mini-card">
+            <h3>Status</h3>
+            <p>Auto-pauses when marked paid</p>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <section class="section" id="features">
+      <div class="section-header">
+        <div>
+          <h2>Built for the way independent work gets paid</h2>
+          <p>Everything needed to track, remind, escalate, and protect your time while keeping client communication polite and consistent.</p>
+        </div>
+      </div>
+
+      <div class="features">
+        <article class="feature">
+          <div class="priority">Priority 1</div>
+          <h3>Invoice Tracking Dashboard</h3>
+          <p>See all unpaid invoices in one place with due dates, amounts, client names, and current payment status.</p>
+        </article>
+        <article class="feature">
+          <div class="priority">Priority 2</div>
+          <h3>Overdue Detection</h3>
+          <p>Automatically flag invoices nearing their due date or past due, with aging buckets that reveal cash-flow risk.</p>
+        </article>
+        <article class="feature">
+          <div class="priority">Priority 3</div>
+          <h3>Reminder Scheduling</h3>
+          <p>Define reminders before and after the due date, including repeat cadence for steady, timely follow-up.</p>
+        </article>
+        <article class="feature">
+          <div class="priority">Priority 4</div>
+          <h3>Polite Reminder Templates</h3>
+          <p>Customize first notice, follow-up, and final reminder emails so every message stays courteous and on-brand.</p>
+        </article>
+        <article class="feature">
+          <div class="priority">Priority 5</div>
+          <h3>Escalation and Payment Pause Rules</h3>
+          <p>Escalate late invoices through a clear path and automatically stop reminders once payment is received.</p>
+        </article>
+        <article class="feature">
+          <div class="priority">For your workflow</div>
+          <h3>Simple enough to keep up with</h3>
+          <p>Designed for solo freelancers, contractors, and small studio owners who need visibility without another complicated system.</p>
+        </article>
+      </div>
+
+      <div class="persona-band">
+        <div class="persona">
+          <strong>Solo Freelancer</strong>
+          <span style="color: var(--muted);">Track a handful of clients without manually chasing due dates or losing focus.</span>
+        </div>
+        <div class="persona">
+          <strong>Small Studio Owner</strong>
+          <span style="color: var(--muted);">Standardize reminders across multiple projects and keep collections consistent.</span>
+        </div>
+        <div class="persona">
+          <strong>Contractor</strong>
+          <span style="color: var(--muted);">Spot overdue invoices early and escalate politely when clients delay payment.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-panel" id="cta">
+      <div>
+        <h2 style="margin:0 0 10px;">Get paid faster without the awkward follow-up.</h2>
+        <p>Start with a clear invoice tracker, then automate reminders that keep conversations professional and payments moving.</p>
+      </div>
+      <a class="btn btn-primary" href="#">Launch LedgerFlow</a>
+    </section>
+
+    <p class="footer">Reliable invoice reminders for freelancers who want less admin and better cash flow.</p>
+  </div>
+</body>
+</html>
