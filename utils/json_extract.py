@@ -1,5 +1,3 @@
-"""Extract JSON objects from LLM output."""
-
 from __future__ import annotations
 
 import json

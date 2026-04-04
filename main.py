@@ -1,5 +1,3 @@
-"""LaunchMind: FastAPI job API + synchronous CLI demo (`python main.py`)."""
-
 from __future__ import annotations
 
 import sys

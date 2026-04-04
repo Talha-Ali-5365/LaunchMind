@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import json
+import logging
 from uuid import uuid4
 
 from langchain_core.tools import StructuredTool
@@ -9,6 +11,9 @@ from langchain_core.tools import StructuredTool
 from agents.engineer_context import EngineerContext
 from core.settings import Settings
 from services.github_service import GitHubService
+from services.unsplash_service import search_photos
+
+logger = logging.getLogger(__name__)
 
 
 class EngineerToolkit:
@@ -80,6 +85,44 @@ class EngineerToolkit:
         self._ctx.last_html = full_html
         return "uploaded index.html"
 
+    def search_unsplash_photos(self, query: str, count: int = 4) -> str:
+        """Search Unsplash for photos matching a theme; returns JSON with URLs and attribution.
+
+        Requires ``UNSPLASH_ACCESS_KEY`` in settings. Use 1–2 searches derived from the
+        product spec (e.g. industry + audience) before building HTML, then embed ``url``
+        values in ``<img src=...>`` and credit photographers in the footer.
+
+        Args:
+            query: Search string (e.g. ``modern restaurant interior``, ``laptop workspace``).
+            count: Number of images to return (1–10).
+
+        Returns:
+            JSON string: ``images`` list with ``url``, ``alt_suggestion``, ``photographer``,
+            ``photographer_url``, ``photo_page``; or an ``error`` / ``hint`` if misconfigured.
+        """
+        key = (self._settings.unsplash_access_key or "").strip()
+        if not key:
+            return json.dumps(
+                {
+                    "error": "missing_unsplash_access_key",
+                    "hint": "Set UNSPLASH_ACCESS_KEY in .env, or use static Unsplash URLs from your instructions.",
+                },
+            )
+        try:
+            n = max(1, min(int(count), 10))
+        except (TypeError, ValueError):
+            n = 4
+        try:
+            rows = search_photos(self._settings, query=query.strip(), per_page=n)
+        except Exception as e:
+            logger.warning("Unsplash search failed: %s", e)
+            return json.dumps({"error": str(e), "query": query.strip()})
+        if not rows:
+            return json.dumps(
+                {"query": query.strip(), "images": [], "note": "no_results"},
+            )
+        return json.dumps({"query": query.strip(), "images": rows}, indent=2)
+
     def open_pull_request(self, title: str, body: str) -> str:
         """Open a pull request from the engineer branch to the default branch.
 
@@ -126,6 +169,15 @@ def build_engineer_structured_tools(toolkit: EngineerToolkit) -> list[Structured
             func=toolkit.create_engineer_branch,
             name="create_engineer_branch",
             description="Create a new branch from the repo default branch for agent work.",
+        ),
+        StructuredTool.from_function(
+            func=toolkit.search_unsplash_photos,
+            name="search_unsplash_photos",
+            description=(
+                "Search Unsplash for photo URLs and attribution (needs UNSPLASH_ACCESS_KEY). "
+                "Call with keywords from the product spec before upload_landing_html; embed "
+                "returned url values in img tags and credit photographers in the footer."
+            ),
         ),
         StructuredTool.from_function(
             func=toolkit.upload_landing_html,

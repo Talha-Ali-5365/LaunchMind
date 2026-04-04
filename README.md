@@ -18,7 +18,7 @@ Built with **FastAPI**, **LangChain Deep Agents** ([quickstart](https://docs.lan
 | `services/pipeline.py` | Phase machine (ordering + CEO reviews) |
 | `services/jobs.py` | In-memory job store |
 | `services/run_log.py` | Per-run ``output/<id>/`` bundle (log, links, ``index.html``) |
-| `services/github_service.py`, `slack_service.py`, `email_service.py` | Integrations |
+| `services/github_service.py`, `slack_service.py`, `email_service.py`, `unsplash_service.py` | Integrations |
 | `agents/` | One Deep Agent builder per role |
 | `prompts/` | Prompt strings only |
 
@@ -41,6 +41,8 @@ pip install -e .
 5. **Slack**: Bot token with `chat:write`, `channels:read`, `channels:join`; channel `#launches`; invite the bot.
 
 6. **Resend**: API key; with `onboarding@resend.dev`, **`TO_EMAIL` must be the same address as your Resend account** (testing restriction). To mail arbitrary inboxes, [verify a domain](https://resend.com/domains) and set `FROM_EMAIL` to an address on that domain.
+
+7. **Unsplash** (optional, for engineer landing imagery): [Create an application](https://unsplash.com/oauth/applications), copy the **Access Key** into `UNSPLASH_ACCESS_KEY`. The engineer agent calls `search_unsplash_photos`; without a key it falls back to fixed reference URLs in the prompt. `UNSPLASH_SECRET_KEY` and `UNSPLASH_APPLICATION_ID` are optional (dashboard metadata / future OAuth).
 
 ## Run
 
@@ -66,4 +68,5 @@ curl -s http://127.0.0.1:8000/runs/<job_id>
 |----------|----------------|
 | GitHub | Issue “Initial landing page”, branch, `index.html` commit, open PR; QA inline comments on HTML |
 | Slack | Marketing launch blocks; CEO final summary |
-| Resend | Cold outreach to `TO_EMAIL` (test inbox only) |
+| Resend | Cold outreach to `TO_EMAIL`  |
+| Unsplash | Engineer searches photos by query; hotlinks + attribution in HTML |
