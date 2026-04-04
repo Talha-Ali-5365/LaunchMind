@@ -6,15 +6,17 @@
   <title>LedgerFlow — Polite invoice reminders for freelancers</title>
   <style>
     :root {
-      --bg: #0f172a;
-      --panel: rgba(15, 23, 42, 0.72);
-      --card: rgba(255, 255, 255, 0.08);
-      --text: #e2e8f0;
-      --muted: #94a3b8;
-      --accent: #38bdf8;
-      --accent-2: #22c55e;
-      --border: rgba(148, 163, 184, 0.22);
-      --shadow: 0 24px 80px rgba(2, 6, 23, 0.45);
+      --bg: #07111f;
+      --bg-2: #0b1730;
+      --panel: rgba(10, 18, 35, 0.72);
+      --card: rgba(255, 255, 255, 0.06);
+      --text: #e5eefb;
+      --muted: #9fb1ca;
+      --accent: #74d3ff;
+      --accent-2: #7cf0c5;
+      --accent-3: #f6c56b;
+      --border: rgba(159, 177, 202, 0.18);
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
     }
 
     * { box-sizing: border-box; }
@@ -25,15 +27,18 @@
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(56, 189, 248, 0.22), transparent 30%),
-        radial-gradient(circle at top right, rgba(34, 197, 94, 0.16), transparent 28%),
-        linear-gradient(180deg, #020617 0%, #0f172a 55%, #111827 100%);
+        radial-gradient(circle at 18% 18%, rgba(116, 211, 255, 0.18), transparent 24%),
+        radial-gradient(circle at 82% 12%, rgba(124, 240, 197, 0.13), transparent 26%),
+        radial-gradient(circle at 50% 100%, rgba(246, 197, 107, 0.11), transparent 28%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 54%, #09101d 100%);
     }
 
+    a { color: inherit; }
+
     .container {
-      width: min(1120px, calc(100% - 32px));
+      width: min(1160px, calc(100% - 32px));
       margin: 0 auto;
-      padding: 28px 0 56px;
+      padding: 28px 0 54px;
     }
 
     .nav {
@@ -41,38 +46,45 @@
       justify-content: space-between;
       align-items: center;
       gap: 16px;
-      margin-bottom: 56px;
+      margin-bottom: 54px;
     }
 
     .brand {
       display: flex;
       align-items: center;
       gap: 12px;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 0.01em;
     }
 
     .logo {
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
       border-radius: 14px;
       display: grid;
       place-items: center;
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      box-shadow: 0 12px 30px rgba(56, 189, 248, 0.3);
-      color: #00111f;
+      color: #03111f;
+      box-shadow: 0 14px 30px rgba(116, 211, 255, 0.22);
       font-weight: 900;
     }
 
-    .nav a {
+    .brand small {
+      display: block;
       color: var(--muted);
+      font-weight: 500;
+      margin-top: 2px;
+    }
+
+    .nav a {
       text-decoration: none;
+      color: var(--muted);
       font-size: 0.95rem;
     }
 
     .hero {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: 1.08fr 0.92fr;
       gap: 28px;
       align-items: center;
     }
@@ -86,24 +98,24 @@
       border: 1px solid var(--border);
       border-radius: 999px;
       background: rgba(255, 255, 255, 0.04);
-      color: #cbd5e1;
+      color: #d6e4f3;
       font-size: 0.92rem;
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(2.8rem, 6vw, 5.6rem);
+      font-size: clamp(3rem, 6vw, 5.7rem);
       line-height: 0.95;
-      letter-spacing: -0.05em;
+      letter-spacing: -0.055em;
       max-width: 11ch;
     }
 
     .subheadline {
       margin: 22px 0 30px;
-      max-width: 58ch;
+      max-width: 60ch;
       font-size: 1.12rem;
-      line-height: 1.7;
-      color: #cbd5e1;
+      line-height: 1.72;
+      color: #c5d4e6;
     }
 
     .actions {
@@ -122,13 +134,15 @@
       border: 1px solid transparent;
       text-decoration: none;
       font-weight: 700;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
     }
 
+    .btn:hover { transform: translateY(-1px); }
+
     .btn-primary {
-      color: #00111f;
-      background: linear-gradient(135deg, #7dd3fc, #34d399);
-      box-shadow: 0 18px 36px rgba(52, 211, 153, 0.2);
+      color: #04111d;
+      background: linear-gradient(135deg, #82dbff, #7cf0c5);
+      box-shadow: 0 18px 36px rgba(124, 240, 197, 0.18);
     }
 
     .btn-secondary {
@@ -137,15 +151,34 @@
       border-color: var(--border);
     }
 
-    .btn:hover { transform: translateY(-1px); }
-
     .hero-card {
       background: var(--panel);
       border: 1px solid var(--border);
-      border-radius: 24px;
+      border-radius: 26px;
       padding: 22px;
       box-shadow: var(--shadow);
       backdrop-filter: blur(16px);
+    }
+
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(124, 240, 197, 0.22);
+      background: rgba(124, 240, 197, 0.08);
+      color: #c9f8e9;
+      font-size: 0.82rem;
+      font-weight: 700;
     }
 
     .status-grid {
@@ -157,24 +190,31 @@
 
     .mini-card {
       background: var(--card);
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 18px;
       padding: 16px;
     }
 
-    .mini-card h3, .section h2 {
+    .mini-card h3,
+    .section h2,
+    .feature h3,
+    .persona strong,
+    .cta-panel h2 {
       margin: 0 0 8px;
-      font-size: 1rem;
     }
 
-    .mini-card p, .section p {
+    .mini-card p,
+    .section p,
+    .feature p,
+    .persona p,
+    .cta-panel p {
       margin: 0;
       color: var(--muted);
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     .section {
-      margin-top: 72px;
+      margin-top: 74px;
     }
 
     .section-header {
@@ -185,9 +225,7 @@
       margin-bottom: 22px;
     }
 
-    .section-header p {
-      max-width: 60ch;
-    }
+    .section-header p { max-width: 66ch; }
 
     .features {
       display: grid;
@@ -200,7 +238,7 @@
       border: 1px solid var(--border);
       border-radius: 22px;
       padding: 22px;
-      box-shadow: 0 16px 50px rgba(2, 6, 23, 0.25);
+      box-shadow: 0 16px 50px rgba(0, 0, 0, 0.2);
     }
 
     .feature .priority {
@@ -209,15 +247,13 @@
       border-radius: 999px;
       font-size: 0.82rem;
       margin-bottom: 14px;
-      background: rgba(56, 189, 248, 0.14);
-      color: #bae6fd;
-      border: 1px solid rgba(56, 189, 248, 0.2);
+      background: rgba(116, 211, 255, 0.12);
+      color: #caecff;
+      border: 1px solid rgba(116, 211, 255, 0.18);
     }
 
-    .feature h3 { margin-bottom: 10px; font-size: 1.08rem; }
-
     .persona-band {
-      margin-top: 22px;
+      margin-top: 20px;
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 14px;
@@ -226,18 +262,20 @@
     .persona {
       padding: 18px;
       border-radius: 18px;
-      background: rgba(15, 23, 42, 0.65);
-      border: 1px solid rgba(148, 163, 184, 0.18);
+      background: rgba(12, 21, 40, 0.72);
+      border: 1px solid rgba(159, 177, 202, 0.16);
     }
 
-    .persona strong { display: block; margin-bottom: 8px; }
+    .persona strong { display: block; }
+
+    .persona span { display: block; margin-top: 8px; color: var(--muted); line-height: 1.6; }
 
     .cta-panel {
-      margin-top: 72px;
+      margin-top: 74px;
       padding: 28px;
       border-radius: 26px;
-      border: 1px solid rgba(125, 211, 252, 0.2);
-      background: linear-gradient(135deg, rgba(14, 165, 233, 0.16), rgba(34, 197, 94, 0.14));
+      border: 1px solid rgba(124, 240, 197, 0.18);
+      background: linear-gradient(135deg, rgba(116, 211, 255, 0.14), rgba(124, 240, 197, 0.12));
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -245,17 +283,22 @@
       box-shadow: var(--shadow);
     }
 
-    .cta-panel p { max-width: 58ch; }
+    .cta-panel p { max-width: 60ch; }
 
     .footer {
       margin-top: 34px;
-      color: #64748b;
+      color: #7488a3;
       font-size: 0.92rem;
       text-align: center;
     }
 
-    @media (max-width: 920px) {
-      .hero, .features, .persona-band, .cta-panel, .section-header, .nav {
+    @media (max-width: 980px) {
+      .hero,
+      .features,
+      .persona-band,
+      .cta-panel,
+      .section-header,
+      .nav {
         grid-template-columns: 1fr;
         display: grid;
       }
@@ -267,11 +310,11 @@
     }
 
     @media (max-width: 640px) {
-      .container { width: min(100% - 22px, 1120px); padding-top: 18px; }
-      h1 { font-size: 2.8rem; }
+      .container { width: min(100% - 22px, 1160px); padding-top: 18px; }
+      h1 { font-size: 2.85rem; }
       .subheadline { font-size: 1rem; }
-      .btn { width: 100%; }
       .actions { flex-direction: column; align-items: stretch; }
+      .btn { width: 100%; }
       .cta-panel { padding: 22px; }
     }
   </style>
@@ -279,11 +322,11 @@
 <body>
   <div class="container">
     <header class="nav">
-      <div class="brand">
+      <div class="brand" aria-label="LedgerFlow home">
         <div class="logo">L</div>
         <div>
           LedgerFlow
-          <div style="color: var(--muted); font-weight: 500; font-size: 0.9rem;">Polite invoice follow-ups</div>
+          <small>Polite invoice follow-ups, automatically</small>
         </div>
       </div>
       <a href="#features">Features</a>
@@ -292,11 +335,11 @@
     <main class="hero">
       <section>
         <div class="eyebrow">Less awkward chasing. Faster payments.</div>
-        <h1>Track unpaid invoices and send reminders that feel professional.</h1>
+        <h1>Track unpaid invoices and send reminders that stay professional.</h1>
         <p class="subheadline">
           LedgerFlow helps freelancers, contractors, and small studio owners keep every invoice visible,
-          detect overdue risk early, and automatically send timely reminders so cash flow stays healthy
-          without the manual follow-up.
+          spot overdue risk early, and automatically send timely reminders so cash flow stays healthy
+          without manual follow-up.
         </p>
         <div class="actions">
           <a class="btn btn-primary" href="#cta">Start tracking invoices</a>
@@ -305,8 +348,11 @@
       </section>
 
       <aside class="hero-card" aria-label="Invoice dashboard preview">
-        <h2 style="margin-top:0;">Invoice Dashboard</h2>
-        <p>Centralize due dates, amounts, client names, and payment status in one calm workspace.</p>
+        <div class="hero-card-header">
+          <h2 style="margin: 0;">Invoice Dashboard</h2>
+          <span class="pill">Live risk view</span>
+        </div>
+        <p>Centralize due dates, amounts, client names, payment status, and reminder timing in one calm workspace.</p>
         <div class="status-grid">
           <div class="mini-card">
             <h3>Due soon</h3>
@@ -332,7 +378,9 @@
       <div class="section-header">
         <div>
           <h2>Built for the way independent work gets paid</h2>
-          <p>Everything needed to track, remind, escalate, and protect your time while keeping client communication polite and consistent.</p>
+          <p>
+            A focused workflow for tracking, detecting, reminding, escalating, and stopping notifications once invoices are paid.
+          </p>
         </div>
       </div>
 
@@ -340,17 +388,17 @@
         <article class="feature">
           <div class="priority">Priority 1</div>
           <h3>Invoice Tracking Dashboard</h3>
-          <p>See all unpaid invoices in one place with due dates, amounts, client names, and current payment status.</p>
+          <p>View all unpaid invoices in one place with due dates, amounts, client names, and current payment status.</p>
         </article>
         <article class="feature">
           <div class="priority">Priority 2</div>
           <h3>Overdue Detection</h3>
-          <p>Automatically flag invoices nearing their due date or past due, with aging buckets that reveal cash-flow risk.</p>
+          <p>Automatically flag invoices nearing due date or past due and highlight cash-flow risk by aging bucket.</p>
         </article>
         <article class="feature">
           <div class="priority">Priority 3</div>
           <h3>Reminder Scheduling</h3>
-          <p>Define reminders before and after the due date, including repeat cadence for steady, timely follow-up.</p>
+          <p>Define reminders before and after the due date, including repeat cadence for steady follow-up.</p>
         </article>
         <article class="feature">
           <div class="priority">Priority 4</div>
@@ -360,34 +408,34 @@
         <article class="feature">
           <div class="priority">Priority 5</div>
           <h3>Escalation and Payment Pause Rules</h3>
-          <p>Escalate late invoices through a clear path and automatically stop reminders once payment is received.</p>
+          <p>Escalate late invoices through a clear path and automatically stop reminders once an invoice is marked paid.</p>
         </article>
         <article class="feature">
-          <div class="priority">For your workflow</div>
+          <div class="priority">For freelancers</div>
           <h3>Simple enough to keep up with</h3>
           <p>Designed for solo freelancers, contractors, and small studio owners who need visibility without another complicated system.</p>
         </article>
       </div>
 
-      <div class="persona-band">
+      <div class="persona-band" aria-label="Primary users">
         <div class="persona">
           <strong>Solo Freelancer</strong>
-          <span style="color: var(--muted);">Track a handful of clients without manually chasing due dates or losing focus.</span>
+          <span>Track a handful of clients without manually chasing due dates or losing focus.</span>
         </div>
         <div class="persona">
           <strong>Small Studio Owner</strong>
-          <span style="color: var(--muted);">Standardize reminders across multiple projects and keep collections consistent.</span>
+          <span>Standardize reminders across multiple projects and keep collections consistent.</span>
         </div>
         <div class="persona">
           <strong>Contractor</strong>
-          <span style="color: var(--muted);">Spot overdue invoices early and escalate politely when clients delay payment.</span>
+          <span>Spot overdue invoices early and escalate politely when clients delay payment.</span>
         </div>
       </div>
     </section>
 
     <section class="cta-panel" id="cta">
       <div>
-        <h2 style="margin:0 0 10px;">Get paid faster without the awkward follow-up.</h2>
+        <h2 style="margin: 0 0 10px;">Get paid faster without the awkward follow-up.</h2>
         <p>Start with a clear invoice tracker, then automate reminders that keep conversations professional and payments moving.</p>
       </div>
       <a class="btn btn-primary" href="#">Launch LedgerFlow</a>
