@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Closing Time — Surplus Meals Marketplace</title>
+  <meta name="description" content="Discover discounted end-of-day restaurant meals and help restaurants sell surplus food before closing." />
+  <style>
+    :root {
+      --bg: #07111f;
+      --panel: rgba(255, 255, 255, 0.08);
+      --panel-strong: rgba(255, 255, 255, 0.12);
+      --text: #eef4ff;
+      --muted: #b7c4df;
+      --brand: #6ee7b7;
+      --brand-2: #60a5fa;
+      --accent: #fbbf24;
+      --danger: #fb7185;
+      --line: rgba(255, 255, 255, 0.12);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(96, 165, 250, 0.28), transparent 32%),
+        radial-gradient(circle at top right, rgba(110, 231, 183, 0.22), transparent 30%),
+        radial-gradient(circle at bottom center, rgba(251, 191, 36, 0.12), transparent 24%),
+        linear-gradient(180deg, #091120 0%, #07111f 100%);
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 0;
+      gap: 16px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      color: #05111b;
+      box-shadow: 0 12px 30px rgba(96, 165, 250, 0.3);
+      font-size: 1.05rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      color: var(--muted);
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .hero {
+      padding: 52px 0 32px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      line-height: 0.96;
+      letter-spacing: -0.05em;
+      max-width: 12ch;
+    }
+
+    .subheadline {
+      margin: 22px 0 0;
+      max-width: 58ch;
+      font-size: 1.08rem;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 20px;
+      border-radius: 14px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      color: #031018;
+      box-shadow: 0 16px 35px rgba(96, 165, 250, 0.28);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: var(--line);
+      color: var(--text);
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.07));
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 18px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.4rem;
+      margin-bottom: 6px;
+    }
+
+    .stat span { color: var(--muted); font-size: 0.95rem; line-height: 1.5; }
+
+    .section {
+      padding: 28px 0 12px;
+    }
+
+    .section h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      margin: 0 0 12px;
+      letter-spacing: -0.03em;
+    }
+
+    .section p.lead {
+      color: var(--muted);
+      margin: 0 0 22px;
+      max-width: 72ch;
+      line-height: 1.7;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+      backdrop-filter: blur(14px);
+    }
+
+    .card h3 {
+      margin: 12px 0 8px;
+      font-size: 1.15rem;
+    }
+
+    .card p { margin: 0; color: var(--muted); line-height: 1.65; }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--line);
+      color: var(--text);
+      font-size: 0.84rem;
+      font-weight: 600;
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .feature-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 20px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--line);
+    }
+
+    .feature-index {
+      width: 40px;
+      height: 40px;
+      flex: 0 0 40px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(110, 231, 183, 0.22), rgba(96, 165, 250, 0.24));
+      border: 1px solid rgba(255,255,255,0.12);
+      color: var(--text);
+      font-weight: 800;
+    }
+
+    .feature-item h3 { margin: 2px 0 7px; }
+    .feature-item p { margin: 0; color: var(--muted); line-height: 1.65; }
+
+    .cta-band {
+      margin: 30px 0 50px;
+      border-radius: 30px;
+      padding: 28px;
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, rgba(96, 165, 250, 0.16), rgba(110, 231, 183, 0.14));
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .cta-band p { margin: 8px 0 0; color: var(--muted); line-height: 1.6; max-width: 70ch; }
+
+    footer {
+      padding: 6px 0 28px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero, .cards, .feature-list, .cta-band { grid-template-columns: 1fr; display: grid; }
+      .nav { flex-direction: column; align-items: flex-start; }
+      .nav-links { justify-content: flex-start; }
+      .hero { padding-top: 24px; }
+      h1 { max-width: none; }
+    }
+
+    @media (max-width: 640px) {
+      .container { width: min(100% - 24px, 1120px); }
+      .stat-grid { grid-template-columns: 1fr; }
+      .card, .feature-item, .cta-band, .hero-card { border-radius: 22px; }
+      .btn { width: 100%; }
+      .cta-row { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header class="container">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="#top">
+        <span class="brand-mark">🍽️</span>
+        <span>Closing Time</span>
+      </a>
+      <div class="nav-links">
+        <a href="#who-it-serves">Who it serves</a>
+        <a href="#features">Features</a>
+        <a href="#trust">Trust & safety</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top" class="container">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Discounted end-of-day meals, made simple for diners and restaurants</div>
+        <h1>Turn surplus food into savings before closing.</h1>
+        <p class="subheadline">
+          Closing Time is a marketplace for nearby discounted restaurant meals. Diners discover reliable last-minute offers,
+          while restaurants post surplus inventory quickly, reduce waste, and avoid late-night confusion with clear pickup windows,
+          auto-expiry, and safety-minded disclosures.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#features">Explore nearby deals</a>
+          <a class="btn btn-secondary" href="#who-it-serves">See how it works</a>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="Marketplace highlights">
+        <div class="stat-grid">
+          <div class="stat">
+            <strong>Nearby savings</strong>
+            <span>Sorted by proximity, discount, and pickup time.</span>
+          </div>
+          <div class="stat">
+            <strong>Fast posting</strong>
+            <span>Templates help restaurants list surplus in seconds.</span>
+          </div>
+          <div class="stat">
+            <strong>Auto-expiring offers</strong>
+            <span>Only valid listings remain visible to diners.</span>
+          </div>
+          <div class="stat">
+            <strong>Trust signals</strong>
+            <span>Safety, allergen, and accuracy details are always visible.</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="who-it-serves" class="section">
+      <h2>Built for three key audiences</h2>
+      <p class="lead">
+        The experience balances affordability, operational speed, and confidence so the marketplace works for both sides of the transaction.
+      </p>
+      <div class="cards">
+        <article class="card">
+          <span class="pill">Budget-Conscious Diner</span>
+          <h3>Find cheap food nearby without the guesswork.</h3>
+          <p>Browse trustworthy last-minute options with clear pickup windows, visible savings, and a simple path to claim an affordable meal before closing.</p>
+        </article>
+        <article class="card">
+          <span class="pill">Restaurant Manager</span>
+          <h3>Post surplus inventory in a few taps.</h3>
+          <p>List remaining meals, set quantity and pricing, and use preset templates to update closing-time availability quickly and consistently.</p>
+        </article>
+        <article class="card">
+          <span class="pill">Safety-Minded Customer</span>
+          <h3>Buy with confidence and clear expectations.</h3>
+          <p>See freshness, allergen, handling, and cancellation details upfront so you can make an informed choice and pick up on time.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <h2>Core product features</h2>
+      <p class="lead">
+        The landing page reflects the product spec with a strong marketplace focus, operational tools for restaurants, and trust mechanisms for reliable end-of-day ordering.
+      </p>
+      <div class="feature-list">
+        <div class="feature-item">
+          <div class="feature-index">1</div>
+          <div>
+            <h3>Discounted Surplus Marketplace</h3>
+            <p>Surface nearby restaurants with unsold meals at a discount, ranked by proximity, savings, and pickup time for fast decision-making.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-index">2</div>
+          <div>
+            <h3>Restaurant Inventory Posting</h3>
+            <p>Let restaurants quickly publish surplus items, quantities, prices, and pickup windows with templates designed for closing-time speed.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-index">3</div>
+          <div>
+            <h3>Closing-Time Rules and Auto-Expiry</h3>
+            <p>Enforce cutoff times and pickup limits so only valid offers are shown and restaurants avoid missed or late pickups.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-index">4</div>
+          <div>
+            <h3>Trust and Food Safety Disclaimers</h3>
+            <p>Display standardized freshness, allergen, and handling disclaimers alongside each listing to support informed purchasing.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-index">5</div>
+          <div>
+            <h3>Ratings, Accuracy, and Cancellation Handling</h3>
+            <p>Capture pickup experience feedback, track restaurant reliability, and make cancellations or substitutions visible to diners.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-index">✓</div>
+          <div>
+            <h3>Simple, reliable end-of-day workflow</h3>
+            <p>A friction-light experience for both diners and operators helps convert surplus into savings and reduce food waste responsibly.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="trust" class="section">
+      <div class="cta-band">
+        <div>
+          <h2>Trust is part of the product.</h2>
+          <p>
+            Closing Time emphasizes accurate availability, pickup reliability, and clear food safety expectations so diners can purchase with confidence and restaurants can avoid avoidable issues at the end of service.
+          </p>
+        </div>
+        <div class="cta-row" style="margin-top:0;">
+          <a class="btn btn-primary" href="#top">Start browsing deals</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    <p>Designed for diners seeking affordable meals and restaurants reducing end-of-day surplus.</p>
+  </footer>
+</body>
+</html>
