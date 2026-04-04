@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>StudyLink — Trusted nearby tutors, booked fast</title>
+    <title>LaunchMind — Trusted nearby tutors, booked fast</title>
     <meta
       name="description"
-      content="StudyLink is a trusted mobile marketplace that helps students and parents quickly find, book, and pay for nearby tutors for in-person help."
+      content="LaunchMind is a trusted mobile marketplace that helps students and parents quickly find, book, and pay for nearby tutors for in-person help."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,85 +20,81 @@
               sans: ["Manrope", "sans-serif"],
             },
             colors: {
-              study: {
-                50: "#eefaf6",
-                100: "#d9f4ea",
-                200: "#b0ead6",
-                300: "#80d8bd",
-                400: "#48be9f",
-                500: "#2aa084",
-                600: "#1f8068",
-                700: "#1f6453",
-                800: "#1d5144",
-                900: "#183f36",
-              },
-              warm: {
-                50: "#fff9f2",
-                100: "#fff0df",
-                200: "#feddb8",
-                300: "#fdc07e",
-                400: "#fb9f44",
-                500: "#f57d14",
-              },
               ink: {
-                950: "#07111a",
+                950: "#07111c",
                 900: "#0d1722",
-                800: "#172433",
+                800: "#162334",
+              },
+              mint: {
+                50: "#effbf7",
+                100: "#d8f5eb",
+                200: "#b5ecd8",
+                300: "#81d7be",
+                400: "#4fc19e",
+                500: "#2ea080",
+                600: "#23836a",
+                700: "#1f6655",
+              },
+              sand: {
+                50: "#fffaf4",
+                100: "#fff1df",
+                200: "#f8ddbb",
+                300: "#efc280",
               },
             },
             boxShadow: {
-              soft: "0 20px 50px rgba(13, 23, 34, 0.12)",
-              lift: "0 14px 32px rgba(31, 100, 83, 0.16)",
+              soft: "0 18px 50px rgba(13, 23, 34, 0.10)",
+              lift: "0 18px 36px rgba(31, 102, 85, 0.18)",
             },
           },
         },
       };
     </script>
   </head>
-  <body class="bg-slate-50 text-slate-900 antialiased font-sans">
-    <header class="sticky top-0 z-50 border-b border-slate-200 bg-white shadow-sm">
-      <nav class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3 sm:py-4">
-        <a href="#top" class="flex items-center gap-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-study-500 focus:ring-offset-2">
-          <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-study-900 text-white shadow-sm">
-            <span class="text-lg font-extrabold tracking-tight">S</span>
+  <body class="bg-slate-50 text-slate-900 antialiased font-sans" id="top">
+    <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90 shadow-sm">
+      <nav class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3 sm:py-4" aria-label="Primary">
+        <a href="#top" class="flex items-center gap-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-mint-500 focus:ring-offset-2">
+          <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-ink-950 text-white shadow-sm">
+            <span class="text-lg font-extrabold tracking-tight">L</span>
           </div>
           <div>
-            <div class="text-xl font-extrabold tracking-tight text-ink-950">StudyLink</div>
-            <p class="text-xs font-medium text-slate-500">Trusted nearby tutoring</p>
+            <div class="text-xl font-extrabold tracking-tight text-ink-950">LaunchMind</div>
+            <p class="text-xs font-semibold text-slate-500">Trusted nearby tutoring</p>
           </div>
         </a>
         <div class="flex flex-wrap items-center gap-2 text-sm font-semibold text-slate-700 sm:gap-4">
-          <a class="rounded-full px-3 py-2 transition hover:bg-study-50 hover:text-study-800 focus:outline-none focus:ring-2 focus:ring-study-500" href="#features">Features</a>
-          <a class="rounded-full px-3 py-2 transition hover:bg-study-50 hover:text-study-800 focus:outline-none focus:ring-2 focus:ring-study-500" href="#personas">Who it serves</a>
-          <a class="rounded-full px-3 py-2 transition hover:bg-study-50 hover:text-study-800 focus:outline-none focus:ring-2 focus:ring-study-500" href="#how-it-works">How it works</a>
-          <a class="rounded-full bg-study-900 px-4 py-2 text-white transition hover:bg-study-800 focus:outline-none focus:ring-2 focus:ring-study-500" href="#cta">Find a tutor</a>
+          <a class="rounded-full px-3 py-2 transition hover:bg-mint-50 hover:text-ink-950 focus:outline-none focus:ring-2 focus:ring-mint-500" href="#features">Features</a>
+          <a class="rounded-full px-3 py-2 transition hover:bg-mint-50 hover:text-ink-950 focus:outline-none focus:ring-2 focus:ring-mint-500" href="#personas">Who it serves</a>
+          <a class="rounded-full px-3 py-2 transition hover:bg-mint-50 hover:text-ink-950 focus:outline-none focus:ring-2 focus:ring-mint-500" href="#how-it-works">How it works</a>
+          <a class="rounded-full bg-ink-950 px-4 py-2 text-white transition hover:bg-ink-800 focus:outline-none focus:ring-2 focus:ring-mint-500 focus:ring-offset-2" href="#cta">Find a tutor</a>
         </div>
       </nav>
     </header>
 
-    <main id="top">
-      <section class="relative overflow-hidden bg-gradient-to-b from-white via-slate-50 to-study-50/70">
+    <main>
+      <section class="relative overflow-hidden bg-gradient-to-b from-white via-slate-50 to-mint-50/70">
         <div class="absolute inset-0 -z-10">
-          <div class="absolute left-[-6rem] top-8 h-72 w-72 rounded-full bg-study-200/50 blur-3xl"></div>
-          <div class="absolute right-[-4rem] top-24 h-80 w-80 rounded-full bg-warm-100/70 blur-3xl"></div>
+          <div class="absolute left-[-6rem] top-10 h-72 w-72 rounded-full bg-mint-200/50 blur-3xl"></div>
+          <div class="absolute right-[-5rem] top-20 h-80 w-80 rounded-full bg-sand-100/70 blur-3xl"></div>
         </div>
         <div class="mx-auto grid max-w-6xl items-center gap-12 px-4 py-14 lg:grid-cols-2 lg:py-24">
           <div>
-            <div class="inline-flex items-center gap-2 rounded-full border border-study-100 bg-white px-4 py-2 text-sm font-semibold text-study-700 shadow-sm">
-              <span class="h-2.5 w-2.5 rounded-full bg-study-500"></span>
+            <div class="inline-flex items-center gap-2 rounded-full border border-mint-100 bg-white px-4 py-2 text-sm font-semibold text-ink-800 shadow-sm">
+              <span class="h-2.5 w-2.5 rounded-full bg-mint-500"></span>
               Same-day help, verified tutors, secure booking
             </div>
             <h1 class="mt-6 max-w-2xl text-4xl font-extrabold tracking-tight text-ink-950 sm:text-5xl lg:text-6xl">
               Find a trusted nearby tutor, book in minutes, and get help before tonight’s deadline.
             </h1>
             <p class="mt-6 max-w-xl text-lg leading-8 text-slate-600">
-              StudyLink is the mobile marketplace for students and parents who need in-person tutoring fast—whether that means a last-minute math rescue, a recurring SAT prep schedule, or a simple way for tutors to manage availability and respond to requests.
+              LaunchMind is the mobile marketplace for students and parents who need in-person tutoring fast—whether that means a last-minute math rescue, a recurring SAT prep schedule, or a simple way for tutors to manage availability and respond to requests.
             </p>
             <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="#cta" class="inline-flex items-center justify-center rounded-2xl bg-study-900 px-6 py-3.5 text-sm font-bold text-white shadow-lift transition hover:-translate-y-0.5 hover:bg-study-800 focus:outline-none focus:ring-2 focus:ring-study-500 focus:ring-offset-2">
+              <a href="#cta" class="inline-flex items-center justify-center rounded-2xl bg-ink-950 px-6 py-3.5 text-sm font-bold text-white shadow-lift transition hover:-translate-y-0.5 hover:bg-ink-800 focus:outline-none focus:ring-2 focus:ring-mint-500 focus:ring-offset-2">
                 Find a tutor now
               </a>
-              <a href="#features" class="inline-flex items-center justify-center rounded-2xl border border-slate-300 bg-white px-6 py-3.5 text-sm font-bold text-ink-950 transition hover:border-slate-400 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-study-500 focus:ring-offset-2">
+              <a href="#features" class="inline-flex items-center justify-center rounded-2xl border border-slate-300 bg-white px-6 py-3.5 text-sm font-bold text-ink-950 transition hover:border-slate-400 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-mint-500 focus:ring-offset-2">
                 Explore features
               </a>
             </div>
@@ -119,24 +115,24 @@
           </div>
 
           <div class="relative">
-            <div class="absolute -left-6 -top-6 hidden h-24 w-24 rounded-3xl bg-warm-200/60 blur-2xl lg:block"></div>
+            <div class="absolute -left-8 -top-8 hidden h-24 w-24 rounded-3xl bg-sand-200/60 blur-2xl lg:block"></div>
             <div class="grid gap-4 sm:grid-cols-2">
               <figure class="overflow-hidden rounded-[2rem] bg-white p-3 shadow-soft ring-1 ring-slate-200 sm:col-span-2">
                 <img
-                  src="https://images.unsplash.com/photo-1758685733907-42e9651721f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTU1MjR8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMHR1dG9yaW5nJTIwY2xhc3Nyb29tJTIwbGFwdG9wfGVufDB8fHx8MTc3NTMyMTE3M3ww&ixlib=rb-4.1.0&q=80&w=1080&auto=format&fit=crop&w=1200&q=80"
-                  alt="Tutor helping a student with homework in a focused one-on-one study session"
+                  src="https://images.unsplash.com/photo-1617755870291-1f0de453ad30?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTU1MjR8MHwxfHNlYXJjaHwxfHx0dXRvcmluZyUyMHN0dWRlbnQlMjBwYXJlbnQlMjBjbGFzc3Jvb20lMjBsYXB0b3B8ZW58MHx8fHwxNzc1MzIxMzcyfDA&ixlib=rb-4.1.0&q=80&w=1080&auto=format&fit=crop&w=1200&q=80"
+                  alt="Laptop on a classroom desk representing nearby tutor discovery and quick booking"
                   class="h-[22rem] w-full rounded-[1.5rem] object-cover sm:h-[26rem]"
                 />
               </figure>
               <figure class="overflow-hidden rounded-[2rem] bg-white p-3 shadow-soft ring-1 ring-slate-200">
                 <img
-                  src="https://images.unsplash.com/photo-1617755870291-1f0de453ad30?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTU1MjR8MHwxfHNlYXJjaHwyfHxzdHVkZW50cyUyMHR1dG9yaW5nJTIwY2xhc3Nyb29tJTIwbGFwdG9wfGVufDB8fHx8MTc3NTMyMTE3M3ww&ixlib=rb-4.1.0&q=80&w=1080&auto=format&fit=crop&w=1200&q=80"
-                  alt="Laptop on a study desk representing scheduling, messaging, and booking tools for tutors"
+                  src="https://images.unsplash.com/photo-1604525241109-c3b7eecf4add?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTU1MjR8MHwxfHNlYXJjaHwzfHx0dXRvcmluZyUyMHN0dWRlbnQlMjBwYXJlbnQlMjBjbGFzc3Jvb20lMjBsYXB0b3B8ZW58MHx8fHwxNzc1MzIxMzcyfDA&ixlib=rb-4.1.0&q=80&w=1080&auto=format&fit=crop&w=1200&q=80"
+                  alt="Person using a laptop for scheduling, messaging, and payment management"
                   class="h-56 w-full rounded-[1.25rem] object-cover"
                 />
               </figure>
-              <div class="rounded-[2rem] bg-study-900 p-6 text-white shadow-soft ring-1 ring-white/10">
-                <p class="text-sm font-semibold uppercase tracking-[0.18em] text-study-200">Designed for trust</p>
+              <div class="rounded-[2rem] bg-ink-950 p-6 text-white shadow-soft ring-1 ring-white/10">
+                <p class="text-sm font-semibold uppercase tracking-[0.18em] text-mint-200">Designed for trust</p>
                 <p class="mt-3 text-lg font-semibold leading-7">Students and parents can compare nearby tutors, verify fit, and book with confidence.</p>
               </div>
             </div>
@@ -146,14 +142,14 @@
 
       <section id="features" class="mx-auto max-w-6xl px-4 py-20">
         <div class="max-w-2xl">
-          <p class="text-sm font-bold uppercase tracking-[0.2em] text-study-700">Features</p>
+          <p class="text-sm font-bold uppercase tracking-[0.2em] text-mint-700">Features</p>
           <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-ink-950 sm:text-4xl">Everything needed to move from search to session without friction</h2>
-          <p class="mt-4 text-lg leading-8 text-slate-600">The product follows the marketplace journey: discover, trust, communicate, pay, and stay organized.</p>
+          <p class="mt-4 text-lg leading-8 text-slate-600">LaunchMind follows the marketplace journey: discover, trust, communicate, pay, and stay organized.</p>
         </div>
 
         <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           <article class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-soft">
-            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-study-50 text-study-700 ring-1 ring-study-100">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-mint-50 text-mint-700 ring-1 ring-mint-100">
               <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6" aria-hidden="true"><path d="M10 4a6 6 0 104.47 10.03l4.25 4.25 1.41-1.41-4.25-4.25A6 6 0 0010 4zm0 2a4 4 0 110 8 4 4 0 010-8z" fill="currentColor"/></svg>
             </div>
             <h3 class="mt-4 text-xl font-bold text-ink-950">Tutor discovery and search</h3>
@@ -161,7 +157,7 @@
           </article>
 
           <article class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-soft">
-            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-warm-50 text-warm-500 ring-1 ring-warm-100">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-sand-50 text-amber-600 ring-1 ring-sand-100">
               <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6" aria-hidden="true"><path d="M12 2l2.6 5.3L20 8l-4 3.9.9 5.6L12 15.9 7.1 17.5 8 11.9 4 8l5.4-.7L12 2z" fill="currentColor"/></svg>
             </div>
             <h3 class="mt-4 text-xl font-bold text-ink-950">Verified tutor profiles</h3>
@@ -169,7 +165,7 @@
           </article>
 
           <article class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-soft">
-            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-study-900 text-white ring-1 ring-study-900/10">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-ink-950 text-white ring-1 ring-ink-950/10">
               <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6" aria-hidden="true"><path d="M7 8h10M7 12h6m-8 8h14a2 2 0 002-2V7l-5-5H5a2 2 0 00-2 2v14a2 2 0 002 2z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
             <h3 class="mt-4 text-xl font-bold text-ink-950">Messaging and booking</h3>
@@ -177,74 +173,68 @@
           </article>
 
           <article class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-soft">
-            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-study-50 text-study-700 ring-1 ring-study-100">
-              <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6" aria-hidden="true"><path d="M6 7h12l1 12H5L6 7zm3-3h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-mint-50 text-mint-700 ring-1 ring-mint-100">
+              <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6" aria-hidden="true"><path d="M4 7h16M6 11h12M6 15h6M7 3h10a2 2 0 012 2v14a2 2 0 01-2 2H7a2 2 0 01-2-2V5a2 2 0 012-2z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
             <h3 class="mt-4 text-xl font-bold text-ink-950">In-app payments</h3>
-            <p class="mt-2 leading-7 text-slate-600">Support secure payments, receipts, and cancellation handling so transactions stay simple, centralized, and easy to reconcile.</p>
+            <p class="mt-2 leading-7 text-slate-600">Support secure payments, receipts, and cancellation handling so transactions are simple and centralized.</p>
           </article>
 
-          <article class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-soft">
-            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-warm-50 text-warm-500 ring-1 ring-warm-100">
-              <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6" aria-hidden="true"><path d="M7 11V7a5 5 0 0110 0v4m-11 0h12l1 10H5l1-10z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <article class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-soft md:col-span-2 xl:col-span-1">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-sand-50 text-amber-700 ring-1 ring-sand-100">
+              <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6" aria-hidden="true"><path d="M12 8v5l3 2m5 0a8 8 0 11-16 0 8 8 0 0116 0z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
-            <h3 class="mt-4 text-xl font-bold text-ink-950">Reminders and availability</h3>
-            <p class="mt-2 leading-7 text-slate-600">Send booking reminders and let tutors update open slots so sessions remain organized and attendance improves.</p>
-          </article>
-
-          <article class="rounded-3xl bg-gradient-to-br from-study-900 to-study-700 p-6 text-white shadow-soft ring-1 ring-study-900/10">
-            <p class="text-sm font-bold uppercase tracking-[0.18em] text-study-200">Outcome</p>
-            <h3 class="mt-3 text-xl font-bold">A calmer booking experience for families and tutors</h3>
-            <p class="mt-2 leading-7 text-study-50/90">StudyLink keeps the whole tutoring journey in one mobile flow, reducing the search time and back-and-forth that normally slows booking down.</p>
+            <h3 class="mt-4 text-xl font-bold text-ink-950">Reminders and availability management</h3>
+            <p class="mt-2 leading-7 text-slate-600">Send booking reminders and let tutors update open time slots so sessions stay organized and attendance improves.</p>
           </article>
         </div>
       </section>
 
-      <section id="personas" class="bg-slate-900 py-20 text-white">
+      <section id="personas" class="bg-white py-20">
         <div class="mx-auto max-w-6xl px-4">
           <div class="max-w-2xl">
-            <p class="text-sm font-bold uppercase tracking-[0.2em] text-study-200">Personas</p>
-            <h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Built for students, parents, and tutors who each need a different kind of clarity</h2>
-            <p class="mt-4 text-lg leading-8 text-slate-300">The experience balances urgency, trust, and flexibility so each audience can move confidently to the next step.</p>
+            <p class="text-sm font-bold uppercase tracking-[0.2em] text-mint-700">Who it serves</p>
+            <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-ink-950 sm:text-4xl">Built around the needs of students, parents, and tutors</h2>
+            <p class="mt-4 text-lg leading-8 text-slate-600">Each persona has a different urgency, but the same goal: make in-person tutoring easier to trust, schedule, and pay for.</p>
           </div>
 
           <div class="mt-10 grid gap-6 lg:grid-cols-3">
-            <article class="overflow-hidden rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur">
-              <img
-                src="https://images.unsplash.com/photo-1758525860449-fa3602fceb31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTU1MjR8MHwxfHNlYXJjaHwxfHxwYXJlbnQlMjBzdHVkZW50JTIwdHV0b3IlMjBzdHVkeSUyMHNlc3Npb258ZW58MHx8fHwxNzc1MzIxMTczfDA&ixlib=rb-4.1.0&q=80&w=1080&auto=format&fit=crop&w=1200&q=80"
-                alt="Parent helping a student study at home, representing recurring tutoring support and family trust"
-                class="h-56 w-full object-cover"
-              />
+            <article class="overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 shadow-sm">
+              <img src="https://images.unsplash.com/photo-1758685733907-42e9651721f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTU1MjR8MHwxfHNlYXJjaHw0fHx0dXRvcmluZyUyMHN0dWRlbnQlMjBwYXJlbnQlMjBjbGFzc3Jvb20lMjBsYXB0b3B8ZW58MHx8fHwxNzc1MzIxMzcyfDA&ixlib=rb-4.1.0&q=80&w=1080&auto=format&fit=crop&w=1200&q=80" alt="Tutor helping a student with math homework in a focused in-person session" class="h-56 w-full object-cover" />
               <div class="p-6">
-                <h3 class="text-xl font-bold">Emma</h3>
-                <p class="mt-1 text-sm text-study-200">High school student needing homework help</p>
-                <p class="mt-4 leading-7 text-slate-300">Needs a nearby tutor quickly for same-day help in specific subjects without a long search process.</p>
+                <h3 class="text-xl font-bold text-ink-950">Emma</h3>
+                <p class="mt-1 text-sm font-semibold text-mint-700">High school student needing homework help</p>
+                <p class="mt-3 leading-7 text-slate-600">Needs a nearby tutor quickly for same-day help in specific subjects without a long search process.</p>
+                <div class="mt-5 rounded-2xl bg-white p-4 ring-1 ring-slate-200">
+                  <p class="text-sm font-semibold text-ink-950">Why LaunchMind works</p>
+                  <p class="mt-1 text-sm leading-6 text-slate-600">Search by subject, distance, availability, and rating to find tonight’s best fit fast.</p>
+                </div>
               </div>
             </article>
 
-            <article class="overflow-hidden rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur">
-              <img
-                src="https://images.unsplash.com/photo-1758525860435-502240649c59?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTU1MjR8MHwxfHNlYXJjaHwyfHxwYXJlbnQlMjBzdHVkZW50JTIwdHV0b3IlMjBzdHVkeSUyMHNlc3Npb258ZW58MHx8fHwxNzc1MzIxMTczfDA&ixlib=rb-4.1.0&q=80&w=1080&auto=format&fit=crop&w=1200&q=80"
-                alt="Mother and daughter studying together at a table, reflecting recurring tutoring and parental involvement"
-                class="h-56 w-full object-cover"
-              />
+            <article class="overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 shadow-sm">
+              <img src="https://images.unsplash.com/photo-1629360057380-18b15b42e650?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTU1MjR8MHwxfHNlYXJjaHwzfHxlZHVjYXRpb24lMjB0dXRvciUyMGxhcHRvcCUyMG5vdGVzJTIwZnJpZW5kbHl8ZW58MHx8fHwxNzc1MzIxMzczfDA&ixlib=rb-4.1.0&q=80&w=1080&auto=format&fit=crop&w=1200&q=80" alt="Parent and child learning together with a laptop, reflecting consistent tutoring support" class="h-56 w-full object-cover" />
               <div class="p-6">
-                <h3 class="text-xl font-bold">Raj</h3>
-                <p class="mt-1 text-sm text-study-200">Parent booking tutors for a younger child</p>
-                <p class="mt-4 leading-7 text-slate-300">Wants a safe, verified tutor with flexible scheduling and transparent pricing for recurring support.</p>
+                <h3 class="text-xl font-bold text-ink-950">Raj</h3>
+                <p class="mt-1 text-sm font-semibold text-mint-700">Parent booking tutors for a younger child</p>
+                <p class="mt-3 leading-7 text-slate-600">Wants a safe, verified tutor with flexible scheduling and transparent pricing for recurring support.</p>
+                <div class="mt-5 rounded-2xl bg-white p-4 ring-1 ring-slate-200">
+                  <p class="text-sm font-semibold text-ink-950">Why LaunchMind works</p>
+                  <p class="mt-1 text-sm leading-6 text-slate-600">Verified profiles, reviews, and in-app receipts make repeated booking easy to trust.</p>
+                </div>
               </div>
             </article>
 
-            <article class="overflow-hidden rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur">
-              <img
-                src="https://images.unsplash.com/photo-1617755870291-1f0de453ad30?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTU1MjR8MHwxfHNlYXJjaHwyfHxzdHVkZW50cyUyMHR1dG9yaW5nJTIwY2xhc3Nyb29tJTIwbGFwdG9wfGVufDB8fHx8MTc3NTMyMTE3M3ww&ixlib=rb-4.1.0&q=80&w=1080&auto=format&fit=crop&w=1200&q=80"
-                alt="Laptop on a student desk representing tutor scheduling, availability management, and communications"
-                class="h-56 w-full object-cover"
-              />
+            <article class="overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 shadow-sm">
+              <img src="https://images.unsplash.com/photo-1604525241109-c3b7eecf4add?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTU1MjR8MHwxfHNlYXJjaHwzfHx0dXRvcmluZyUyMHN0dWRlbnQlMjBwYXJlbnQlMjBjbGFzc3Jvb20lMjBsYXB0b3B8ZW58MHx8fHwxNzc1MzIxMzcyfDA&ixlib=rb-4.1.0&q=80&w=1080&auto=format&fit=crop&w=1200&q=80" alt="Tutor or student managing bookings on a laptop, showing availability and messaging tools" class="h-56 w-full object-cover" />
               <div class="p-6">
-                <h3 class="text-xl font-bold">Maya</h3>
-                <p class="mt-1 text-sm text-study-200">University student tutoring locally</p>
-                <p class="mt-4 leading-7 text-slate-300">Needs an easy way to manage availability, get bookings, and communicate with students in one place.</p>
+                <h3 class="text-xl font-bold text-ink-950">Maya</h3>
+                <p class="mt-1 text-sm font-semibold text-mint-700">University student tutoring locally</p>
+                <p class="mt-3 leading-7 text-slate-600">Needs an easy way to manage availability, get bookings, and communicate with students in one place.</p>
+                <div class="mt-5 rounded-2xl bg-white p-4 ring-1 ring-slate-200">
+                  <p class="text-sm font-semibold text-ink-950">Why LaunchMind works</p>
+                  <p class="mt-1 text-sm leading-6 text-slate-600">Update time slots, confirm requests, and keep recurring sessions organized without switching tools.</p>
+                </div>
               </div>
             </article>
           </div>
@@ -252,68 +242,64 @@
       </section>
 
       <section id="how-it-works" class="mx-auto max-w-6xl px-4 py-20">
-        <div class="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+        <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>
-            <p class="text-sm font-bold uppercase tracking-[0.2em] text-study-700">How it works</p>
-            <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-ink-950 sm:text-4xl">One clear flow from search to confirmed session</h2>
-            <p class="mt-4 max-w-2xl text-lg leading-8 text-slate-600">StudyLink organizes the full tutoring journey around the three user stories in the spec: urgent homework help, recurring test prep, and tutor-side availability management.</p>
-
-            <div class="mt-8 grid gap-4 sm:grid-cols-3">
-              <article class="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-200">
-                <div class="text-sm font-bold uppercase tracking-[0.18em] text-study-700">1</div>
-                <h3 class="mt-2 font-bold text-ink-950">Search</h3>
-                <p class="mt-2 text-sm leading-6 text-slate-600">Filter by subject, distance, price, rating, and open slots.</p>
-              </article>
-              <article class="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-200">
-                <div class="text-sm font-bold uppercase tracking-[0.18em] text-study-700">2</div>
-                <h3 class="mt-2 font-bold text-ink-950">Verify</h3>
-                <p class="mt-2 text-sm leading-6 text-slate-600">Review credentials, university affiliation, and background checks.</p>
-              </article>
-              <article class="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-200">
-                <div class="text-sm font-bold uppercase tracking-[0.18em] text-study-700">3</div>
-                <h3 class="mt-2 font-bold text-ink-950">Book</h3>
-                <p class="mt-2 text-sm leading-6 text-slate-600">Chat, confirm, pay, and manage reminders and cancellations in app.</p>
-              </article>
+            <p class="text-sm font-bold uppercase tracking-[0.2em] text-mint-700">How it works</p>
+            <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-ink-950 sm:text-4xl">A simple path from urgent search to confirmed session</h2>
+            <div class="mt-8 space-y-4">
+              <div class="rounded-3xl bg-white p-5 ring-1 ring-slate-200 shadow-sm">
+                <p class="text-sm font-bold text-mint-700">1. Search nearby</p>
+                <p class="mt-2 leading-7 text-slate-600">Browse tutors by subject, location, availability, price, and rating to shortlist the best match.</p>
+              </div>
+              <div class="rounded-3xl bg-white p-5 ring-1 ring-slate-200 shadow-sm">
+                <p class="text-sm font-bold text-mint-700">2. Verify and message</p>
+                <p class="mt-2 leading-7 text-slate-600">Review credentials, university affiliation, background checks, and reviews before chatting about the session.</p>
+              </div>
+              <div class="rounded-3xl bg-white p-5 ring-1 ring-slate-200 shadow-sm">
+                <p class="text-sm font-bold text-mint-700">3. Book and pay in app</p>
+                <p class="mt-2 leading-7 text-slate-600">Confirm timing, send reminders, collect secure payments, and keep everything in one place.</p>
+              </div>
             </div>
           </div>
-
-          <aside class="rounded-[2rem] bg-gradient-to-br from-study-900 to-ink-950 p-8 text-white shadow-soft ring-1 ring-slate-200/10">
-            <p class="text-sm font-bold uppercase tracking-[0.18em] text-study-200">Why it works</p>
-            <ul class="mt-5 space-y-4 text-slate-200">
-              <li class="flex gap-3">
-                <span class="mt-1 h-2.5 w-2.5 rounded-full bg-warm-300"></span>
-                <span><strong class="text-white">Fast discovery:</strong> students can find nearby tutors tonight without a long search process.</span>
-              </li>
-              <li class="flex gap-3">
-                <span class="mt-1 h-2.5 w-2.5 rounded-full bg-warm-300"></span>
-                <span><strong class="text-white">Trust signals:</strong> parents get verified profiles, reviews, and clear pricing before booking.</span>
-              </li>
-              <li class="flex gap-3">
-                <span class="mt-1 h-2.5 w-2.5 rounded-full bg-warm-300"></span>
-                <span><strong class="text-white">Tutor control:</strong> availability tools and request management help tutors accept the right sessions.</span>
-              </li>
-              <li class="flex gap-3">
-                <span class="mt-1 h-2.5 w-2.5 rounded-full bg-warm-300"></span>
-                <span><strong class="text-white">Centralized payments:</strong> secure checkout, receipts, and cancellation handling keep everything in one place.</span>
-              </li>
-            </ul>
-          </aside>
+          <div class="rounded-[2rem] bg-ink-950 p-6 text-white shadow-soft">
+            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-mint-200">Why it feels dependable</p>
+            <div class="mt-6 grid gap-4 sm:grid-cols-2">
+              <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
+                <p class="text-3xl font-extrabold text-white">Verified</p>
+                <p class="mt-2 text-sm leading-6 text-slate-300">Trust signals for parents and students.</p>
+              </div>
+              <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
+                <p class="text-3xl font-extrabold text-white">Fast</p>
+                <p class="mt-2 text-sm leading-6 text-slate-300">Find help for tonight or next week.</p>
+              </div>
+              <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
+                <p class="text-3xl font-extrabold text-white">Organized</p>
+                <p class="mt-2 text-sm leading-6 text-slate-300">Scheduling, reminders, and receipts in one flow.</p>
+              </div>
+              <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
+                <p class="text-3xl font-extrabold text-white">Local</p>
+                <p class="mt-2 text-sm leading-6 text-slate-300">Built for in-person tutoring nearby.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section id="cta" class="bg-study-900 py-20 text-white">
-        <div class="mx-auto max-w-6xl px-4">
-          <div class="rounded-[2rem] bg-white/5 p-8 ring-1 ring-white/10 md:p-10">
-            <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-              <div>
-                <p class="text-sm font-bold uppercase tracking-[0.2em] text-study-200">Get started</p>
-                <h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Find the right tutor faster, and keep every booking organized.</h2>
-                <p class="mt-4 max-w-2xl text-lg leading-8 text-slate-200">Whether you are a parent looking for recurring support, a student with a same-day homework need, or a tutor managing your calendar, StudyLink keeps the workflow simple and trusted.</p>
-              </div>
-              <div class="flex flex-col gap-3 sm:flex-row lg:justify-end">
-                <a href="#top" class="inline-flex items-center justify-center rounded-2xl bg-white px-6 py-3.5 text-sm font-bold text-study-900 transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-study-900">Start searching</a>
-                <a href="#features" class="inline-flex items-center justify-center rounded-2xl border border-white/20 px-6 py-3.5 text-sm font-bold text-white transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-study-900">See features</a>
-              </div>
+      <section id="cta" class="bg-mint-700">
+        <div class="mx-auto max-w-6xl px-4 py-16 sm:py-20">
+          <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div>
+              <p class="text-sm font-bold uppercase tracking-[0.2em] text-mint-100">Ready to book?</p>
+              <h2 class="mt-3 max-w-2xl text-3xl font-extrabold tracking-tight text-white sm:text-4xl">LaunchMind makes nearby tutoring feel immediate, safe, and simple.</h2>
+              <p class="mt-4 max-w-2xl text-lg leading-8 text-mint-50">Whether it’s one homework question tonight or a recurring SAT prep routine, LaunchMind helps families and tutors move from search to session with less friction.</p>
+            </div>
+            <div class="flex flex-col gap-3 sm:flex-row lg:flex-col">
+              <a href="#top" class="inline-flex items-center justify-center rounded-2xl bg-white px-6 py-3.5 text-sm font-bold text-ink-950 shadow-sm transition hover:-translate-y-0.5 hover:bg-mint-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-mint-700">
+                Find a tutor now
+              </a>
+              <a href="#features" class="inline-flex items-center justify-center rounded-2xl border border-white/30 bg-white/10 px-6 py-3.5 text-sm font-bold text-white transition hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-mint-700">
+                Review features
+              </a>
             </div>
           </div>
         </div>
@@ -323,43 +309,51 @@
     <footer class="border-t border-slate-200 bg-white">
       <div class="mx-auto max-w-6xl px-4 py-10">
         <div class="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
-          <div>
-            <div class="text-xl font-extrabold tracking-tight text-ink-950">StudyLink</div>
-            <p class="mt-2 max-w-md text-sm leading-6 text-slate-600">Trusted nearby tutoring for students, parents, and tutors—discovery, verification, booking, and payments in one mobile marketplace.</p>
+          <div class="max-w-md">
+            <div class="flex items-center gap-3">
+              <div class="flex h-10 w-10 items-center justify-center rounded-2xl bg-ink-950 text-white">
+                <span class="font-extrabold">L</span>
+              </div>
+              <div>
+                <p class="text-lg font-extrabold tracking-tight text-ink-950">LaunchMind</p>
+                <p class="text-sm font-medium text-slate-500">Trusted nearby tutoring</p>
+              </div>
+            </div>
+            <p class="mt-4 text-sm leading-6 text-slate-600">A mobile marketplace for students, parents, and tutors to discover, book, and pay for in-person help with confidence.</p>
           </div>
-          <div class="flex flex-wrap gap-4 text-sm font-semibold text-slate-700">
-            <a class="rounded-full px-3 py-2 transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-study-500" href="#features">Features</a>
-            <a class="rounded-full px-3 py-2 transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-study-500" href="#personas">Personas</a>
-            <a class="rounded-full px-3 py-2 transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-study-500" href="#cta">CTA</a>
+          <div class="flex flex-wrap gap-3 text-sm font-semibold text-slate-700">
+            <a class="rounded-full px-3 py-2 transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-mint-500" href="#features">Features</a>
+            <a class="rounded-full px-3 py-2 transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-mint-500" href="#personas">Who it serves</a>
+            <a class="rounded-full px-3 py-2 transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-mint-500" href="#how-it-works">How it works</a>
+            <a class="rounded-full px-3 py-2 transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-mint-500" href="#cta">CTA</a>
           </div>
         </div>
 
-        <div class="mt-8 grid gap-5 border-t border-slate-200 pt-6 text-sm text-slate-600 lg:grid-cols-2">
-          <p>&copy; <span id="year"></span> StudyLink. All rights reserved.</p>
-          <div class="space-y-2 lg:text-right">
-            <p><a class="font-semibold text-study-700 hover:text-study-900" href="https://unsplash.com" target="_blank" rel="noreferrer">Photos from Unsplash</a></p>
-            <p>
-              Photo by <a class="font-semibold text-study-700 hover:text-study-900" href="https://unsplash.com/@silverkblack" target="_blank" rel="noreferrer">Vitaly Gariev</a>
-              on <a class="font-semibold text-study-700 hover:text-study-900" href="https://unsplash.com/photos/teacher-helping-young-student-with-math-homework-qubcvHi6DBk" target="_blank" rel="noreferrer">Unsplash</a>
-            </p>
-            <p>
-              Photo by <a class="font-semibold text-study-700 hover:text-study-900" href="https://unsplash.com/@thomascpark" target="_blank" rel="noreferrer">Thomas Park</a>
-              on <a class="font-semibold text-study-700 hover:text-study-900" href="https://unsplash.com/photos/macbook-pro-on-brown-wooden-table-VdPTlyp60ys" target="_blank" rel="noreferrer">Unsplash</a>
-            </p>
-            <p>
-              Photo by <a class="font-semibold text-study-700 hover:text-study-900" href="https://unsplash.com/@silverkblack" target="_blank" rel="noreferrer">Vitaly Gariev</a>
-              on <a class="font-semibold text-study-700 hover:text-study-900" href="https://unsplash.com/photos/two-women-studying-together-at-a-table-EYkx28n9Gi0" target="_blank" rel="noreferrer">Unsplash</a>
-            </p>
-            <p>
-              Photo by <a class="font-semibold text-study-700 hover:text-study-900" href="https://unsplash.com/@silverkblack" target="_blank" rel="noreferrer">Vitaly Gariev</a>
-              on <a class="font-semibold text-study-700 hover:text-study-900" href="https://unsplash.com/photos/mother-and-daughter-studying-together-at-a-table-_Am5E9vcsu8" target="_blank" rel="noreferrer">Unsplash</a>
-            </p>
+        <div class="mt-10 grid gap-6 border-t border-slate-200 pt-8 lg:grid-cols-2">
+          <div class="text-sm leading-6 text-slate-600">
+            <p>© <span id="year"></span> LaunchMind. All rights reserved.</p>
+            <p class="mt-2">Photos from <a href="https://unsplash.com" class="font-semibold text-ink-950 underline decoration-slate-300 underline-offset-4 hover:text-mint-700">Unsplash</a>.</p>
+          </div>
+          <div class="text-sm leading-6 text-slate-600 lg:text-right">
+            <p class="font-semibold text-ink-950">Photo credits</p>
+            <ul class="mt-2 space-y-2">
+              <li>
+                Hero: Photo by <a href="https://unsplash.com/@thomascpark" class="font-semibold text-ink-950 underline decoration-slate-300 underline-offset-4 hover:text-mint-700">Thomas Park</a> on <a href="https://unsplash.com/photos/macbook-pro-on-brown-wooden-table-VdPTlyp60ys" class="font-semibold text-ink-950 underline decoration-slate-300 underline-offset-4 hover:text-mint-700">Unsplash</a>
+              </li>
+              <li>
+                Persona: Photo by <a href="https://unsplash.com/@silverkblack" class="font-semibold text-ink-950 underline decoration-slate-300 underline-offset-4 hover:text-mint-700">Vitaly Gariev</a> on <a href="https://unsplash.com/photos/teacher-helping-young-student-with-math-homework-qubcvHi6DBk" class="font-semibold text-ink-950 underline decoration-slate-300 underline-offset-4 hover:text-mint-700">Unsplash</a>
+              </li>
+              <li>
+                Supporting image: Photo by <a href="https://unsplash.com/@akhu" class="font-semibold text-ink-950 underline decoration-slate-300 underline-offset-4 hover:text-mint-700">Anthony Da Cruz</a> on <a href="https://unsplash.com/photos/woman-in-black-long-sleeve-shirt-using-laptop-computer-b4dNhklLF7I" class="font-semibold text-ink-950 underline decoration-slate-300 underline-offset-4 hover:text-mint-700">Unsplash</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-      <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
-      </script>
     </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
