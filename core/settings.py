@@ -41,12 +41,12 @@ class Settings(BaseSettings):
     openai_api_key: str = ""
     openai_base_url: str = "https://api.openai.com/v1"
     openai_model: str = "gpt-5.4-mini"
-    # Optional per-agent model ids (OpenAI-compatible ``model`` param only). Unset → ``openai_model``.
-    openai_model_ceo: str = "gpt-5.4"
-    openai_model_product: str = "gpt-5.4-mini"
-    openai_model_engineer: str = "gemini-3.1-pro"
-    openai_model_marketing: str = "gpt-5.4-mini"
-    openai_model_qa: str = "gpt-5.4-mini"
+    # Optional per-agent model ids (OpenAI-compatible ``model`` param only). Empty → ``openai_model``.
+    openai_model_ceo: str = ""
+    openai_model_product: str = ""
+    openai_model_engineer: str = ""
+    openai_model_marketing: str = ""
+    openai_model_qa: str = ""
 
     github_token: str = ""
     github_repo: str = ""
@@ -74,14 +74,8 @@ class Settings(BaseSettings):
 
     def openai_model_for_agent(self, role: AgentLLMRole) -> str:
         """Return the chat ``model`` string for ``role`` (falls back to ``openai_model``)."""
-        per_role = {
-            "ceo": self.openai_model_ceo,
-            "product": self.openai_model_product,
-            "engineer": self.openai_model_engineer,
-            "marketing": self.openai_model_marketing,
-            "qa": self.openai_model_qa,
-        }
-        chosen = (per_role[role] or "").strip()
+        raw = getattr(self, f"openai_model_{role}", "")
+        chosen = (raw or "").strip()
         return chosen or self.openai_model
 
 
