@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WarmTrail | Compliant ICP Outreach Automation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              canyon: {
+                50: "#f7f6ff",
+                100: "#ece7ff",
+                200: "#d7cfff",
+                300: "#baaaef",
+                400: "#917be6",
+                500: "#6d4dd4",
+                600: "#4a3aa8",
+                700: "#332775",
+                800: "#1d1646",
+                900: "#0f0f24"
+              }
+            },
+            fontFamily: {
+              display: ["Space Grotesk", "system-ui", "sans-serif"]
+            }
+          }
+        }
+      };
+    </script>
+  </head>
+  <body class="bg-slate-950 text-slate-100 font-display">
+    <header class="sticky top-0 z-50 bg-slate-950/95 backdrop-blur border-b border-white/10">
+      <nav class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-4 px-4 py-4">
+        <div class="flex items-center gap-3">
+          <span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-canyon-500 text-slate-950 font-bold">
+            WT
+          </span>
+          <div>
+            <p class="text-lg font-semibold">WarmTrail</p>
+            <p class="text-sm text-slate-400">Compliant ICP outreach</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-6 text-sm font-medium text-slate-300">
+          <a class="hover:text-white focus:outline-none focus:ring-2 focus:ring-canyon-400" href="#features">Features</a>
+          <a class="hover:text-white focus:outline-none focus:ring-2 focus:ring-canyon-400" href="#how-it-works">How it works</a>
+          <a class="hover:text-white focus:outline-none focus:ring-2 focus:ring-canyon-400" href="#cta">Get a demo</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="space-y-20 pt-10">
+      <section class="px-4" id="hero">
+        <div class="max-w-6xl mx-auto grid gap-12 lg:grid-cols-[1.05fr,0.95fr] items-center">
+          <div class="space-y-6">
+            <p class="text-sm uppercase tracking-[0.4em] text-canyon-200">Signal-first revenue operations</p>
+            <h1 class="text-4xl font-bold leading-tight text-white md:text-5xl">
+              WarmTrail automates compliant, human-approved ICP outreach so RevOps and Sales Ops stay in sync.
+            </h1>
+            <p class="text-lg text-slate-300">
+              Spot signal-rich leads, draft on-brand sequences with human reviewers, and keep multi-channel follow-ups running until CRM handoff—without ever sacrificing auditability.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <a href="#cta" class="rounded-full bg-canyon-500 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-slate-950 shadow-lg shadow-canyon-600/40 transition hover:bg-canyon-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-canyon-400">
+                Book a compliance demo
+              </a>
+              <button class="rounded-full border border-white/30 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-slate-200 transition hover:border-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-canyon-400">
+                Explore ICP signal studio
+              </button>
+            </div>
+            <div class="flex flex-wrap gap-8 text-sm text-slate-400">
+              <div>
+                <p class="text-xs uppercase tracking-[0.4em] text-slate-500">Compliance coverage</p>
+                <p class="text-2xl font-semibold text-white">100% human approvals</p>
+              </div>
+              <div>
+                <p class="text-xs uppercase tracking-[0.4em] text-slate-500">Automation uptime</p>
+                <p class="text-2xl font-semibold text-white">24/7 signal monitoring</p>
+              </div>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="rounded-3xl border border-white/10 bg-gradient-to-b from-slate-900/80 to-slate-950/80 p-4 shadow-2xl shadow-black/70">
+              <img
+                src="https://images.unsplash.com/photo-1754531976828-69e42ce4e0d9?auto=format&fit=crop&w=1200&q=80"
+                alt="Revenue operations leaders collaborating over ICP signals"
+                class="h-full w-full rounded-2xl object-cover shadow-xl"
+              />
+              <div class="absolute left-6 top-6 rounded-2xl bg-slate-950/70 px-4 py-3 text-left text-xs font-semibold uppercase tracking-[0.3em] text-canyon-200">
+                Signal-rich account uncovering
+              </div>
+            </div>
+            <div class="mt-6 space-y-3 rounded-2xl border border-white/10 bg-slate-900/80 p-5 text-sm text-slate-300">
+              <div class="flex items-center justify-between text-xs uppercase tracking-[0.4em] text-slate-500">
+                <span>ICP Signal Studio</span>
+                <span>Live</span>
+              </div>
+              <p class="text-sm text-slate-200">
+                Alerts on new funding, hiring, and product moves feed personalized drafts that land in the Warm Outreach Composer for reviewer sign-off.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="px-4" id="features">
+        <div class="max-w-6xl mx-auto space-y-8">
+          <div class="space-y-2">
+            <p class="text-sm uppercase tracking-[0.4em] text-slate-500">Platform capabilities</p>
+            <h2 class="text-3xl font-semibold text-white">The automation stack RevOps trusts</h2>
+            <p class="text-slate-300">
+              Every priority feature ties to audited approvals and follows the WarmTrail promise: signal detection, human-composed outreach, smart follow-ups, and CRM-ready handoff transparency.
+            </p>
+          </div>
+          <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <article class="rounded-2xl border border-white/5 bg-slate-900/60 p-6 shadow-lg shadow-black/20 transition hover:border-canyon-500/60">
+              <div class="text-xs font-semibold uppercase tracking-[0.3em] text-canyon-200">Priority 1</div>
+              <h3 class="mt-4 text-xl font-semibold text-white">ICP Signal Studio</h3>
+              <p class="mt-3 text-sm text-slate-300">
+                Combines firmographics, intent, engagement triggers, and win patterns to auto-score ideal accounts, with instant alerts when new signals surface.
+              </p>
+            </article>
+            <article class="rounded-2xl border border-white/5 bg-slate-900/60 p-6 shadow-lg shadow-black/20 transition hover:border-canyon-500/60">
+              <div class="text-xs font-semibold uppercase tracking-[0.3em] text-canyon-200">Priority 2</div>
+              <h3 class="mt-4 text-xl font-semibold text-white">Warm Outreach Composer</h3>
+              <p class="mt-3 text-sm text-slate-300">
+                Drafts personalized, brand-aligned templates using signal context, past touchpoints, and buyer personas before routing drafts to named reviewers.
+              </p>
+            </article>
+            <article class="rounded-2xl border border-white/5 bg-slate-900/60 p-6 shadow-lg shadow-black/20 transition hover:border-canyon-500/60">
+              <div class="text-xs font-semibold uppercase tracking-[0.3em] text-canyon-200">Priority 3</div>
+              <h3 class="mt-4 text-xl font-semibold text-white">Smart Sequence Engine</h3>
+              <p class="mt-3 text-sm text-slate-300">
+                Runs multi-channel follow-ups that pause on replies, escalate interested leads to reps, and refresh outreach as new signals arrive.
+              </p>
+            </article>
+            <article class="rounded-2xl border border-white/5 bg-slate-900/60 p-6 shadow-lg shadow-black/20 transition hover:border-canyon-500/60">
+              <div class="text-xs font-semibold uppercase tracking-[0.3em] text-canyon-200">Priority 2</div>
+              <h3 class="mt-4 text-xl font-semibold text-white">Compliance & Human-in-the-Loop Workspace</h3>
+              <p class="mt-3 text-sm text-slate-300">
+                Surfaces opt-out lists, legal cues, disclosures, and logs every approval action so legal and compliance leaders stay confident.
+              </p>
+            </article>
+            <article class="rounded-2xl border border-white/5 bg-slate-900/60 p-6 shadow-lg shadow-black/20 transition hover:border-canyon-500/60">
+              <div class="text-xs font-semibold uppercase tracking-[0.3em] text-canyon-200">Priority 4</div>
+              <h3 class="mt-4 text-xl font-semibold text-white">CRM Handoff & Pricing Insights</h3>
+              <p class="mt-3 text-sm text-slate-300">
+                Tracks handoff states, reports reviewer seat usage vs active sequences, and helps finance align on seat-based or sequence-based pricing.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="px-4" id="personas">
+        <div class="max-w-6xl mx-auto grid gap-10 rounded-3xl border border-white/5 bg-slate-900/60 p-8 lg:grid-cols-[1.1fr,0.9fr]">
+          <div class="space-y-6">
+            <p class="text-sm uppercase tracking-[0.4em] text-slate-400">Trusted by modern revenue teams</p>
+            <h2 class="text-3xl font-semibold text-white">Built for Maya, Luis, and Priya</h2>
+            <p class="text-slate-300">
+              Every workflow keeps humans in the loop while automation keeps follow-ups precise and compliant. WarmTrail scales ICP sourcing without losing the visibility RevOps demands.
+            </p>
+            <div class="space-y-5">
+              <article class="rounded-2xl border border-white/5 bg-slate-950/60 p-5">
+                <p class="text-xs uppercase tracking-[0.4em] text-slate-500">Maya Chen</p>
+                <h3 class="text-lg font-semibold text-white">RevOps Director at a mid-market SaaS</h3>
+                <p class="text-slate-300">
+                  “Needs trustworthy automation that scales ICP sourcing without sacrificing compliance or visibility.” WarmTrail configures ICP signals and approval roles upfront so onboarding finishes faster.
+                </p>
+              </article>
+              <article class="rounded-2xl border border-white/5 bg-slate-950/60 p-5">
+                <p class="text-xs uppercase tracking-[0.4em] text-slate-500">Luis Alvarez</p>
+                <h3 class="text-lg font-semibold text-white">VP of Sales Enablement</h3>
+                <p class="text-slate-300">
+                  “Struggles to keep reps focused on high-intent accounts and hates chasing manual follow-ups.” Smart Sequence Engine keeps reps out of repetitive outreach until a reply or CRM handoff triggers attention.
+                </p>
+              </article>
+              <article class="rounded-2xl border border-white/5 bg-slate-950/60 p-5">
+                <p class="text-xs uppercase tracking-[0.4em] text-slate-500">Priya Nayar</p>
+                <h3 class="text-lg font-semibold text-white">Sales Operations Manager</h3>
+                <p class="text-slate-300">
+                  “Requires human-in-the-loop approvals and audit trails.” The Compliance Workspace highlights opt-outs, legal cues, and logs every decision before launch.
+                </p>
+              </article>
+            </div>
+          </div>
+          <figure class="relative overflow-hidden rounded-3xl border border-white/10 bg-slate-950/40 shadow-2xl">
+            <img
+              src="https://images.unsplash.com/photo-1695891583421-3cbbf1c2e3bd?auto=format&fit=crop&w=1200&q=80"
+              alt="Sales and revenue leaders reviewing compliance-ready outreach"
+              class="h-full w-full object-cover"
+            />
+            <figcaption class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent p-6 text-xs text-slate-300">
+              Priya, Maya, and Luis trust WarmTrail to keep automation compliant and visible.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="px-4" id="how-it-works">
+        <div class="max-w-6xl mx-auto space-y-8">
+          <div class="space-y-2">
+            <p class="text-sm uppercase tracking-[0.4em] text-slate-500">How WarmTrail works</p>
+            <h2 class="text-3xl font-semibold text-white">From signal configuration to CRM handoff</h2>
+          </div>
+          <div class="grid gap-6 md:grid-cols-3">
+            <article class="rounded-2xl border border-white/5 bg-slate-900/60 p-6 shadow-lg shadow-black/20">
+              <div class="text-xs font-semibold uppercase tracking-[0.3em] text-canyon-200">Step 1</div>
+              <h3 class="mt-3 text-xl font-semibold text-white">Configure ICP signals & approvals</h3>
+              <p class="mt-3 text-sm text-slate-300">
+                As a RevOps director, Maya sets ICP filters, selects intent triggers, and defines review roles right in onboarding so outreach can launch quickly.
+              </p>
+            </article>
+            <article class="rounded-2xl border border-white/5 bg-slate-900/60 p-6 shadow-lg shadow-black/20">
+              <div class="text-xs font-semibold uppercase tracking-[0.3em] text-canyon-200">Step 2</div>
+              <h3 class="mt-3 text-xl font-semibold text-white">Verify compliance before sending</h3>
+              <p class="mt-3 text-sm text-slate-300">
+                Priya verifies opt-outs, legal cues, and disclosures via the human-in-the-loop workspace so every sequence respects legal boundaries.
+              </p>
+            </article>
+            <article class="rounded-2xl border border-white/5 bg-slate-900/60 p-6 shadow-lg shadow-black/20">
+              <div class="text-xs font-semibold uppercase tracking-[0.3em] text-canyon-200">Step 3</div>
+              <h3 class="mt-3 text-xl font-semibold text-white">Let smart follow-ups run</h3>
+              <p class="mt-3 text-sm text-slate-300">
+                Sales leaders rely on Smart Sequence Engine to run multi-channel follow-ups until a reply or CRM handoff triggers rep intervention.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="px-4" id="cta">
+        <div class="max-w-6xl mx-auto rounded-3xl border border-canyon-500/40 bg-gradient-to-r from-canyon-500/20 via-slate-900/80 to-slate-900/95 p-8 text-center shadow-2xl">
+          <p class="text-sm uppercase tracking-[0.4em] text-canyon-100">Ready to align compliance & outreach?</p>
+          <h2 class="mt-3 text-3xl font-semibold text-white">Launch compliant ICP outreach the RevOps way.</h2>
+          <p class="mt-4 text-base text-slate-200">
+            Book a demo to see how WarmTrail pairs signal intelligence with human approvals, so your reps stay focused and legal stays confident.
+          </p>
+          <div class="mt-6 flex flex-wrap justify-center gap-4">
+            <a href="#" class="rounded-full bg-white px-6 py-3 text-sm font-semibold uppercase tracking-wide text-slate-900 shadow-lg shadow-black/30 transition hover:bg-canyon-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+              Schedule a call
+            </a>
+            <a href="#features" class="rounded-full border border-white/40 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition hover:border-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+              See platform tour
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="mt-20 border-t border-white/5 bg-slate-950/60 px-4 py-10 text-sm text-slate-400">
+      <div class="max-w-6xl mx-auto flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+        <div class="space-y-1">
+          <p class="text-white">WarmTrail</p>
+          <p>Copyright © <span id="year"></span> WarmTrail. Built with LaunchMind.</p>
+        </div>
+        <div class="flex flex-wrap gap-4 text-xs uppercase tracking-[0.4em] text-slate-400">
+          <a href="#features">Features</a>
+          <a href="#how-it-works">How it works</a>
+          <a href="#cta">Get a demo</a>
+        </div>
+      </div>
+      <div class="mt-6 text-xs text-slate-500">
+        <p>
+          Photos from <a href="https://unsplash.com" class="text-slate-200 underline-offset-2 hover:underline">Unsplash</a>. Photo by
+          <a href="https://unsplash.com/@garakta" class="text-slate-200 underline-offset-2 hover:underline">Gatot Adri</a> on
+          <a href="https://unsplash.com/photos/a-team-of-professionals-is-gathered-around-a-table-uZzjOm5vSls" class="text-slate-200 underline-offset-2 hover:underline">Unsplash</a>, and
+          <a href="https://unsplash.com/@phyoemin" class="text-slate-200 underline-offset-2 hover:underline">phyo min</a> on
+          <a href="https://unsplash.com/photos/two-men-sitting-at-a-table-with-a-laptop-fpGNSxvx1g8" class="text-slate-200 underline-offset-2 hover:underline">Unsplash</a>.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
