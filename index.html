@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -16,74 +16,84 @@
         theme: {
           extend: {
             colors: {
-              "warmtrail-blue": "#0f172a",
-              "warmtrail-teal": "#0ea5e9",
-              "warmtrail-amber": "#fbbf24",
-              "warmtrail-slate": "#1e293b"
+              "warmtrail-navy": "#020617",
+              "warmtrail-deep": "#0f172a",
+              "warmtrail-teal": "#22d3ee",
+              "warmtrail-gold": "#fbbf24",
+              "warmtrail-ink": "#0f172a",
+              "warmtrail-graphite": "#1e293b"
             },
             fontFamily: {
-              sans: ["Space Grotesk", "system-ui", "sans-serif"]
+              sans: ["Manrope", "Inter", "system-ui", "sans-serif"]
             }
           }
         }
       };
     </script>
   </head>
-  <body class="bg-warmtrail-blue text-white font-sans">
-    <header class="sticky top-0 z-50 bg-warmtrail-blue/95 backdrop-blur shadow-lg">
-      <nav class="max-w-6xl mx-auto flex items-center justify-between px-4 py-4">
+  <body class="bg-warmtrail-navy text-slate-100 font-sans">
+    <header class="sticky top-0 z-50 bg-warmtrail-navy/95 backdrop-blur border-b border-slate-800">
+      <nav class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between gap-6">
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-warmtrail-teal to-warmtrail-amber flex items-center justify-center text-warmtrail-blue font-bold shadow-md">
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-warmtrail-teal to-warmtrail-gold flex items-center justify-center text-warmtrail-ink font-bold text-lg shadow-2xl">
             WT
           </div>
-          <span class="text-xl font-semibold tracking-tight">WarmTrail</span>
+          <div>
+            <p class="text-sm uppercase tracking-[0.4em] text-slate-400">WarmTrail</p>
+            <p class="text-xl font-semibold text-white tracking-tight">Trusted revenue outreach</p>
+          </div>
         </div>
-        <div class="flex gap-6 text-sm font-medium">
-          <a href="#features" class="hover:text-warmtrail-amber focus:outline-none focus:ring-2 focus:ring-warmtrail-amber">Features</a>
-          <a href="#how-it-works" class="hover:text-warmtrail-amber focus:outline-none focus:ring-2 focus:ring-warmtrail-amber">How it works</a>
-          <a href="#cta" class="hover:text-warmtrail-amber focus:outline-none focus:ring-2 focus:ring-warmtrail-amber">Talk to us</a>
+        <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+          <a href="#features" class="hover:text-warmtrail-gold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-warmtrail-gold">Features</a>
+          <a href="#pricing" class="hover:text-warmtrail-gold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-warmtrail-gold">Pricing</a>
+          <a href="#personas" class="hover:text-warmtrail-gold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-warmtrail-gold">Personas</a>
+          <a href="#cta" class="hover:text-warmtrail-gold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-warmtrail-gold">Talk to us</a>
         </div>
+        <button class="md:hidden text-sm text-slate-300 py-2 px-3 border border-slate-700 rounded-lg">Menu</button>
       </nav>
     </header>
 
     <main>
       <section class="pt-16 pb-20">
-        <div class="max-w-6xl mx-auto grid gap-12 lg:grid-cols-2 items-center px-4">
+        <div class="max-w-6xl mx-auto px-4 grid gap-12 lg:grid-cols-2 items-center">
           <div class="space-y-6">
-            <p class="text-sm uppercase tracking-[0.3em] text-warmtrail-amber">RevOps & SDR teams</p>
-            <h1 class="text-4xl md:text-5xl font-semibold leading-tight">
-              Scale trusted revenue outreach without the manual busywork.
+            <p class="text-xs uppercase tracking-[0.5em] text-warmtrail-gold">Revenue Operations & SDR teams</p>
+            <h1 class="text-4xl md:text-5xl font-semibold leading-tight text-white">
+              WarmTrail discovers ICP leads, auto-drafts approved outreach, sequences follow-ups, and hands off replies—so trusted revenue outreach keeps moving while your team shifts headcount.
             </h1>
-            <p class="text-lg text-slate-200">
-              WarmTrail automatically discovers ICP leads from configurable signals, drafts human-approved outreach, sequences intelligent follow-ups, and hands off compliant replies so your revenue engine keeps moving even as staffing and budgets shift.
+            <p class="text-lg text-slate-300">
+              Signal Studio finds the accounts that matter, Discovery Pipeline keeps the funnel full, Outreach Composer layers in personalized human-approved messaging, and compliance guardrails log it all so leadership can forecast with confidence.
             </p>
-            <div class="flex flex-wrap gap-4">
+            <div class="flex flex-wrap gap-3">
               <a
                 href="#cta"
-                class="inline-flex items-center justify-center bg-warmtrail-amber text-warmtrail-blue font-semibold px-6 py-3 rounded-full shadow-lg shadow-warmtrail-amber/40 hover:bg-amber-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-warmtrail-amber"
+                class="inline-flex items-center justify-center bg-warmtrail-gold text-warmtrail-ink font-semibold px-6 py-3 rounded-full shadow-lg shadow-warmtrail-gold/60 hover:bg-amber-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-warmtrail-gold"
               >
                 Book a live walkthrough
               </a>
-              <button class="inline-flex items-center justify-center border border-white/30 px-6 py-3 rounded-full hover:border-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-warmtrail-amber">
+              <a
+                href="#pricing"
+                class="inline-flex items-center justify-center border border-slate-600 px-6 py-3 rounded-full text-sm font-semibold text-slate-200 hover:border-slate-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-warmtrail-gold"
+              >
                 Explore pricing models
-              </button>
+              </a>
             </div>
-            <div class="text-sm text-slate-300">
-              Pricing that moves with your outreach: per-seat tiers for predictable headcount shifts or active-sequence billing for seasonal campaigns.
-            </div>
+            <p class="text-sm text-slate-400 max-w-xl">
+              Per-seat tiers keep budgets predictable when SDR headcount moves, while active-sequence billing scales seasonal campaigns without carrying dormant costs. RevOps analysts compare both to keep outreach velocity aligned with spend.
+            </p>
           </div>
           <div class="relative">
-            <div class="rounded-3xl overflow-hidden shadow-2xl shadow-black/60">
+            <div class="rounded-[32px] overflow-hidden shadow-2xl shadow-black/60 border border-white/5 bg-gradient-to-br from-warmtrail-graphite to-warmtrail-navy">
               <img
-                src="https://images.unsplash.com/photo-1754531976828-69e42ce4e0d9?auto=format&fit=crop&w=1200&q=80"
-                alt="Revenue operations leaders reviewing outreach signals with warmlight filters"
+                src="https://images.unsplash.com/photo-1565350897149-38dfafa81d83?auto=format&fit=crop&w=1200&q=80"
+                alt="Revenue operations leaders collaborating over outreach data and dashboards"
                 class="w-full h-full object-cover"
               />
             </div>
-            <div class="absolute -bottom-6 right-6 bg-warmtrail-slate/90 border border-white/20 rounded-2xl px-6 py-4 shadow-lg w-[320px]">
-              <p class="text-xs uppercase text-slate-200 tracking-wide">Signal Studio</p>
-              <p class="text-sm text-slate-100">
-                Tune multi-source ICP signals and scoring thresholds that keep only the best leads in front of your SDRs.
+            <div class="absolute -bottom-6 right-6 bg-slate-900/90 border border-white/10 rounded-2xl px-5 py-4 shadow-lg max-w-xs">
+              <p class="text-xs uppercase tracking-[0.4em] text-warmtrail-gold">Signal Studio</p>
+              <p class="text-sm text-slate-200">
+                Tune multi-source signals—firmographics, intent, engagement—and scoring thresholds so only ICP leads surface.
               </p>
             </div>
           </div>
@@ -92,130 +102,154 @@
 
       <section id="features" class="py-16 bg-slate-900/60">
         <div class="max-w-6xl mx-auto px-4">
-          <div class="flex items-center justify-between mb-10 gap-6">
+          <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between mb-10">
             <div>
-              <p class="uppercase text-xs tracking-[0.5em] text-warmtrail-amber">Capabilities</p>
-              <h2 class="text-3xl font-semibold mt-2">Everything a modern outreach team needs.</h2>
+              <p class="uppercase text-xs tracking-[0.5em] text-warmtrail-gold">Capabilities</p>
+              <h2 class="text-3xl md:text-4xl font-semibold mt-2">Engineered for predictable outreach velocity.</h2>
             </div>
-            <div class="text-sm text-slate-300 max-w-xs">
-              Built for Revenue Operations, Sales Development, and Compliance teams who need predictable budget alignment plus actionable pipeline health.
-            </div>
+            <p class="text-sm text-slate-300 max-w-sm">
+              Every feature surfaces rich ICP leads, orchestrates personalized sequences, and keeps compliance sightlines clear for Morgan, Avery, and Jordan.
+            </p>
           </div>
           <div class="grid gap-6 md:grid-cols-2">
-            <article class="bg-white/5 border border-white/10 rounded-3xl p-6 space-y-3">
-              <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-warmtrail-teal/15 text-warmtrail-teal">
-                01
+            <article class="bg-slate-950/70 border border-white/10 rounded-3xl p-6 space-y-3 shadow-lg shadow-black/40">
+              <div class="flex items-center gap-3">
+                <span class="text-warmtrail-gold font-semibold">01</span>
+                <h3 class="text-xl font-semibold">Signal Studio</h3>
               </div>
-              <h3 class="text-xl font-semibold">Signal Studio</h3>
-              <p class="text-base text-slate-200">
-                Multi-source signals combining firmographics, intent, and engagement behavior let you define ICP once and let WarmTrail keep it fresh.
+              <p class="text-slate-300">
+                Define configurable signals across firmographics, intent, and engagement, then let WarmTrail score every account so SDRs see only ICP-ready prospects.
               </p>
             </article>
-            <article class="bg-white/5 border border-white/10 rounded-3xl p-6 space-y-3">
-              <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-warmtrail-teal/15 text-warmtrail-teal">
-                02
+            <article class="bg-slate-950/70 border border-white/10 rounded-3xl p-6 space-y-3 shadow-lg shadow-black/40">
+              <div class="flex items-center gap-3">
+                <span class="text-warmtrail-gold font-semibold">02</span>
+                <h3 class="text-xl font-semibold">Discovery Pipeline</h3>
               </div>
-              <h3 class="text-xl font-semibold">Discovery Pipeline</h3>
-              <p class="text-base text-slate-200">
-                Continuous enrichment and ranking of signal-fed prospects keeps outreach-ready batches flowing without manual data work.
+              <p class="text-slate-300">
+                Continuously scan the signal feed, enrich accounts, and rank outbound-ready batches so your pipeline never stalls while SDR headcount fluctuates.
               </p>
             </article>
-            <article class="bg-white/5 border border-white/10 rounded-3xl p-6 space-y-3">
-              <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-warmtrail-teal/15 text-warmtrail-teal">
-                03
+            <article class="bg-slate-950/70 border border-white/10 rounded-3xl p-6 space-y-3 shadow-lg shadow-black/40">
+              <div class="flex items-center gap-3">
+                <span class="text-warmtrail-gold font-semibold">03</span>
+                <h3 class="text-xl font-semibold">Outreach Composer with Human Approvals</h3>
               </div>
-              <h3 class="text-xl font-semibold">Outreach Composer</h3>
-              <p class="text-base text-slate-200">
-                AI-assisted drafts insert verified insights and route every message through your human approvals and compliance workflows before send.
+              <p class="text-slate-300">
+                AI-assisted drafts auto-insert verified insights, then route to reviewers so every outreach is human-approved before hitting prospects.
               </p>
             </article>
-            <article class="bg-white/5 border border-white/10 rounded-3xl p-6 space-y-3">
-              <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-warmtrail-teal/15 text-warmtrail-teal">
-                04
+            <article class="bg-slate-950/70 border border-white/10 rounded-3xl p-6 space-y-3 shadow-lg shadow-black/40">
+              <div class="flex items-center gap-3">
+                <span class="text-warmtrail-gold font-semibold">04</span>
+                <h3 class="text-xl font-semibold">Smart Follow-up Sequencer</h3>
               </div>
-              <h3 class="text-xl font-semibold">Smart Follow-up Sequencer</h3>
-              <p class="text-base text-slate-200">
-                Multi-channel sequences pause on replies, escalate handoffs, and keep you aware of which cadences are live and healthy.
+              <p class="text-slate-300">
+                Orchestrate multi-channel sequences that pause when replies arrive, escalate handoffs, and surface exactly which cadences are live.
               </p>
             </article>
-            <article class="bg-white/5 border border-white/10 rounded-3xl p-6 space-y-3 md:col-span-2">
-              <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-warmtrail-teal/15 text-warmtrail-teal">
-                05
+            <article class="md:col-span-2 bg-slate-950/70 border border-white/10 rounded-3xl p-6 space-y-3 shadow-lg shadow-black/40">
+              <div class="flex items-center gap-3">
+                <span class="text-warmtrail-gold font-semibold">05</span>
+                <h3 class="text-xl font-semibold">CRM Handoff &amp; Compliance Guardrails</h3>
               </div>
-              <h3 class="text-xl font-semibold">CRM Handoff &amp; Compliance Guardrails</h3>
-              <p class="text-base text-slate-200">
-                Qualified replies auto-log to your CRM, opt-outs are enforced, and approval trails keep leadership confident about every outreach batch.
+              <p class="text-slate-300">
+                Qualified replies auto-log to your CRM, opt-outs are enforced, and approval trails stay tied to each outreach batch so leadership stays confident.
               </p>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="how-it-works" class="py-16">
-        <div class="max-w-6xl mx-auto px-4 grid gap-10 lg:grid-cols-2 items-center">
+      <section id="pricing" class="py-16">
+        <div class="max-w-6xl mx-auto px-4 grid gap-10 lg:grid-cols-2">
           <div class="space-y-6">
-            <p class="text-sm uppercase tracking-[0.4em] text-warmtrail-amber">How it works</p>
-            <h2 class="text-3xl font-semibold">Signal, sequence, approve, and hand off—without fear.</h2>
-            <div class="space-y-4 text-slate-200">
-              <div class="flex gap-3">
-                <span class="text-warmtrail-amber font-semibold">1.</span>
-                <p>
-                  RevOps leaders capture ICP signals and choose between predictable per-seat tiers or active-sequence pricing so budgets flex with staffing.
+            <p class="text-xs uppercase tracking-[0.5em] text-warmtrail-gold">Flexible pricing</p>
+            <h2 class="text-3xl md:text-4xl font-semibold text-white">Choose what moves with your outreach.</h2>
+            <p class="text-slate-300">
+              Revenue operations directors lock in per-seat tiers so forecasts stay steady even as SDR personnel shifts. Sales development leaders pay only for active sequences—perfect for seasonal campaigns. RevOps analysts compare both models to align spend with velocity and prove ROI.
+            </p>
+            <div class="grid gap-4 text-sm text-slate-200">
+              <div class="flex items-start gap-3">
+                <span class="text-warmtrail-gold font-semibold">•</span>
+                <p>Per-seat pricing keeps predictable headcount costs steady as SDR staffing ebbs and flows.</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-warmtrail-gold font-semibold">•</span>
+                <p>Active-sequence billing lets you scale seasonal campaigns without carrying dormant cadences.</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-warmtrail-gold font-semibold">•</span>
+                <p>Compare spend between models in real time so Outreach velocity and budget stay in sync.</p>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-[28px] overflow-hidden shadow-2xl shadow-black/60 border border-white/10">
+            <img
+              src="https://images.unsplash.com/photo-1628495073765-e7fdbb7c25fc?auto=format&fit=crop&w=1200&q=80"
+              alt="Team members aligning strategies around sales and operations"
+              class="w-full h-72 object-cover"
+            />
+            <div class="bg-slate-950/70 p-6 space-y-4">
+              <p class="text-sm uppercase tracking-[0.4em] text-warmtrail-gold">Personas</p>
+              <div class="space-y-3">
+                <p class="text-lg font-semibold">Morgan Lee · Revenue Operations Leader</p>
+                <p class="text-slate-300 text-sm">
+                  Needs configurable signals and transparent spend to keep forecasts true even when headcount fluctuates.
                 </p>
               </div>
-              <div class="flex gap-3">
-                <span class="text-warmtrail-amber font-semibold">2.</span>
-                <p>
-                  SDR teams launch AI-sculpted drafts, humans polish them, and sequences pause the moment replies flood in—no dead follow-ups.
+              <div class="space-y-3">
+                <p class="text-lg font-semibold">Avery Patel · Sales Development Manager</p>
+                <p class="text-slate-300 text-sm">
+                  Needs consistent, personalized drafts and smart follow-ups so SDRs can chase scale without dropping replies.
                 </p>
               </div>
-              <div class="flex gap-3">
-                <span class="text-warmtrail-amber font-semibold">3.</span>
-                <p>
-                  Sales Ops &amp; Compliance teams track approvals, enforce opt-outs, and watch replies flow seamlessly into the CRM for accurate reporting.
+              <div class="space-y-3">
+                <p class="text-lg font-semibold">Jordan Rivera · Sales Ops &amp; Compliance Specialist</p>
+                <p class="text-slate-300 text-sm">
+                  Balances fast outreach with approvals, opt-outs, and CRM handoffs so leadership rests easy on compliance.
                 </p>
               </div>
             </div>
           </div>
-          <div class="rounded-3xl overflow-hidden shadow-2xl shadow-black/60">
-            <img
-              src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&w=1200&q=80"
-              alt="Data reporting dashboard that shows outreach and compliance metrics"
-              class="w-full h-full object-cover"
-            />
-          </div>
         </div>
       </section>
 
-      <section class="py-16 bg-slate-900/60">
-        <div class="max-w-6xl mx-auto px-4">
-          <div class="flex flex-col gap-6 mb-12">
-            <p class="text-sm uppercase tracking-[0.4em] text-warmtrail-amber">Personas</p>
+      <section id="personas" class="py-16 bg-slate-900/60">
+        <div class="max-w-6xl mx-auto px-4 space-y-8">
+          <div class="space-y-3">
+            <p class="text-xs uppercase tracking-[0.5em] text-warmtrail-gold">Personas</p>
             <h2 class="text-3xl font-semibold">Built for the people who keep revenue predictable.</h2>
-            <p class="text-slate-300 max-w-2xl">
-              Every WarmTrail workflow reflects the priorities of Revenue Operations, Sales Development, and Compliance leaders who balance outreach velocity with auditability.
+            <p class="text-slate-300 max-w-3xl">
+              WarmTrail merges automation with human oversight so every persona—from RevOps to Sales Ops—can see how signals, sequences, and compliance guardrails tie together.
             </p>
           </div>
           <div class="grid gap-6 md:grid-cols-3">
-            <article class="bg-white/5 border border-white/10 rounded-3xl p-6 space-y-3">
-              <h3 class="text-xl font-semibold">Morgan Lee</h3>
-              <p class="text-sm text-slate-400">Revenue Operations Leader</p>
-              <p class="text-slate-200 text-sm">
-                Needs configurable ICP signals plus clear performance data so headcount shifts don’t break the forecast.
+            <article class="bg-slate-950/80 border border-slate-800 rounded-3xl p-6 shadow-lg shadow-black/30 space-y-3">
+              <div class="text-sm text-warmtrail-gold uppercase tracking-[0.4em]">Morgan Lee</div>
+              <p class="text-base text-slate-200">
+                Revenue Operations Leader balancing ICP signals and performance reconciliation to keep budgets predictable as SDR headcount shifts.
+              </p>
+              <p class="text-sm text-slate-400">
+                WarmTrail surfaces the signals you trust and shows performance at a glance so forecasts never surprise.
               </p>
             </article>
-            <article class="bg-white/5 border border-white/10 rounded-3xl p-6 space-y-3">
-              <h3 class="text-xl font-semibold">Avery Patel</h3>
-              <p class="text-sm text-slate-400">Sales Development Manager</p>
-              <p class="text-slate-200 text-sm">
-                Wants consistent, personalized drafts and follow-ups so SDRs can own volume without dropping the human touch.
+            <article class="bg-slate-950/80 border border-slate-800 rounded-3xl p-6 shadow-lg shadow-black/30 space-y-3">
+              <div class="text-sm text-warmtrail-gold uppercase tracking-[0.4em]">Avery Patel</div>
+              <p class="text-base text-slate-200">
+                Sales Development Manager chasing personalization with consistent drafts, follow-ups, and real-time sequence health visibility.
+              </p>
+              <p class="text-sm text-slate-400">
+                Smart sequencing pauses on replies, escalates handoffs, and surfaces nightly health so no lead falls through the cracks.
               </p>
             </article>
-            <article class="bg-white/5 border border-white/10 rounded-3xl p-6 space-y-3">
-              <h3 class="text-xl font-semibold">Jordan Rivera</h3>
-              <p class="text-sm text-slate-400">Sales Ops &amp; Compliance Specialist</p>
-              <p class="text-slate-200 text-sm">
-                Balances fast outreach with CRM-ready audit trails, approvals, and opt-out enforcement so leadership stays confident.
+            <article class="bg-slate-950/80 border border-slate-800 rounded-3xl p-6 shadow-lg shadow-black/30 space-y-3">
+              <div class="text-sm text-warmtrail-gold uppercase tracking-[0.4em]">Jordan Rivera</div>
+              <p class="text-base text-slate-200">
+                Sales Ops &amp; Compliance specialist balancing rapid outreach with approvals, opt-outs, and CRM handoffs.
+              </p>
+              <p class="text-sm text-slate-400">
+                Every draft routes through human eyes, approval trails stay attached, and replies log automatically so compliance never lags.
               </p>
             </article>
           </div>
@@ -223,29 +257,27 @@
       </section>
 
       <section id="cta" class="py-16">
-        <div class="max-w-6xl mx-auto px-4 bg-gradient-to-r from-warmtrail-blue/90 via-warmtrail-slate/80 to-warmtrail-teal/70 rounded-3xl p-8 lg:p-12 shadow-2xl shadow-black/50">
-          <div class="grid gap-8 lg:grid-cols-2 items-center">
-            <div class="space-y-4">
-              <p class="text-sm uppercase tracking-[0.4em] text-warmtrail-amber">Ready to launch</p>
-              <h2 class="text-3xl font-semibold">
-                See how WarmTrail keeps outreach compliant, personal, and fully automated without losing control.
-              </h2>
-              <p class="text-slate-100">
-                Book a walkthrough or schedule a budget review to compare per-seat vs active-sequence pricing so you always choose the model that matches your velocity.
-              </p>
-            </div>
-            <div class="flex flex-col gap-3">
+        <div class="max-w-6xl mx-auto px-4">
+          <div class="rounded-[32px] bg-gradient-to-r from-warmtrail-teal/20 via-slate-900 to-warmtrail-gold/20 border border-white/10 p-10 text-center space-y-6 shadow-2xl shadow-black/30">
+            <p class="text-xs uppercase tracking-[0.5em] text-warmtrail-gold">Ready to move faster?</p>
+            <h2 class="text-3xl md:text-4xl font-semibold">
+              Book a walkthrough and see how WarmTrail keeps outreach compliant, personalized, and budget-friendly.
+            </h2>
+            <p class="text-slate-200 max-w-3xl mx-auto">
+              We will show you how Signal Studio, smart sequencing, and CRM guardrails work together, plus how per-seat or active-sequence pricing keeps your forecasts predictable.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
               <a
-                href="#"
-                class="inline-flex items-center justify-center bg-white text-warmtrail-blue font-semibold px-6 py-3 rounded-full shadow-lg shadow-white/40 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-warmtrail-amber"
+                href="mailto:hello@warmtrail.com"
+                class="inline-flex items-center justify-center bg-warmtrail-gold text-warmtrail-ink font-semibold px-6 py-3 rounded-full shadow-lg shadow-warmtrail-gold/40 hover:bg-amber-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-warmtrail-gold"
               >
-                Schedule a walkthrough
+                Talk to us
               </a>
               <a
-                href="#"
-                class="inline-flex items-center justify-center border border-white/30 px-6 py-3 rounded-full hover:border-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-warmtrail-amber"
+                href="#features"
+                class="inline-flex items-center justify-center border border-slate-600 px-6 py-3 rounded-full text-sm font-semibold text-slate-200 hover:border-slate-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-warmtrail-gold"
               >
-                Compare pricing models
+                Review features
               </a>
             </div>
           </div>
@@ -253,31 +285,35 @@
       </section>
     </main>
 
-    <footer class="bg-warmtrail-blue/90 border-t border-white/10 py-10">
-      <div class="max-w-6xl mx-auto px-4 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-        <div>
-          <p class="text-xl font-semibold">WarmTrail</p>
-          <p class="text-sm text-slate-400">© 2024 WarmTrail. All rights reserved.</p>
+    <footer class="bg-warmtrail-deep text-slate-300">
+      <div class="max-w-6xl mx-auto px-4 py-10 border-t border-slate-900 space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <p class="text-xl font-semibold text-white">WarmTrail</p>
+            <p class="text-sm text-slate-400">Trusted revenue outreach that scales with your team.</p>
+          </div>
+          <div class="flex flex-wrap gap-4 text-sm">
+            <a href="#features" class="hover:text-white">Features</a>
+            <a href="#pricing" class="hover:text-white">Pricing</a>
+            <a href="#personas" class="hover:text-white">Personas</a>
+            <a href="#cta" class="hover:text-white">Talk to us</a>
+          </div>
         </div>
-        <div class="flex gap-4 text-sm text-slate-300">
-          <a href="#features" class="hover:text-white">Features</a>
-          <a href="#how-it-works" class="hover:text-white">How it works</a>
-          <a href="#cta" class="hover:text-white">Contact</a>
+        <div class="text-sm space-y-2">
+          <p>
+            Photo by <a class="underline hover:text-white" href="https://unsplash.com/@vantaymedia">Van Tay Media</a> on <a class="underline hover:text-white" href="https://unsplash.com">Unsplash</a>
+          </p>
+          <p>
+            Photo by <a class="underline hover:text-white" href="https://unsplash.com/@bibhashpal">Bibhash Paul</a> on <a class="underline hover:text-white" href="https://unsplash.com">Unsplash</a>
+          </p>
+          <p>
+            Photos from <a class="underline hover:text-white" href="https://unsplash.com">Unsplash</a>
+          </p>
         </div>
-      </div>
-      <div class="max-w-6xl mx-auto px-4 mt-6 border-t border-white/10 pt-6 text-xs text-slate-400 space-y-1">
-        <p>
-          Photos from <a href="https://unsplash.com" class="underline hover:text-white" target="_blank" rel="noreferrer">Unsplash</a>.
-        </p>
-        <p>
-          Photo by <a href="https://unsplash.com/@garakta" class="underline hover:text-white" target="_blank" rel="noreferrer">Gatot Adri</a> on
-          <a href="https://unsplash.com" class="underline hover:text-white" target="_blank" rel="noreferrer">Unsplash</a>
-        </p>
-        <p>
-          Photo by <a href="https://unsplash.com/@dawson2406" class="underline hover:text-white" target="_blank" rel="noreferrer">Stephen Dawson</a> on
-          <a href="https://unsplash.com" class="underline hover:text-white" target="_blank" rel="noreferrer">Unsplash</a>
-        </p>
-        <p class="text-xs text-slate-500">Built with thoughtful revenue teams in mind.</p>
+        <div class="flex flex-wrap items-center justify-between text-xs text-slate-500">
+          <p>© {""}{new Date().getFullYear()} WarmTrail. All rights reserved.</p>
+          <p>Built with LaunchMind</p>
+        </div>
       </div>
     </footer>
   </body>
