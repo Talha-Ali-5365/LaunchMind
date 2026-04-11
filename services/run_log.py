@@ -179,19 +179,26 @@ def build_run_log_document(
         [m for m in message_history if isinstance(m, dict)],
     )
 
+    per_agent_models = artifacts.get("openai_model_per_agent")
     agents_section: list[dict[str, Any]] = []
     for meta in PIPELINE_AGENTS:
         aid = meta["id"]
+        tl = timelines.get(
+            aid,
+            {"stats": {"messages_sent": 0, "messages_received": 0}, "timeline": []},
+        )
         block: dict[str, Any] = {
             "id": aid,
             "title": meta["title"],
             "description": meta["description"],
-            **timelines.get(
-                aid,
-                {"stats": {"messages_sent": 0, "messages_received": 0}, "timeline": []},
-            ),
-            "outputs": _agent_outputs(artifacts, aid),
         }
+        if isinstance(per_agent_models, dict):
+            mid = per_agent_models.get(aid)
+            if isinstance(mid, str):
+                block["model"] = mid
+        block["stats"] = tl["stats"]
+        block["timeline"] = tl["timeline"]
+        block["outputs"] = _agent_outputs(artifacts, aid)
         agents_section.append(block)
 
     errors = artifacts.get("errors")

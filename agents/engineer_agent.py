@@ -33,7 +33,7 @@ def build_engineer_agent(
     Returns:
         Deep Agent runnable with GitHub tools.
     """
-    model = build_chat_model(settings)
+    model = build_chat_model(settings, agent="engineer")
     toolkit = EngineerToolkit(gh, ctx, settings)
     tools = build_engineer_structured_tools(toolkit)
     return create_deep_agent(model=model, system_prompt=ENGINEER_SYSTEM, tools=tools)

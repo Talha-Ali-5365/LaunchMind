@@ -26,7 +26,7 @@ def build_marketing_agent(settings: Settings, pr_url: str) -> Any:
     Returns:
         Deep Agent runnable with email + Slack tools.
     """
-    model = build_chat_model(settings)
+    model = build_chat_model(settings, agent="marketing")
     toolkit = MarketingToolkit(settings, pr_url)
     tools = build_marketing_structured_tools(toolkit)
     return create_deep_agent(model=model, system_prompt=MARKETING_SYSTEM, tools=tools)
