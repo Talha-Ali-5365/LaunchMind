@@ -36,7 +36,7 @@ def build_ceo_agent(settings: Settings) -> Any:
     Returns:
         Deep Agent runnable from ``deepagents.create_deep_agent``.
     """
-    model = build_chat_model(settings)
+    model = build_chat_model(settings, agent="ceo")
     return create_deep_agent(model=model, system_prompt=CEO_SYSTEM, tools=[])
 
 

@@ -29,7 +29,7 @@ from agents.marketing_agent import build_marketing_agent, marketing_run
 from agents.product_agent import build_product_agent, product_run
 from agents.qa_agent import build_qa_agent, qa_run
 from core.message_bus import MessageBus
-from core.settings import Settings, get_settings
+from core.settings import Settings, get_settings, openai_models_by_agent
 from models.messages import AgentMessage, new_message
 from services.github_service import GitHubService, parse_pull_number_from_url
 from services.run_log import save_run_output
@@ -92,6 +92,7 @@ async def run_pipeline_async(
     settings = settings or get_settings()
     rid = run_id or str(uuid.uuid4())
     started_at = _utc_iso()
+    openai_model_per_agent = openai_models_by_agent(settings)
     if verbose:
         bus, log = make_verbose_bus()
     else:
@@ -99,7 +100,13 @@ async def run_pipeline_async(
         log = logger.info
 
     try:
-        result = await _run_pipeline_core(idea, settings, bus, log)
+        result = await _run_pipeline_core(
+            idea,
+            settings,
+            bus,
+            log,
+            openai_model_per_agent=openai_model_per_agent,
+        )
         finished_at = _utc_iso()
         landing_html = result.pop("landing_html", None)
         out_dir = save_run_output(
@@ -126,6 +133,7 @@ async def run_pipeline_async(
             "idea": idea,
             "message_history": [m.model_dump(mode="json") for m in bus.history()],
             "errors": [str(e)],
+            "openai_model_per_agent": openai_model_per_agent,
         }
         save_run_output(
             settings,
@@ -169,9 +177,10 @@ async def _run_pipeline_core(
     settings: Settings,
     bus: MessageBus,
     log: Callable[..., None],
+    openai_model_per_agent: dict[str, str],
 ) -> dict[str, Any]:
     """Internal async pipeline implementation."""
-    artifacts: dict[str, Any] = {"idea": idea}
+    artifacts: dict[str, Any] = {"idea": idea, "openai_model_per_agent": openai_model_per_agent}
     errors: list[str] = []
 
     ceo_agent = build_ceo_agent(settings)

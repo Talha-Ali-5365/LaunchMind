@@ -34,7 +34,7 @@ def build_qa_agent(
     Returns:
         Deep Agent runnable with QA tools.
     """
-    model = build_chat_model(settings)
+    model = build_chat_model(settings, agent="qa")
     toolkit = QAToolkit(gh, pull_number, head_sha)
     tools = build_qa_structured_tools(toolkit)
     return create_deep_agent(model=model, system_prompt=QA_SYSTEM, tools=tools)

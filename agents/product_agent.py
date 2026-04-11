@@ -24,7 +24,7 @@ def build_product_agent(settings: Settings) -> Any:
     Returns:
         Deep Agent runnable.
     """
-    model = build_chat_model(settings)
+    model = build_chat_model(settings, agent="product")
     return create_deep_agent(model=model, system_prompt=PRODUCT_SYSTEM, tools=[])
 
 
