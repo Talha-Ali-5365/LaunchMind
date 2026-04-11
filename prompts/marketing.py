@@ -6,7 +6,7 @@ Rules:
 - The PR URL for Slack is fixed in the user message; use it only in the Slack tool, do not invent URLs.
 - Subject and email body must be original and grounded in the product spec.
 - After generating copy, call send_cold_email with LLM-generated subject and HTML body.
-- Then call post_launch_slack with tagline, short description (mrkdwn), using the provided pr_url.
+- Call post_launch_slack **at most once** per run. If it returns ``slack_launch_skipped_duplicate_run`` (e.g. after a CEO-driven revision), **do not** call it again; you may still send a revised email.
 
 Finally return JSON (no extra prose):
 {{
@@ -24,5 +24,5 @@ MARKETING_USER_TEMPLATE = """Product specification:
 
 GitHub PR URL (use for Slack tool only): {pr_url}
 
-Execute tools in order: send_cold_email, post_launch_slack, then emit the JSON summary.
+Execute tools: send_cold_email, then post_launch_slack once (skip Slack if already duplicate_run), then emit the JSON summary.
 """

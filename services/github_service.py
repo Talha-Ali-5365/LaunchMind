@@ -207,6 +207,13 @@ class GitHubService:
         }
         if sha:
             body["sha"] = sha
+        # PRD: commits attributable to the Engineer agent (visible in Git history).
+        agent_author = {
+            "name": "EngineerAgent",
+            "email": "agent@launchmind.ai",
+        }
+        body["author"] = agent_author
+        body["committer"] = agent_author
         return self._request("PUT", contents_path, json_body=body).json()
 
     def create_pull_request(
