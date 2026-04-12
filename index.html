@@ -6,7 +6,7 @@
     <title>StudyLink — Trusted local tutors, booked with confidence</title>
     <meta
       name="description"
-      content="StudyLink helps students and families quickly find trusted local tutors, compare options, and book help with confidence."
+      content="StudyLink is a mobile marketplace that helps students and families quickly find trusted local tutors, compare options, and book help with confidence."
     />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -15,16 +15,18 @@
           extend: {
             colors: {
               ink: '#0f172a',
+              navy: '#111827',
               sea: '#0f766e',
               mint: '#ccfbf1',
-              sand: '#fff7ed',
+              sand: '#fef3c7',
               cloud: '#f8fafc',
+              paper: '#fffdf7',
             },
             fontFamily: {
-              sans: ['Inter', 'system-ui', 'sans-serif'],
+              sans: ['Manrope', 'system-ui', 'sans-serif'],
             },
             boxShadow: {
-              soft: '0 20px 60px rgba(15, 23, 42, 0.12)',
+              soft: '0 22px 70px rgba(15, 23, 42, 0.12)',
             },
           },
         },
@@ -32,7 +34,7 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   </head>
   <body class="bg-cloud font-sans text-slate-800 antialiased">
     <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
@@ -41,35 +43,38 @@
           <span class="flex h-10 w-10 items-center justify-center rounded-2xl bg-sea text-sm font-extrabold text-white shadow-md">SL</span>
           <span>StudyLink</span>
         </a>
-        <div class="flex flex-wrap items-center gap-2 text-sm font-medium text-slate-700 sm:gap-4">
+        <div class="flex flex-wrap items-center gap-2 text-sm font-semibold text-slate-700 sm:gap-4">
           <a class="rounded-full px-3 py-2 transition hover:bg-slate-100 hover:text-ink focus:outline-none focus:ring-2 focus:ring-sea/60 focus:ring-offset-2" href="#features">Features</a>
-          <a class="rounded-full px-3 py-2 transition hover:bg-slate-100 hover:text-ink focus:outline-none focus:ring-2 focus:ring-sea/60 focus:ring-offset-2" href="#how-it-works">How it works</a>
-          <a class="rounded-full px-3 py-2 transition hover:bg-slate-100 hover:text-ink focus:outline-none focus:ring-2 focus:ring-sea/60 focus:ring-offset-2" href="#trust">Trust</a>
-          <a class="rounded-full bg-ink px-4 py-2 text-white transition hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-sea/60 focus:ring-offset-2" href="#cta">Book a tutor</a>
+          <a class="rounded-full px-3 py-2 transition hover:bg-slate-100 hover:text-ink focus:outline-none focus:ring-2 focus:ring-sea/60 focus:ring-offset-2" href="#personas">Who it's for</a>
+          <a class="rounded-full px-3 py-2 transition hover:bg-slate-100 hover:text-ink focus:outline-none focus:ring-2 focus:ring-sea/60 focus:ring-offset-2" href="#cta">Get started</a>
+          <a class="rounded-full bg-ink px-4 py-2 text-white transition hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-sea/60 focus:ring-offset-2" href="#cta">Find a tutor</a>
         </div>
       </nav>
     </header>
 
     <main id="top">
-      <section class="bg-gradient-to-b from-teal-50 via-white to-white">
+      <section class="bg-gradient-to-b from-emerald-50 via-white to-cloud">
         <div class="mx-auto grid max-w-6xl gap-12 px-4 py-16 lg:grid-cols-2 lg:items-center lg:py-24">
           <div>
-            <div class="inline-flex items-center gap-2 rounded-full border border-teal-100 bg-white px-4 py-2 text-sm font-semibold text-sea shadow-sm">
+            <div class="inline-flex items-center gap-2 rounded-full border border-emerald-100 bg-white px-4 py-2 text-sm font-semibold text-sea shadow-sm">
               <span class="h-2.5 w-2.5 rounded-full bg-emerald-500"></span>
-              Trusted local tutoring for busy families
+              Trusted local tutoring for students, parents, and tutors
             </div>
             <h1 class="mt-6 max-w-xl text-4xl font-extrabold tracking-tight text-ink sm:text-5xl lg:text-6xl">
               Find the right tutor nearby and book help with confidence.
             </h1>
             <p class="mt-6 max-w-xl text-lg leading-8 text-slate-600">
-              StudyLink is a mobile marketplace for students and parents to search by subject, compare verified tutors, message securely, and schedule sessions without the back-and-forth.
+              StudyLink is a mobile marketplace that helps families quickly search by subject, compare verified tutors, and schedule sessions without the usual back-and-forth.
+            </p>
+            <p class="mt-4 max-w-xl text-base leading-7 text-slate-500">
+              Built around the real tutoring decision flow: discover, compare, book, message, pay, and review — with trust signals front and center.
             </p>
             <div class="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href="#cta" class="inline-flex items-center justify-center rounded-2xl bg-sea px-6 py-3.5 text-base font-semibold text-white shadow-soft transition hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-sea/60 focus:ring-offset-2">
                 Start searching tutors
               </a>
               <a href="#features" class="inline-flex items-center justify-center rounded-2xl border border-slate-300 bg-white px-6 py-3.5 text-base font-semibold text-ink transition hover:border-slate-400 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-sea/60 focus:ring-offset-2">
-                See how it works
+                Explore features
               </a>
             </div>
             <dl class="mt-10 grid max-w-xl grid-cols-3 gap-4 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
@@ -91,22 +96,28 @@
           <div class="relative">
             <div class="absolute -left-5 -top-5 h-24 w-24 rounded-full bg-amber-200/50 blur-2xl"></div>
             <div class="absolute -bottom-6 -right-4 h-28 w-28 rounded-full bg-teal-200/60 blur-2xl"></div>
-            <div class="overflow-hidden rounded-[2rem] border border-white bg-white shadow-soft">
-              <img
-                src="https://images.unsplash.com/photo-1758685733907-42e9651721f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTU1MjR8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMHR1dG9yaW5nJTIwc3R1ZHklMjBzZXNzaW9uJTIwbGFwdG9wJTIwY2xhc3Nyb29tfGVufDB8fHx8MTc3NTk4Mjg2Nnww&ixlib=rb-4.1.0&q=80&w=1080&auto=format&fit=crop&w=1200&q=80"
-                alt="Tutor helping students study together in a bright classroom"
-                class="h-[420px] w-full object-cover"
-              />
-            </div>
-            <div class="absolute -left-3 bottom-6 w-60 rounded-2xl border border-slate-200 bg-white p-4 shadow-soft">
-              <div class="flex items-center gap-3">
-                <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-teal-100 text-sea">
-                  <svg viewBox="0 0 24 24" class="h-6 w-6 fill-none stroke-current stroke-2"><path d="M4 6h16M7 6V4m10 2V4M6 10h12M6 14h8" stroke-linecap="round"/><path d="M6 20h12a2 2 0 0 0 2-2V8H4v10a2 2 0 0 0 2 2Z"/></svg>
-                </div>
-                <div>
-                  <p class="text-sm font-semibold text-ink">Book in minutes</p>
-                  <p class="text-sm text-slate-500">Availability, rates, and reviews in one view</p>
-                </div>
+            <div class="grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
+              <div class="overflow-hidden rounded-[2rem] border border-white bg-white shadow-soft lg:row-span-2">
+                <img
+                  src="https://images.unsplash.com/photo-1758525862357-27fb39545240?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTU1MjR8MHwxfHNlYXJjaHwxfHx0dXRvcmluZyUyMHN0dWRlbnRzJTIwZmFtaWx5JTIwbGFwdG9wJTIwZGVza3xlbnwwfHx8fDE3NzU5ODI5NDR8MA&ixlib=rb-4.1.0&q=80&w=1080&auto=format&fit=crop&w=1200&q=80"
+                  alt="Parent helping a student study at a desk with a laptop, reflecting family tutoring support"
+                  class="h-[420px] w-full object-cover"
+                />
+              </div>
+              <div class="overflow-hidden rounded-[2rem] border border-white bg-white shadow-soft">
+                <img
+                  src="https://images.unsplash.com/photo-1758685733907-42e9651721f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTU1MjR8MHwxfHNlYXJjaHwxfHx0ZWFjaGVyJTIwY2xhc3Nyb29tJTIwc3R1ZGVudCUyMHN0dWR5JTIwc2Vzc2lvbnxlbnwwfHx8fDE3NzU5ODI5NDJ8MA&ixlib=rb-4.1.0&q=80&w=1080&auto=format&fit=crop&w=1200&q=80"
+                  alt="Tutor guiding a student through a lesson, showing an in-person tutoring session"
+                  class="h-56 w-full object-cover"
+                />
+              </div>
+              <div class="rounded-[2rem] border border-slate-200 bg-white p-5 shadow-soft">
+                <p class="text-sm font-semibold uppercase tracking-[0.2em] text-sea">At a glance</p>
+                <ul class="mt-4 space-y-3 text-sm leading-6 text-slate-600">
+                  <li><span class="font-semibold text-ink">Local search:</span> subject, price, availability, and distance</li>
+                  <li><span class="font-semibold text-ink">Trust signals:</span> badges, ratings, and reviews</li>
+                  <li><span class="font-semibold text-ink">Coordination:</span> chat, scheduling, and secure payment</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -117,7 +128,7 @@
         <div class="max-w-2xl">
           <p class="text-sm font-semibold uppercase tracking-[0.2em] text-sea">Features</p>
           <h2 class="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">Everything families need to choose tutoring confidently</h2>
-          <p class="mt-4 text-lg text-slate-600">Built around the real decision flow: search, compare, book, chat, pay, and review — all from a mobile-friendly experience.</p>
+          <p class="mt-4 text-lg text-slate-600">The experience is structured around the core user stories in the product spec: fast discovery for students, safe comparison for parents, and a reputation-building workflow for tutors.</p>
         </div>
 
         <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
@@ -165,142 +176,115 @@
             <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white">
               <svg viewBox="0 0 24 24" class="h-6 w-6 fill-none stroke-current stroke-2"><path d="M7 11a5 5 0 0 1 10 0v4H7v-4Z"/><path d="M5 15h14v4H5z" stroke-linejoin="round"/><path d="M9 7.5V5a3 3 0 0 1 6 0v2.5" stroke-linecap="round"/></svg>
             </div>
-            <h3 class="mt-5 text-xl font-semibold">Safety-first marketplace</h3>
-            <p class="mt-3 leading-7 text-white/80">Designed for families who want confidence, and tutors who want steady local demand with fair, transparent earning.</p>
+            <h3 class="mt-5 text-xl font-semibold">Trustworthy by design</h3>
+            <p class="mt-3 leading-7 text-white/80">A clear marketplace flow helps families compare confidently while giving tutors a transparent way to earn, collect reviews, and manage cancellation rules.</p>
           </article>
         </div>
       </section>
 
-      <section id="how-it-works" class="bg-sand/70 py-16 lg:py-20">
-        <div class="mx-auto max-w-6xl px-4">
-          <div class="max-w-2xl">
-            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-sea">How it works</p>
-            <h2 class="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">A simple flow for busy students, parents, and tutors</h2>
-          </div>
-          <div class="mt-10 grid gap-6 lg:grid-cols-3">
-            <div class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-              <p class="text-sm font-semibold text-sea">01</p>
-              <h3 class="mt-3 text-xl font-semibold text-ink">Search and shortlist</h3>
-              <p class="mt-3 leading-7 text-slate-600">Filter by subject, budget, distance, and schedule to quickly narrow down the best fit.</p>
-            </div>
-            <div class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-              <p class="text-sm font-semibold text-sea">02</p>
-              <h3 class="mt-3 text-xl font-semibold text-ink">Compare and confirm</h3>
-              <p class="mt-3 leading-7 text-slate-600">Review profiles, credentials, ratings, and intro videos before sending a booking request.</p>
-            </div>
-            <div class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-              <p class="text-sm font-semibold text-sea">03</p>
-              <h3 class="mt-3 text-xl font-semibold text-ink">Message, pay, and review</h3>
-              <p class="mt-3 leading-7 text-slate-600">Coordinate securely, handle payments in-app, and leave feedback that strengthens the network.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="trust" class="mx-auto max-w-6xl px-4 py-16 lg:py-20">
-        <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+      <section id="personas" class="mx-auto max-w-6xl px-4 py-16 lg:py-20">
+        <div class="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <p class="text-sm font-semibold uppercase tracking-[0.2em] text-sea">Personas</p>
-            <h2 class="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">Built for the three people who make tutoring work</h2>
-            <div class="mt-8 grid gap-4">
-              <article class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
-                <div class="flex items-start gap-4">
-                  <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-teal-100 text-sea font-bold">M</div>
-                  <div>
-                    <h3 class="text-lg font-semibold text-ink">Mia, Student</h3>
-                    <p class="mt-1 leading-7 text-slate-600">Needs fast help in specific subjects and a tutor nearby who fits her schedule and budget.</p>
-                  </div>
-                </div>
-              </article>
-              <article class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
-                <div class="flex items-start gap-4">
-                  <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-amber-100 text-amber-700 font-bold">D</div>
-                  <div>
-                    <h3 class="text-lg font-semibold text-ink">Daniel, Parent/Guardian</h3>
-                    <p class="mt-1 leading-7 text-slate-600">Wants a safe way to compare tutors, verify trust, and manage bookings and payments confidently.</p>
-                  </div>
-                </div>
-              </article>
-              <article class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
-                <div class="flex items-start gap-4">
-                  <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-rose-100 text-rose-700 font-bold">A</div>
-                  <div>
-                    <h3 class="text-lg font-semibold text-ink">Aisha, Tutor</h3>
-                    <p class="mt-1 leading-7 text-slate-600">Needs steady local students, simple scheduling, and transparent reputation building.</p>
-                  </div>
-                </div>
-              </article>
-            </div>
-          </div>
-
-          <div class="space-y-6">
-            <div class="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-soft">
+            <h2 class="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">Designed for every side of the tutoring journey</h2>
+            <p class="mt-4 text-lg text-slate-600">The page speaks to students who need quick help, guardians who need safety and clarity, and tutors who need a steady flow of local students.</p>
+            <div class="mt-8 overflow-hidden rounded-[2rem] border border-white bg-white shadow-soft">
               <img
-                src="https://images.unsplash.com/photo-1758612898402-537df8d68723?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTU1MjR8MHwxfHxwYXJlbnQlMjBjaGlsZCUyMGxlYXJuaW5nJTIwdHV0b3IlMjBob21lJTIwc3R1ZHl8ZW58MHx8fHwxNzc1OTgyODY2fDA&ixlib=rb-4.1.0&q=80&w=1080&auto=format&fit=crop&w=1200&q=80"
-                alt="Parent helping a child with homework at home in a warm study setting"
+                src="https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1200&q=80"
+                alt="Person working on a laptop at a remote desk, reflecting the tutor's professional workspace"
                 class="h-72 w-full object-cover"
               />
             </div>
-            <div class="rounded-[2rem] bg-ink p-7 text-white shadow-soft">
-              <p class="text-sm font-semibold uppercase tracking-[0.2em] text-teal-200">Trust signals</p>
-              <ul class="mt-4 space-y-3 text-white/85">
-                <li class="flex gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-teal-300"></span>Verified profiles with ratings and reviews</li>
-                <li class="flex gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-teal-300"></span>Clear hourly rates, cancellation rules, and availability</li>
-                <li class="flex gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-teal-300"></span>Secure chat and payment flows for coordinated bookings</li>
-              </ul>
-            </div>
+          </div>
+
+          <div class="grid gap-4 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+            <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+              <p class="text-sm font-semibold uppercase tracking-[0.2em] text-sea">Mia</p>
+              <h3 class="mt-3 text-xl font-semibold text-ink">Student</h3>
+              <p class="mt-3 leading-7 text-slate-600">Needs fast help in specific subjects and struggles to find a tutor nearby who fits her schedule and budget.</p>
+            </article>
+            <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+              <p class="text-sm font-semibold uppercase tracking-[0.2em] text-sea">Daniel</p>
+              <h3 class="mt-3 text-xl font-semibold text-ink">Parent / Guardian</h3>
+              <p class="mt-3 leading-7 text-slate-600">Wants a safe, reliable way to compare tutors, verify trust, and manage bookings and payments for their child.</p>
+            </article>
+            <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+              <p class="text-sm font-semibold uppercase tracking-[0.2em] text-sea">Aisha</p>
+              <h3 class="mt-3 text-xl font-semibold text-ink">Tutor</h3>
+              <p class="mt-3 leading-7 text-slate-600">Needs a steady flow of local students, simple scheduling, and a way to build reputation and earn transparently.</p>
+            </article>
           </div>
         </div>
       </section>
 
-      <section id="cta" class="bg-sea py-16 lg:py-20">
-        <div class="mx-auto flex max-w-6xl flex-col gap-8 px-4 lg:flex-row lg:items-center lg:justify-between">
-          <div class="max-w-2xl text-white">
-            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-teal-100">Ready to launch</p>
-            <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Give families a faster, safer way to find tutoring support.</h2>
-            <p class="mt-4 text-lg leading-8 text-teal-50">A polished marketplace experience that brings search, comparison, booking, chat, payments, and trust together in one app.</p>
+      <section id="cta" class="mx-auto max-w-6xl px-4 py-16 lg:py-20">
+        <div class="overflow-hidden rounded-[2rem] bg-slate-900 px-6 py-10 text-white shadow-soft sm:px-10 sm:py-12">
+          <div class="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+            <div>
+              <p class="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-300">Final step</p>
+              <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Give families a faster path to the right tutor.</h2>
+              <p class="mt-4 max-w-2xl text-lg leading-8 text-slate-300">
+                StudyLink brings local search, comparisons, booking, messaging, payments, and trust into one mobile-first experience.
+              </p>
+            </div>
+            <div class="flex flex-col gap-3 sm:flex-row lg:justify-end">
+              <a href="#top" class="inline-flex items-center justify-center rounded-2xl bg-white px-6 py-3.5 text-base font-semibold text-slate-900 transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-white/70 focus:ring-offset-2 focus:ring-offset-slate-900">
+                Back to top
+              </a>
+              <a href="#features" class="inline-flex items-center justify-center rounded-2xl border border-white/20 bg-white/10 px-6 py-3.5 text-base font-semibold text-white transition hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white/70 focus:ring-offset-2 focus:ring-offset-slate-900">
+                Review features
+              </a>
+            </div>
           </div>
-          <a href="#top" class="inline-flex items-center justify-center rounded-2xl bg-white px-6 py-3.5 text-base font-semibold text-sea transition hover:bg-teal-50 focus:outline-none focus:ring-2 focus:ring-white/80 focus:ring-offset-2 focus:ring-offset-sea">
-            Explore StudyLink
-          </a>
         </div>
       </section>
     </main>
 
     <footer class="border-t border-slate-200 bg-white">
-      <div class="mx-auto max-w-6xl px-4 py-10">
-        <div class="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
-          <div>
-            <div class="flex items-center gap-3 text-lg font-bold text-ink">
-              <span class="flex h-10 w-10 items-center justify-center rounded-2xl bg-sea text-sm font-extrabold text-white">SL</span>
-              StudyLink
-            </div>
-            <p class="mt-3 max-w-md text-sm leading-6 text-slate-600">
-              Trusted local tutor marketplace for students, parents, and tutors.
-            </p>
+      <div class="mx-auto grid max-w-6xl gap-8 px-4 py-10 md:grid-cols-3">
+        <div>
+          <div class="flex items-center gap-3 text-xl font-bold tracking-tight text-ink">
+            <span class="flex h-10 w-10 items-center justify-center rounded-2xl bg-sea text-sm font-extrabold text-white shadow-md">SL</span>
+            <span>StudyLink</span>
           </div>
-          <div class="flex flex-wrap gap-4 text-sm font-medium text-slate-600">
-            <a class="transition hover:text-ink" href="#features">Features</a>
-            <a class="transition hover:text-ink" href="#how-it-works">How it works</a>
-            <a class="transition hover:text-ink" href="#trust">Trust</a>
-            <a class="transition hover:text-ink" href="#cta">CTA</a>
-          </div>
+          <p class="mt-4 max-w-sm text-sm leading-6 text-slate-600">A trusted local tutoring marketplace designed to help students and families compare options and book confidently.</p>
         </div>
-
-        <div class="mt-8 grid gap-4 border-t border-slate-200 pt-6 text-sm text-slate-500 md:grid-cols-2">
-          <p>© <span id="year"></span> StudyLink. All rights reserved.</p>
-          <p class="md:text-right">
-            Photos from <a href="https://unsplash.com" class="font-medium text-slate-700 underline decoration-slate-300 underline-offset-2 hover:text-ink">Unsplash</a>.
-            Photo by <a href="https://unsplash.com/@silverkblack" class="font-medium text-slate-700 underline decoration-slate-300 underline-offset-2 hover:text-ink">Vitaly Gariev</a> on <a href="https://unsplash.com" class="font-medium text-slate-700 underline decoration-slate-300 underline-offset-2 hover:text-ink">Unsplash</a>.
+        <div>
+          <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Navigate</h3>
+          <ul class="mt-4 space-y-3 text-sm font-medium text-slate-700">
+            <li><a class="transition hover:text-ink" href="#features">Features</a></li>
+            <li><a class="transition hover:text-ink" href="#personas">Who it's for</a></li>
+            <li><a class="transition hover:text-ink" href="#cta">Get started</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Credits</h3>
+          <p class="mt-4 text-sm leading-6 text-slate-600">
+            Photos from <a class="font-semibold text-ink underline decoration-slate-300 underline-offset-2 transition hover:decoration-ink" href="https://unsplash.com" target="_blank" rel="noreferrer">Unsplash</a>.
           </p>
-          <p class="md:col-span-2">
-            Photo by <a href="https://unsplash.com/@silverkblack" class="font-medium text-slate-700 underline decoration-slate-300 underline-offset-2 hover:text-ink">Vitaly Gariev</a> on <a href="https://unsplash.com" class="font-medium text-slate-700 underline decoration-slate-300 underline-offset-2 hover:text-ink">Unsplash</a>.
-          </p>
+          <ul class="mt-4 space-y-3 text-sm leading-6 text-slate-600">
+            <li>
+              Photo by <a class="font-semibold text-ink underline decoration-slate-300 underline-offset-2 transition hover:decoration-ink" href="https://unsplash.com/@silverkblack" target="_blank" rel="noreferrer">Vitaly Gariev</a> on <a class="font-semibold text-ink underline decoration-slate-300 underline-offset-2 transition hover:decoration-ink" href="https://unsplash.com" target="_blank" rel="noreferrer">Unsplash</a>
+            </li>
+            <li>
+              Photo by <a class="font-semibold text-ink underline decoration-slate-300 underline-offset-2 transition hover:decoration-ink" href="https://unsplash.com/@silverkblack" target="_blank" rel="noreferrer">Vitaly Gariev</a> on <a class="font-semibold text-ink underline decoration-slate-300 underline-offset-2 transition hover:decoration-ink" href="https://unsplash.com" target="_blank" rel="noreferrer">Unsplash</a>
+            </li>
+            <li>
+              Photo by <a class="font-semibold text-ink underline decoration-slate-300 underline-offset-2 transition hover:decoration-ink" href="https://unsplash.com/@silverkblack" target="_blank" rel="noreferrer">Vitaly Gariev</a> on <a class="font-semibold text-ink underline decoration-slate-300 underline-offset-2 transition hover:decoration-ink" href="https://unsplash.com" target="_blank" rel="noreferrer">Unsplash</a>
+            </li>
+          </ul>
         </div>
       </div>
-      <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-      </script>
+      <div class="border-t border-slate-100">
+        <div class="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-4 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+          <p>© <span id="year"></span> StudyLink. All rights reserved.</p>
+          <p>Built with LaunchMind.</p>
+        </div>
+      </div>
     </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
