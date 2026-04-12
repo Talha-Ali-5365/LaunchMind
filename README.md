@@ -102,8 +102,8 @@ pip install -e .
 
 1. Copy `.env.example` → `.env` and fill in real values (never commit `.env`).
 2. **GitHub**: Public repo; classic PAT with `repo` and `workflow`. Ensure branch `**ENGINEER_BASE_BRANCH`** (default `agent`) exists—it is the parent for engineer branches and the PR merge target.
-3. **Slack**: Bot token with `chat:write`, `channels:read`, `channels:join`; channel `#launches` (or your `SLACK_CHANNEL`); invite the bot. For the course README requirement, add your **workspace invite link** or screenshot note in this section when you submit.
-4. **Email**: The PRD names **SendGrid** or **Gmail**; this repo uses **Resend** for the same role (real HTML email from the Marketing agent). With `onboarding@resend.dev`, `**TO_EMAIL` must match your Resend account** in testing; for other recipients, [verify a domain](https://resend.com/domains).
+3. **Slack**: Bot token with `chat:write`, `channels:read`, `channels:join`; channel `#launches` (or your `SLACK_CHANNEL`); invite the bot.
+4. **Email**: The course PRD names **SendGrid** or **Gmail API**. This implementation uses [**Resend**](https://resend.com) for the same outcome (real outbound HTML email, API key in env). If your grader requires SendGrid by name, confirm with them or swap the provider in `services/email_service.py`. With `onboarding@resend.dev`, **`TO_EMAIL` must match your Resend account** in testing; for other recipients, [verify a domain](https://resend.com/domains).
 5. **Unsplash** (optional): `UNSPLASH_ACCESS_KEY` — engineer tool `search_unsplash_photos`; otherwise static fallback URLs in prompts.
 
 ## Run

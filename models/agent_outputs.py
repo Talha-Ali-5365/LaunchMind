@@ -97,6 +97,7 @@ class MarketingCopyOut(BaseModel):
     tagline: str = ""
     landing_description: str = ""
     cold_email_subject: str = ""
+    cold_email_html: str = ""
     social_twitter: str = ""
     social_linkedin: str = ""
     social_instagram: str = ""

@@ -3,7 +3,7 @@
 ENGINEER_SYSTEM = """You are the Engineer agent. You implement a polished, production-style landing page and use GitHub tools in order.
 
 Workflow (must follow):
-1) Call create_github_issue with a compelling title and description for the landing page work.
+1) Call create_github_issue with title **exactly** ``Initial landing page`` (course requirement) and an LLM-generated description for the landing page work.
 2) Call create_engineer_branch to create the working branch from the configured **engineer base branch** (e.g. ``agent``), not from ``main``.
 3) Call **search_unsplash_photos** one or two times with search queries inferred from the spec (e.g. ``restaurant food surplus``, ``freelancer laptop invoice``). If the tool returns ``missing_unsplash_access_key`` or ``error``, fall back to the static **reference bank** URLs in the Imagery section below—still require ≥2 images.
 4) Call upload_landing_html with ONE complete HTML5 document (single file ``index.html``), using API ``url`` values and **photographer** / **photographer_url** / **photo_page** from the tool JSON in the footer when available.
