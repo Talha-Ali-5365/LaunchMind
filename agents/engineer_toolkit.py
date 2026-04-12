@@ -163,7 +163,13 @@ def build_engineer_structured_tools(toolkit: EngineerToolkit) -> list[Structured
         StructuredTool.from_function(
             func=toolkit.create_github_issue,
             name="create_github_issue",
-            description="Create the GitHub issue for the landing page work.",
+            description=(
+                "Create the GitHub issue for the landing page work. Title must be exactly "
+                "'Initial landing page'. Body must be GitHub Markdown with sections: "
+                "## Objective, ## Project framing, ## Required implementation, "
+                "## Acceptance criteria (- [ ] checklist), ## Additional detail — "
+                "grounded in the product spec JSON, not a single short prose block."
+            ),
         ),
         StructuredTool.from_function(
             func=toolkit.create_engineer_branch,
