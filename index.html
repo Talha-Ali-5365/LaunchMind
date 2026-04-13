@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="LaunchMind is a mobile marketplace that helps students quickly find trusted local tutors and book sessions with confidence, while giving tutors an easy way to get discovered, verified, and paid." />
+  <title>LaunchMind — Trusted Local Tutoring Marketplace</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Merriweather', 'Georgia', 'serif'],
+          },
+          colors: {
+            ink: '#10233a',
+            navy: '#183153',
+            moss: '#2f6b56',
+            sage: '#edf5f1',
+            sand: '#f8f3ea',
+            clay: '#c27a4b',
+            sky: '#dce9f5',
+          },
+          boxShadow: {
+            soft: '0 18px 60px rgba(16, 35, 58, 0.10)',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-sand text-slate-800 antialiased font-sans">
+  <header class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/85 backdrop-blur">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between" aria-label="Primary">
+      <a href="#top" class="flex items-center gap-3 font-semibold text-slate-900 focus:outline-none focus:ring-2 focus:ring-moss/30 rounded-xl">
+        <span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-navy text-white shadow-soft">L</span>
+        <span>LaunchMind</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+        <a href="#features" class="hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-moss/30 rounded">Features</a>
+        <a href="#personas" class="hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-moss/30 rounded">Personas</a>
+        <a href="#outreach" class="hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-moss/30 rounded">Cold email</a>
+        <a href="#cta" class="hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-moss/30 rounded">Launch</a>
+      </div>
+      <a href="#cta" class="inline-flex items-center rounded-full bg-navy px-4 py-2 text-sm font-semibold text-white shadow-soft hover:bg-slate-950 focus:outline-none focus:ring-2 focus:ring-navy/40">Find a tutor</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="relative overflow-hidden">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(47,107,86,0.10),_transparent_24%),radial-gradient(circle_at_bottom_left,_rgba(194,122,75,0.12),_transparent_28%)]"></div>
+      <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="inline-flex items-center gap-2 rounded-full border border-moss/15 bg-white px-4 py-2 text-sm font-medium text-moss shadow-sm">
+              <span class="h-2 w-2 rounded-full bg-clay"></span>
+              One-city launch • trusted local tutoring marketplace
+            </div>
+            <h1 class="mt-6 max-w-2xl font-display text-4xl sm:text-5xl lg:text-6xl tracking-tight text-ink leading-tight">
+              Find the right tutor fast, and book with confidence.
+            </h1>
+            <p class="mt-6 max-w-xl text-lg leading-8 text-slate-600">
+              LaunchMind helps students and parents search by subject, grade, location, availability, and price while giving tutors a verified profile, reliable discovery, and secure in-app payment in one mobile marketplace.
+            </p>
+            <div class="mt-8 flex flex-col sm:flex-row gap-3">
+              <a href="#features" class="inline-flex justify-center rounded-full bg-moss px-6 py-3.5 text-base font-semibold text-white shadow-soft hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-moss/40">Explore features</a>
+              <a href="#outreach" class="inline-flex justify-center rounded-full border border-slate-300 bg-white px-6 py-3.5 text-base font-semibold text-slate-700 hover:border-slate-400 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-moss/30">See cold email</a>
+            </div>
+            <dl class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-xl">
+              <div class="rounded-2xl bg-white p-4 shadow-soft border border-slate-100">
+                <dt class="text-sm text-slate-500">Search</dt>
+                <dd class="mt-1 text-xl font-bold text-ink">Fast filters</dd>
+              </div>
+              <div class="rounded-2xl bg-white p-4 shadow-soft border border-slate-100">
+                <dt class="text-sm text-slate-500">Trust</dt>
+                <dd class="mt-1 text-xl font-bold text-ink">Verified profiles</dd>
+              </div>
+              <div class="rounded-2xl bg-white p-4 shadow-soft border border-slate-100">
+                <dt class="text-sm text-slate-500">Pay</dt>
+                <dd class="mt-1 text-xl font-bold text-ink">In-app checkout</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="relative">
+            <div class="absolute -inset-4 rounded-[2rem] bg-navy/10 blur-2xl"></div>
+            <div class="relative overflow-hidden rounded-[2rem] bg-white p-3 shadow-soft border border-slate-200">
+              <img src="https://images.unsplash.com/photo-1758685733907-42e9651721f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTU1MjR8MHwxfHNlYXJjaHwxfHxzdHVkZW50JTIwdHV0b3IlMjBzdHVkeWluZyUyMGxhcHRvcCUyMGNsYXNzcm9vbXxlbnwwfHx8fDE3NzUzMTc1NzV8MA&ixlib=rb-4.1.0&q=80&w=1080&auto=format&fit=crop&w=1200&q=80" alt="Student and tutor working together at a desk, reflecting LaunchMind's fast matching and supportive tutoring sessions." class="h-72 sm:h-[28rem] w-full rounded-[1.5rem] object-cover" />
+              <div class="absolute bottom-6 left-6 right-6 rounded-2xl bg-slate-950/80 p-4 text-white backdrop-blur-sm">
+                <div class="flex items-center justify-between gap-4">
+                  <div>
+                    <p class="text-sm text-slate-300">Trusted booking flow</p>
+                    <p class="mt-1 font-semibold">Match • verify • chat • book • pay</p>
+                  </div>
+                  <div class="hidden sm:flex items-center gap-2 rounded-full bg-white/10 px-3 py-2 text-sm">
+                    <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+                    Safety checks on
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="absolute -bottom-6 -left-4 hidden sm:block rounded-2xl bg-white p-4 shadow-soft border border-slate-100 max-w-xs">
+              <p class="text-sm font-semibold text-ink">Maya’s quick filter</p>
+              <p class="mt-1 text-sm text-slate-600">Math • Grade 8 • 3 miles • After school • $30/hr</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="py-16 sm:py-20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl">
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-moss">Features</p>
+          <h2 class="mt-3 font-display text-3xl sm:text-4xl text-ink">Built around how families choose a tutor and how tutors win local demand.</h2>
+          <p class="mt-4 text-lg text-slate-600">The product balances speed, trust, and marketplace quality from discovery through payment.</p>
+        </div>
+
+        <div class="mt-10 grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+          <article class="rounded-3xl bg-white p-6 shadow-soft border border-slate-100">
+            <div class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-sage text-moss">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-6 w-6" stroke-width="1.8"><path d="M3 6h18M3 12h10M3 18h14" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="mt-5 text-xl font-semibold text-ink">Student tutor search and filtering</h3>
+            <p class="mt-3 text-slate-600">Search by subject, grade, location, availability, and price to quickly narrow to relevant tutors.</p>
+          </article>
+          <article class="rounded-3xl bg-white p-6 shadow-soft border border-slate-100">
+            <div class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-sage text-moss">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-6 w-6" stroke-width="1.8"><path d="M12 14a4 4 0 1 0-4-4 4 4 0 0 0 4 4Z"/><path d="M20 20a8 8 0 1 0-16 0" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="mt-5 text-xl font-semibold text-ink">Tutor profile pages</h3>
+            <p class="mt-3 text-slate-600">Profiles show bio, subjects, grade levels, rates, experience, reviews, and credentials for side-by-side comparison.</p>
+          </article>
+          <article class="rounded-3xl bg-white p-6 shadow-soft border border-slate-100">
+            <div class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-sage text-moss">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-6 w-6" stroke-width="1.8"><path d="M7 3v4M17 3v4M4 9h16M5 21h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2Z" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="mt-5 text-xl font-semibold text-ink">Booking, messaging, and payment flow</h3>
+            <p class="mt-3 text-slate-600">In-app messaging, calendar confirmation, secure payment, receipts, and cancellation rules keep sessions organized.</p>
+          </article>
+          <article class="rounded-3xl bg-white p-6 shadow-soft border border-slate-100">
+            <div class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-sage text-moss">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-6 w-6" stroke-width="1.8"><path d="M12 2 4 6v6c0 5 3.5 9.7 8 10 4.5-.3 8-5 8-10V6l-8-4Z" stroke-linejoin="round"/><path d="m9 12 2 2 4-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="mt-5 text-xl font-semibold text-ink">Tutor verification and trust signals</h3>
+            <p class="mt-3 text-slate-600">Identity checks, credential verification, ratings, badges, and review history help parents book with confidence.</p>
+          </article>
+          <article class="rounded-3xl bg-white p-6 shadow-soft border border-slate-100">
+            <div class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-sage text-moss">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-6 w-6" stroke-width="1.8"><path d="M4 19V5m0 14h16" stroke-linecap="round"/><path d="M7 15l4-5 3 3 5-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="mt-5 text-xl font-semibold text-ink">MVP launch controls for one city</h3>
+            <p class="mt-3 text-slate-600">Curated onboarding, manual review, and basic safety support keep supply quality high in a single city or region.</p>
+          </article>
+          <article class="rounded-3xl bg-gradient-to-br from-navy to-slate-900 p-6 text-white shadow-soft border border-slate-800 overflow-hidden relative">
+            <div class="absolute right-0 top-0 h-32 w-32 rounded-full bg-clay/20 blur-3xl"></div>
+            <p class="text-sm uppercase tracking-[0.2em] text-slate-300">Outcome</p>
+            <p class="mt-4 text-2xl font-semibold leading-tight">A trustworthy tutoring marketplace that feels fast for students, safe for parents, and practical for tutors.</p>
+            <p class="mt-4 text-sm text-slate-300">The marketplace turns discovery into a simple sequence: search, compare, verify, chat, book, and pay.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="personas" class="py-16 sm:py-20 bg-white border-y border-slate-200/70">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl">
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-moss">Personas</p>
+          <h2 class="mt-3 font-display text-3xl sm:text-4xl text-ink">Designed for students, parents, and tutors in the same local network.</h2>
+          <p class="mt-4 text-lg text-slate-600">LaunchMind lowers friction for the person searching, the person teaching, and the person approving the booking.</p>
+        </div>
+
+        <div class="mt-10 grid lg:grid-cols-3 gap-6 items-stretch">
+          <article class="rounded-3xl overflow-hidden bg-sand border border-slate-200 shadow-soft">
+            <img src="https://images.unsplash.com/photo-1604525241109-c3b7eecf4add?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTU1MjR8MHwxfHNlYXJjaHwyfHxzdHVkZW50JTIwdHV0b3IlMjBzdHVkeWluZyUyMGxhcHRvcCUyMGNsYXNzcm9vbXxlbnwwfHx8fDE3NzUzMTc1NzV8MA&ixlib=rb-4.1.0&q=80&w=1080&auto=format&fit=crop&w=1200&q=80" alt="Student preparing for tutoring on a laptop, representing Maya's need for a fast and affordable tutor search." class="h-56 w-full object-cover" />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-ink">Maya — student or parent</h3>
+              <p class="mt-3 text-slate-600">Needs a fast way to find an affordable tutor who matches subject, grade level, location, and schedule.</p>
+              <p class="mt-4 text-sm font-medium text-moss">Value: filter quickly and book with confidence.</p>
+            </div>
+          </article>
+          <article class="rounded-3xl overflow-hidden bg-sand border border-slate-200 shadow-soft">
+            <img src="https://images.unsplash.com/photo-1758612898402-537df8d68723?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTU1MjR8MHwxfHNlYXJjaHwxfHxwYXJlbnQlMjBjaGlsZCUyMGVkdWNhdGlvbiUyMHR1dG9yaW5nJTIwZGVza3xlbnwwfHx8fDE3NzUzMTc1NzR8MA&ixlib=rb-4.1.0&q=80&w=1080&auto=format&fit=crop&w=1200&q=80" alt="Parent helping a child study at a desk, reflecting Priya's need for trust, safety, and visible tutor quality." class="h-56 w-full object-cover" />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-ink">Priya — parent managing tutoring</h3>
+              <p class="mt-3 text-slate-600">Needs trust, safety, and clear proof of tutor quality before booking someone to work with her child.</p>
+              <p class="mt-4 text-sm font-medium text-moss">Value: verification, reviews, and secure payment.</p>
+            </div>
+          </article>
+          <article class="rounded-3xl overflow-hidden bg-sand border border-slate-200 shadow-soft">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80" alt="Small team collaborating in a modern setting, representing Jordan's desire for reliable tutor discovery and easy scheduling." class="h-56 w-full object-cover" />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-ink">Jordan — local tutor</h3>
+              <p class="mt-3 text-slate-600">Wants a steady flow of qualified leads without manual outreach, scheduling back-and-forth, or unreliable students.</p>
+              <p class="mt-4 text-sm font-medium text-moss">Value: discovery, bookings, and payment in one app.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="outreach" class="py-16 sm:py-20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-8 items-start">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-moss">Cold email</p>
+            <h2 class="mt-3 font-display text-3xl sm:text-4xl text-ink">Full outreach copy for tutor onboarding</h2>
+            <p class="mt-4 text-lg text-slate-600">The marketing deck now includes the complete email body so the acquisition story is ready to send, not just drafted as a subject line.</p>
+          </div>
+          <article class="rounded-3xl bg-white p-6 shadow-soft border border-slate-100">
+            <p class="text-sm font-semibold text-moss">Subject</p>
+            <p class="mt-1 text-slate-700">Get more local tutoring bookings with LaunchMind</p>
+            <div class="mt-5 space-y-4 text-slate-600 leading-7">
+              <p>Hi Jordan,</p>
+              <p>We’re launching LaunchMind, a mobile marketplace built to help local tutors get discovered by students and parents who are actively looking for support. Instead of spending time on outreach, scheduling back-and-forth, and follow-ups, you can create a verified profile, set your subjects and rates, and receive bookings in one place.</p>
+              <p>Parents and students can filter by subject, grade, location, availability, and price, then compare tutors using reviews, credentials, and trust signals. When they’re ready, they can message, book, and pay securely in the app.</p>
+              <p>We’re starting with a one-city launch so the marketplace stays curated, safe, and high quality. If you’re interested in being part of the first tutor cohort, I’d love to share more details.</p>
+              <p>Best,<br/>The LaunchMind team</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="cta" class="py-16 sm:py-20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-navy to-slate-950 px-6 py-10 sm:px-10 sm:py-12 text-white shadow-soft">
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(194,122,75,0.22),_transparent_30%),radial-gradient(circle_at_bottom_left,_rgba(255,255,255,0.10),_transparent_28%)]"></div>
+          <div class="relative grid lg:grid-cols-[1.4fr_0.8fr] gap-8 items-center">
+            <div>
+              <p class="text-sm uppercase tracking-[0.25em] text-slate-300">Final CTA</p>
+              <h2 class="mt-3 font-display text-3xl sm:text-4xl">Launch a tutoring marketplace that feels trustworthy from the first search.</h2>
+              <p class="mt-4 text-slate-300 max-w-2xl">LaunchMind brings together search, verification, booking, messaging, and payment so families can act quickly and tutors can grow locally with less friction.</p>
+            </div>
+            <div class="flex flex-col sm:flex-row lg:flex-col gap-3 lg:justify-end">
+              <a href="#top" class="inline-flex justify-center rounded-full bg-white px-6 py-3.5 text-base font-semibold text-navy hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-white/40">Review the homepage</a>
+              <a href="#features" class="inline-flex justify-center rounded-full border border-white/20 bg-white/5 px-6 py-3.5 text-base font-semibold text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">Inspect features</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
+        <div class="max-w-md">
+          <div class="flex items-center gap-3 font-semibold text-slate-900">
+            <span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-navy text-white">L</span>
+            <span>LaunchMind</span>
+          </div>
+          <p class="mt-4 text-sm leading-6 text-slate-600">A mobile marketplace for trusted local tutoring, built for students, parents, and tutors in one city at a time.</p>
+        </div>
+        <div class="grid grid-cols-2 gap-8 text-sm">
+          <div>
+            <p class="font-semibold text-slate-900">Navigate</p>
+            <ul class="mt-3 space-y-2 text-slate-600">
+              <li><a href="#features" class="hover:text-slate-900">Features</a></li>
+              <li><a href="#personas" class="hover:text-slate-900">Personas</a></li>
+              <li><a href="#outreach" class="hover:text-slate-900">Cold email</a></li>
+              <li><a href="#cta" class="hover:text-slate-900">CTA</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-semibold text-slate-900">Credits</p>
+            <p class="mt-3 text-slate-600">Photos from <a href="https://unsplash.com" class="underline decoration-slate-300 underline-offset-2 hover:text-slate-900">Unsplash</a></p>
+            <ul class="mt-3 space-y-2 text-slate-600">
+              <li>Photo by <a href="https://unsplash.com/@silverkblack" class="hover:text-slate-900 underline underline-offset-2">Vitaly Gariev</a> on <a href="https://unsplash.com" class="hover:text-slate-900 underline underline-offset-2">Unsplash</a></li>
+              <li>Photo by <a href="https://unsplash.com/@akhu" class="hover:text-slate-900 underline underline-offset-2">Anthony Da Cruz</a> on <a href="https://unsplash.com" class="hover:text-slate-900 underline underline-offset-2">Unsplash</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="mt-8 flex flex-col gap-2 border-t border-slate-200 pt-6 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+        <p>© <span id="year"></span> LaunchMind. All rights reserved.</p>
+        <p>Built with LaunchMind</p>
+      </div>
+    </div>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </footer>
+</body>
+</html>
